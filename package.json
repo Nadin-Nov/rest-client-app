@@ -7,9 +7,10 @@
     "build": "next build --turbopack",
     "start": "next start",
     "format:fix": "prettier --write .",
-    "lint": "eslint",
-    "lint:fix": "eslint --fix",
-    "stylelint": "npx stylelint \"**/*.css\""
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "stylelint": "npx stylelint \"**/*.css\"",
+    "stylelint:fix": "stylelint --fix \"**/*.css\""
   },
   "dependencies": {
     "next": "15.5.2",
@@ -28,11 +29,21 @@
     "eslint-config-next": "15.5.2",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-react-refresh": "^0.4.20",
+    "lint-staged": "^16.1.6",
     "prettier": "3.6.2",
     "stylelint": "^16.23.1",
     "stylelint-config-clean-order": "^7.0.0",
     "stylelint-config-standard": "^39.0.0",
     "typescript": "^5.9.2",
     "typescript-eslint": "^8.41.0"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.css": [
+      "npx stylelint --fix"
+    ]
   }
 }
