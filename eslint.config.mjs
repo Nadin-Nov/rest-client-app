@@ -6,6 +6,7 @@ import reactRefresh from 'eslint-plugin-react-refresh';
 import tseslint from 'typescript-eslint';
 import importPlugin from 'eslint-plugin-import';
 import nextPlugin from '@next/eslint-plugin-next';
+import eslintConfigPrettier from 'eslint-config-prettier/flat';
 
 export default tseslint.config(
   { ignores: ['dist/**', 'node_modules/**', '.next/**', 'build/**', 'next-env.d.ts'] },
@@ -18,6 +19,7 @@ export default tseslint.config(
       reactPlugin.configs.flat.recommended,
       reactPlugin.configs.flat['jsx-runtime'],
       reactHooks.configs['recommended-latest'],
+      eslintConfigPrettier,
     ],
     languageOptions: {
       ecmaVersion: 2020,
