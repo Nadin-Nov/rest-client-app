@@ -7,6 +7,7 @@
     "build": "next build --turbopack",
     "start": "next start",
     "format:fix": "prettier --write .",
+    "typecheck": "next build --no-lint",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "stylelint": "npx stylelint \"**/*.css\"",
