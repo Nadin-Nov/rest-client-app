@@ -1,3 +1,7 @@
+import { useTranslations } from 'next-intl';
+
 export default function NotFound() {
-  return <div>Not Found</div>;
+  const t = useTranslations('NotFound');
+
+  return <div>{t('title')}</div>;
 }

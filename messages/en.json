@@ -1,0 +1,6 @@
+{
+  "MainPage": { "title": "Main Page" },
+  "Header": { "title": "Header" },
+  "Footer": { "title": "Footer" },
+  "NotFound": { "title": "Not Found" }
+}

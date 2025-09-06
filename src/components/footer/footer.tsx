@@ -1,3 +1,7 @@
+import { useTranslations } from 'next-intl';
+
 export default function Footer() {
-  return <footer>Footer</footer>;
+  const t = useTranslations('Footer');
+
+  return <footer>{t('title')}</footer>;
 }
