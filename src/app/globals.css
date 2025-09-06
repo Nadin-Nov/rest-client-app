@@ -1,12 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap');
+
 :root {
+  --color-primary: #F25019;
+  --color-warning: #FFC107;
+  --color-danger: #FF3D00;
+  --color-error-alt: #DF6951;
+  --color-bg-light: #FEDCC5;
+  --color-black: #000000;
+  --color-gray: #BFBFBF;
+  --color-accent: #AE4700;
+  --color-success: #4CAF50;
+
   --background: #fff;
   --foreground: #171717;
+  --text-color: var(--foreground);
+
+  --primary-color: var(--color-primary);
+  --secondary-color: #F1A501;
+  --disabled-color: var(--color-gray);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --text-color: var(--foreground);
   }
 }
 
@@ -17,12 +35,23 @@ body {
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', 'Poppins', Arial, sans-serif;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: var(--foreground);
-
+  color: var(--text-color);
   background: var(--background);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', 'Inter', Arial, sans-serif;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.medium-text {
+  font-family: 'Poppins', 'Inter', Arial, sans-serif;
+  font-weight: 500;
 }
 
 * {
