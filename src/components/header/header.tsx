@@ -1,3 +1,7 @@
+import { useTranslations } from 'next-intl';
+
 export default function Header() {
-  return <header>Header</header>;
+  const t = useTranslations('Header');
+
+  return <header>{t('title')}</header>;
 }

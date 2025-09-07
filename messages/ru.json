@@ -1,0 +1,6 @@
+{
+  "MainPage": { "title": "Главная" },
+  "Header": { "title": "Заголовок" },
+  "Footer": { "title": "Футер" },
+  "NotFound": { "title": "Не найдено" }
+}

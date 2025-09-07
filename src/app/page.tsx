@@ -1,3 +1,5 @@
-export default function MainPage() {
-  return <div>Main Page</div>;
+import { redirect } from 'next/navigation';
+
+export default function RootPage() {
+  redirect('/en');
 }
