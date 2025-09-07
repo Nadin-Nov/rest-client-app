@@ -1,1 +1,0 @@
-"use strict";exports.id=270,exports.ids=[270],exports.modules={1270:a=>{a.exports=JSON.parse('{"MainPage":{"title":"Главная"},"Header":{"title":"Заголовок"},"Footer":{"title":"Футер"},"NotFound":{"title":"Не найдено"}}')}};
