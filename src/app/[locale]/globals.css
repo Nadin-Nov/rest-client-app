@@ -1,12 +1,27 @@
 :root {
   --background: #fff;
   --foreground: #171717;
+  --primary-color: #f25019;
+  --secondary-color: #f1a501;
+  --color-warning: #ffc107;
+  --color-error: #ff3d00;
+  --color-danger: #df6951;
+  --color-error-alt: #fedcc5;
+  --color-gray: #bfbfbf;
+  --color-accent: #ae4700;
+  --color-success: #4caf50;
+  --primary-hover: #d74313;
+  --secondary-hover: #e09c00;
+  --text-color: var(--foreground);
+  --color-black: #000;
+  --color-white: #fff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --text-color: var(--foreground);
   }
 }
 
@@ -17,10 +32,10 @@ body {
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: Inter, Poppins, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: var(--foreground);
+  color: var(--text-color);
 
   background: var(--background);
 }
