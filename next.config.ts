@@ -2,10 +2,7 @@ import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
 
 const nextConfig: NextConfig = {
-  distDir: './dist',
-  images: {
-    unoptimized: true,
-  },
+  /* config options here */
 };
 
 const withNextIntl = createNextIntlPlugin();
