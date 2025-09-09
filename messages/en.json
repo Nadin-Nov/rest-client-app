@@ -1,6 +1,14 @@
 {
   "MainPage": { "title": "Main Page" },
-  "Header": { "title": "Header" },
+  "Header": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "signOut": "Sign Out",
+    "language": "Language",
+    "restClient": "REST Client",
+    "history": "History",
+    "variables": "Variables"
+  },
   "Footer": { "title": "Footer" },
   "NotFound": { "title": "Not Found" }
 }
