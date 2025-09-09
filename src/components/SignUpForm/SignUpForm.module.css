@@ -1,0 +1,17 @@
+.form {
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: rgb(255 255 255 / 30%);
+  box-shadow: 0 4px 20px rgb(0 0 0 / 20%);
+}
+
+.form-errors {
+  height: 1rem;
+  margin: 0.3rem 0;
+  font-size: 0.8rem;
+  color: var(--color-error);
+}
+
+.subtitle {
+  color: var(--color-black);
+}

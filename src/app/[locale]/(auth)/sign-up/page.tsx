@@ -1,15 +1,14 @@
 import { AuthWrapper } from '@/components/AuthWrapper/AuthWrapper';
+import { SignUpForm } from '@/components/SignUpForm/SignUpForm';
 
 import styles from './styles.module.css';
 
-interface Props {
-  children: React.ReactNode;
-}
-
-export default function SignUpPage({ children }: Props) {
+export default function SignUpPage() {
   return (
     <div className={styles.container}>
-      <AuthWrapper>{children}</AuthWrapper>
+      <AuthWrapper>
+        <SignUpForm />
+      </AuthWrapper>
     </div>
   );
 }
