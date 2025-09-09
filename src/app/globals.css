@@ -32,7 +32,9 @@ body {
 }
 
 body {
-  font-family: Inter, Poppins, Arial, sans-serif;
+  padding: 0 40px;
+
+  font-family: 'Inter Tight', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--text-color);
