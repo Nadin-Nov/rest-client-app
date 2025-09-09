@@ -1,0 +1,8 @@
+.wrapper {
+  background-color: #fedcc5;
+  border-radius: 1rem;
+  padding: 2rem;
+  max-width: 900px;
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
