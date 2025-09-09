@@ -1,4 +1,6 @@
-import { PasswordInput, Stack, TextInput, Title, Button, Anchor, Text } from '@mantine/core';
+import { PasswordInput, Stack, TextInput, Title, Anchor, Text } from '@mantine/core';
+
+import Button from '@/components/ui/Button/Button';
 
 import styles from './SignUpForm.module.css';
 
@@ -8,7 +10,7 @@ export const SignUpForm = () => {
       <Title ta='center'>Sign up</Title>
       <Stack gap={0}>
         <TextInput label='Name' required radius='md' id='name' />
-        <p className={styles.formErrors}></p>
+        <p className={styles['form-errors']}></p>
       </Stack>
 
       <Stack gap={0}>
@@ -20,16 +22,14 @@ export const SignUpForm = () => {
         <legend>Password</legend>
         <Stack gap={0}>
           <PasswordInput label='Enter password' required radius='md' id='password' />
-          <p className={styles.formErrors}></p>
+          <p className={styles['form-errors']}></p>
         </Stack>
         <Stack gap={0}>
           <PasswordInput label='Confirm password' required radius='md' id='password2' />
-          <p className={styles.formErrors}></p>
+          <p className={styles['form-errors']}></p>
         </Stack>
       </fieldset>
-      <Button fullWidth mt='sm' radius='md' color='#f25019'>
-        SIGN UP
-      </Button>
+      <Button className={styles['auth-btn']}>SIGN UP</Button>
       <Text ta='center' mt='sm' className={styles.subtitle}>
         Already have an account?{' '}
         <Anchor component='button' size='sm'>
