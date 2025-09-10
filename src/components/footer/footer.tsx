@@ -1,7 +1,40 @@
-import { useTranslations } from 'next-intl';
+import Image from 'next/image';
+
+import styles from './footer.module.css';
 
 export default function Footer() {
-  const t = useTranslations('Footer');
+  const authors = [
+    { name: '27moon', url: 'https://github.com/27moon' },
+    { name: 'Gnarkill', url: 'https://github.com/Gnarkill33' },
+    { name: 'Nadin', url: 'https://github.com/Nadin-Nov' },
+  ];
 
-  return <footer>{t('title')}</footer>;
+  return (
+    <footer className={styles.footer}>
+      <div className={styles.container}>
+        <div className={styles.left}>
+          <div className={styles.authors}>
+            {authors.map((author) => (
+              <div key={author.name} className={styles.authorItem}>
+                <Image src='/catt.png' alt='cat' width={40} height={40} className={styles.catDivider} />
+                <a href={author.url} target='_blank' rel='noopener noreferrer'>
+                  {author.name}
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className={`${styles.center} ${styles.desktopOnly}`}>2025</div>
+
+        <div className={styles.right}>
+          <span className={styles.mobileOnly}>2025</span>
+
+          <a href='https://rs.school/courses/reactjs' target='_blank' rel='noopener noreferrer' className={styles.logo}>
+            <Image src='/rss-logo.svg' alt='RS School' width={40} height={40} priority />
+          </a>
+        </div>
+      </div>
+    </footer>
+  );
 }
