@@ -1,19 +1,18 @@
-import { Inter } from 'next/font/google';
+import '@mantine/core/styles.css';
 
-import './globals.css';
-import MantineProviderWrapper from '../providers/MantineProviderWrapper';
-
-const inter = Inter({ subsets: ['latin', 'cyrillic'], display: 'swap' });
-
+import { ColorSchemeScript, MantineProvider, mantineHtmlProps } from '@mantine/core';
 interface RootLayoutProps {
   children: React.ReactNode;
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang='en' className={inter.className}>
+    <html lang='en' {...mantineHtmlProps}>
+      <head>
+        <ColorSchemeScript />
+      </head>
       <body>
-        <MantineProviderWrapper>{children}</MantineProviderWrapper>
+        <MantineProvider>{children}</MantineProvider>
       </body>
     </html>
   );
