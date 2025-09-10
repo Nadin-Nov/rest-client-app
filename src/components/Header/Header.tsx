@@ -1,9 +1,9 @@
 'use client';
 
 import { usePathname, useRouter } from 'next/navigation';
-import { useTranslations } from 'next-intl';
+import { type FC } from 'react';
 
-import { useSticky } from '../../hooks/useSticky';
+import { useSticky } from '@/hooks/useSticky';
 
 import { HeaderView } from './HeaderView';
 
@@ -15,9 +15,8 @@ interface HeaderProps {
   onSignOut?: () => void;
 }
 
-export default function Header({ isAuth = false, username, onSignOut }: HeaderProps) {
+const Header: FC<HeaderProps> = ({ isAuth = false, username, onSignOut }) => {
   const scrolled = useSticky(SCROLL_THRESHOLD);
-  const t = useTranslations();
   const router = useRouter();
   const pathname = usePathname();
 
@@ -36,7 +35,8 @@ export default function Header({ isAuth = false, username, onSignOut }: HeaderPr
       currentLang={currentLang}
       onSignOut={onSignOut}
       onLangChange={handleLangChange}
-      t={t}
     />
   );
-}
+};
+
+export default Header;

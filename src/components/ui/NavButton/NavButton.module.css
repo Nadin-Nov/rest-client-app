@@ -1,4 +1,4 @@
-.nav-button {
+.navButton {
   cursor: pointer;
 
   display: inline-block;
@@ -17,15 +17,15 @@
   transition: border-color 0.2s ease;
 }
 
-.nav-button:disabled {
+.navButton:disabled {
   cursor: default;
   opacity: 0.5;
 }
 
-.nav-button:hover:not(:disabled) {
+.navButton:hover:not(:disabled) {
   border-color: var(--primary-color);
 }
 
-.nav-button.active {
+.navButton.active {
   border-color: var(--primary-color);
 }

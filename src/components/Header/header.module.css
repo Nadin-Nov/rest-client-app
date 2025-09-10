@@ -122,3 +122,12 @@
   border-color: var(--secondary-color);
   outline: none;
 }
+
+.authSection {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.authSectionLoggedIn {
+  align-items: center;
+}

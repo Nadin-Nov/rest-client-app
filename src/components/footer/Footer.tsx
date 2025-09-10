@@ -1,8 +1,9 @@
+import clsx from 'clsx';
 import Image from 'next/image';
 
-import styles from './footer.module.css';
+import styles from '@/components/Footer/footer.module.css';
 
-export default function Footer() {
+const Footer = () => {
   const authors = [
     { name: '27moon', url: 'https://github.com/27moon' },
     { name: 'Gnarkill', url: 'https://github.com/Gnarkill33' },
@@ -25,7 +26,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className={`${styles.center} ${styles.desktopOnly}`}>2025</div>
+        <div className={clsx(styles.center, styles.desktopOnly)}>2025</div>
 
         <div className={styles.right}>
           <span className={styles.mobileOnly}>2025</span>
@@ -37,4 +38,6 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;

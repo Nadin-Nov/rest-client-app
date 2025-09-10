@@ -1,8 +1,8 @@
 import { mantineHtmlProps } from '@mantine/core';
 import { Inter } from 'next/font/google';
 
-import './globals.css';
 import '@mantine/core/styles.css';
+import './globals.css';
 
 import MantineProviderWrapper from '../providers/MantineProviderWrapper';
 

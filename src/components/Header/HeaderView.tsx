@@ -1,5 +1,3 @@
-import type { useTranslations } from 'next-intl';
-
 import { AuthSection } from './AuthSection';
 import { LangToggle } from './LangToggle';
 import { Logo } from './Logo';
@@ -13,17 +11,16 @@ interface Props {
   currentLang: string;
   onSignOut?: () => void;
   onLangChange?: (lang: string) => void;
-  t: ReturnType<typeof useTranslations>;
 }
 
-export const HeaderView = ({ isAuth, username, scrolled, currentLang, onSignOut, onLangChange, t }: Props) => {
+export const HeaderView = ({ isAuth, username, scrolled, currentLang, onSignOut, onLangChange }: Props) => {
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.container}>
         <Logo />
         {isAuth && <NavMenu />}
         <div className={styles.actions}>
-          <AuthSection isAuth={isAuth} username={username} onSignOut={onSignOut} t={t} />
+          <AuthSection isAuth={isAuth} username={username} onSignOut={onSignOut} />
           <LangToggle currentLang={currentLang} onLangChange={onLangChange} />
         </div>
       </div>

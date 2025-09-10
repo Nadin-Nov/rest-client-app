@@ -3,9 +3,8 @@
 import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
-import NavButton from '../ui/NavButton/NavButton';
-
-import styles from './header.module.css';
+import styles from '@/components/Header/header.module.css';
+import NavButton from '@/components/ui/NavButton/NavButton';
 
 export const NavMenu = () => {
   const pathname = usePathname();
