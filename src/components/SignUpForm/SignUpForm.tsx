@@ -7,25 +7,33 @@ import styles from './SignUpForm.module.css';
 export const SignUpForm = () => {
   return (
     <form className={styles.form} noValidate>
-      <Title ta='center'>Sign up</Title>
+      <Title className={styles.title} ta='center'>
+        Sign up
+      </Title>
       <Stack gap={0}>
-        <TextInput label='Name' required radius='md' id='name' />
+        <TextInput className={styles['input-label']} label='Name' required radius='md' id='name' />
         <p className={styles['form-errors']}></p>
       </Stack>
 
       <Stack gap={0}>
-        <TextInput label='Email' required radius='md' id='email' />
+        <TextInput className={styles['input-label']} label='Email' required radius='md' id='email' />
         <p className={styles['form-errors']}></p>
       </Stack>
 
       <fieldset className={styles.fieldset}>
         <legend>Password</legend>
         <Stack gap={0}>
-          <PasswordInput label='Enter password' required radius='md' id='password' />
+          <PasswordInput className={styles['input-label']} label='Enter password' required radius='md' id='password' />
           <p className={styles['form-errors']}></p>
         </Stack>
         <Stack gap={0}>
-          <PasswordInput label='Confirm password' required radius='md' id='password2' />
+          <PasswordInput
+            className={styles['input-label']}
+            label='Confirm password'
+            required
+            radius='md'
+            id='password2'
+          />
           <p className={styles['form-errors']}></p>
         </Stack>
       </fieldset>
