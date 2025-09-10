@@ -1,11 +1,11 @@
 import { SimpleGrid } from '@mantine/core';
 import Image from 'next/image';
-import { type FC } from 'react';
+import { type ReactNode, type FC } from 'react';
 
 import styles from './AuthWrapper.module.css';
 
 interface Props {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export const AuthWrapper: FC<Props> = ({ children }) => {
