@@ -7,7 +7,7 @@ interface Props {
 
 export const LangToggle = ({ currentLang, onLangChange }: Props) => {
   return (
-    <select className={styles['lang-select']} value={currentLang} onChange={(e) => onLangChange?.(e.target.value)}>
+    <select className={styles.langSelect} value={currentLang} onChange={(e) => onLangChange?.(e.target.value)}>
       <option value='en'>EN</option>
       <option value='ru'>RU</option>
     </select>

@@ -27,7 +27,7 @@ export const HeaderView = ({ isAuth, username, scrolled, currentLang, onSignOut,
           <LangToggle currentLang={currentLang} onLangChange={onLangChange} />
         </div>
       </div>
-      <div className={styles['header-line']} />
+      <div className={styles.headerLine} />
     </header>
   );
 };
