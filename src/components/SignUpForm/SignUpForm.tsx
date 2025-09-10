@@ -11,33 +11,27 @@ export const SignUpForm = () => {
         Sign up
       </Title>
       <Stack gap={0}>
-        <TextInput className={styles['input-label']} label='Name' required radius='md' id='name' />
-        <p className={styles['form-errors']}></p>
+        <TextInput className={styles.inputLabel} label='Name' required radius='md' id='name' />
+        <p className={styles.formErrors}></p>
       </Stack>
 
       <Stack gap={0}>
-        <TextInput className={styles['input-label']} label='Email' required radius='md' id='email' />
-        <p className={styles['form-errors']}></p>
+        <TextInput className={styles.inputLabel} label='Email' required radius='md' id='email' />
+        <p className={styles.formErrors}></p>
       </Stack>
 
       <fieldset className={styles.fieldset}>
         <legend>Password</legend>
         <Stack gap={0}>
-          <PasswordInput className={styles['input-label']} label='Enter password' required radius='md' id='password' />
-          <p className={styles['form-errors']}></p>
+          <PasswordInput className={styles.inputLabel} label='Enter password' required radius='md' id='password' />
+          <p className={styles.formErrors}></p>
         </Stack>
         <Stack gap={0}>
-          <PasswordInput
-            className={styles['input-label']}
-            label='Confirm password'
-            required
-            radius='md'
-            id='password2'
-          />
-          <p className={styles['form-errors']}></p>
+          <PasswordInput className={styles.inputLabel} label='Confirm password' required radius='md' id='password2' />
+          <p className={styles.formErrors}></p>
         </Stack>
       </fieldset>
-      <Button className={styles['auth-btn']}>SIGN UP</Button>
+      <Button className={styles.authBtn}>SIGN UP</Button>
       <Text ta='center' mt='sm' className={styles.subtitle}>
         Already have an account?{' '}
         <Anchor component='button' size='sm'>

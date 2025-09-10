@@ -9,11 +9,11 @@
   color: var(--color-black);
 }
 
-.input-label {
+.inputLabel {
   color: var(--color-black);
 }
 
-.form-errors {
+.formErrors {
   height: 1rem;
   margin: 0.3rem 0;
   font-size: 0.8rem;
@@ -29,7 +29,7 @@
   color: var(--color-black);
 }
 
-.auth-btn {
+.authBtn {
   width: 100%;
   margin-top: 0.7rem;
 }
