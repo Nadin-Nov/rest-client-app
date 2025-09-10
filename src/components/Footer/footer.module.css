@@ -10,7 +10,9 @@
   padding: 0 40px;
   border-top: 1px solid var(--secondary-color);
 
-  background: var(--background);
+  color: #171717;
+
+  background: #fff;
 }
 
 .container {
@@ -21,6 +23,8 @@
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
+
+  color: #171717;
 }
 
 .left,
@@ -41,7 +45,7 @@
 
   font-size: 0.9rem;
   font-weight: 500;
-  color: var(--text-color);
+  color: #171717;
 }
 
 .right {
@@ -63,7 +67,7 @@
 
 .authors a {
   font-weight: 400;
-  color: var(--text-color);
+  color: #171717;
   text-decoration: none;
   transition: color 0.3s ease;
 }

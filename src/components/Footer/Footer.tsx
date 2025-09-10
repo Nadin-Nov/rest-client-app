@@ -17,7 +17,7 @@ const Footer = () => {
           <div className={styles.authors}>
             {authors.map((author) => (
               <div key={author.name} className={styles.authorItem}>
-                <Image src='/catt.png' alt='cat' width={40} height={40} className={styles.catDivider} />
+                <Image src='/cat.png' alt='cat' width={40} height={40} className={styles.catDivider} />
                 <a href={author.url} target='_blank' rel='noopener noreferrer'>
                   {author.name}
                 </a>

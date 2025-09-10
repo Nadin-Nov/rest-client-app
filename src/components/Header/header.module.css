@@ -6,7 +6,9 @@
   width: 100%;
   border-bottom: 1px solid transparent;
 
-  background: var(--background);
+  color: #171717;
+
+  background: #fff;
 
   transition: all 0.3s ease;
 }

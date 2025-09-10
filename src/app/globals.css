@@ -42,9 +42,9 @@ body {
   font-family: 'Inter Tight', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: var(--text-color);
+  color: #171717;
 
-  background: var(--background);
+  background: #fff;
 }
 
 * {
