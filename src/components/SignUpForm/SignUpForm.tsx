@@ -1,17 +1,19 @@
 import { PasswordInput, Stack, TextInput, Title, Anchor, Text } from '@mantine/core';
+import { useTranslations } from 'next-intl';
 
 import Button from '@/components/ui/Button/Button';
 
 import styles from './SignUpForm.module.css';
 
 export const SignUpForm = () => {
+  const t = useTranslations('SignUp');
   return (
     <form className={styles.form} noValidate>
       <Title className={styles.title} ta='center'>
-        Sign up
+        {t('signUpTitle')}
       </Title>
       <Stack gap={0}>
-        <TextInput className={styles.inputLabel} label='Name' required radius='md' id='name' />
+        <TextInput className={styles.inputLabel} label={t('name')} required radius='md' id='name' />
         <p className={styles.formErrors}></p>
       </Stack>
 
@@ -21,21 +23,27 @@ export const SignUpForm = () => {
       </Stack>
 
       <fieldset className={styles.fieldset}>
-        <legend>Password</legend>
+        <legend>{t('password')}</legend>
         <Stack gap={0}>
-          <PasswordInput className={styles.inputLabel} label='Enter password' required radius='md' id='password' />
+          <PasswordInput className={styles.inputLabel} label={t('enterPassword')} required radius='md' id='password' />
           <p className={styles.formErrors}></p>
         </Stack>
         <Stack gap={0}>
-          <PasswordInput className={styles.inputLabel} label='Confirm password' required radius='md' id='password2' />
+          <PasswordInput
+            className={styles.inputLabel}
+            label={t('confirmPassword')}
+            required
+            radius='md'
+            id='password2'
+          />
           <p className={styles.formErrors}></p>
         </Stack>
       </fieldset>
-      <Button className={styles.authBtn}>SIGN UP</Button>
+      <Button className={styles.authBtn}>{t('signUpBtn')}</Button>
       <Text ta='center' mt='sm' className={styles.subtitle}>
-        Already have an account?{' '}
+        {t('signInInquiry')}{' '}
         <Anchor component='button' size='sm'>
-          Login here
+          {t('signInLink')}
         </Anchor>
       </Text>
     </form>
