@@ -1,0 +1,35 @@
+.form {
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: rgb(255 255 255 / 30%);
+  box-shadow: 0 4px 20px rgb(0 0 0 / 20%);
+}
+
+.title {
+  color: var(--color-black);
+}
+
+.inputLabel {
+  color: var(--color-black);
+}
+
+.formErrors {
+  height: 1rem;
+  margin: 0.3rem 0;
+  font-size: 0.8rem;
+  color: var(--color-error);
+}
+
+.fieldset {
+  padding: 0.6rem;
+  color: var(--color-black);
+}
+
+.subtitle {
+  color: var(--color-black);
+}
+
+.authBtn {
+  width: 100%;
+  margin-top: 0.7rem;
+}
