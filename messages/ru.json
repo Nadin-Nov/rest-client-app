@@ -12,5 +12,12 @@
     "signUpBtn": "ЗАРЕГИСТРИРОВАТЬСЯ",
     "signInInquiry": "У вас уже есть аккаунт?",
     "signInLink": "Войти"
+  },
+  "SignIn": {
+    "password": "Пароль",
+    "signInTitle": "Вход",
+    "signInBtn": "ВОЙТИ",
+    "signUpInquiry": "Еще не зарегистрированы?",
+    "signUpLink": "Зарегистрироваться"
   }
 }

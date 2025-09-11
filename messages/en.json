@@ -12,5 +12,12 @@
     "signUpBtn": "SIGN UP",
     "signInInquiry": "Already have an account?",
     "signInLink": "Login here"
+  },
+  "SignIn": {
+    "password": "Password",
+    "signInTitle": "Sign in",
+    "signInBtn": "SIGN IN",
+    "signUpInquiry": "Aren’t registered just yet?",
+    "signUpLink": "Sign up here"
   }
 }
