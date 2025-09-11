@@ -2,8 +2,8 @@ import { notFound } from 'next/navigation';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import type { ReactNode } from 'react';
 
-import Footer from '@/components/footer/footer';
-import Header from '@/components/header/header';
+import Footer from '@/components/Footer/Footer';
+import Header from '@/components/Header/Header';
 import { routing } from '@/i18n/routing';
 
 interface LocaleLayoutProps {

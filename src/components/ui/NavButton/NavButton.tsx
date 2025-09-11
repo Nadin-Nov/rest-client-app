@@ -1,15 +1,23 @@
 import clsx from 'clsx';
-import type { FC, ButtonHTMLAttributes } from 'react';
+import Link from 'next/link';
+import type { FC } from 'react';
 
 import styles from './NavButton.module.css';
+import type { NavButtonProps, ButtonProps } from './types';
 
-interface NavButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  isActive?: boolean;
-}
+const NavButton: FC<NavButtonProps> = ({ isActive = false, className, children, ...props }) => {
+  const classes = clsx(styles.navButton, isActive && styles.active, className);
 
-const NavButton: FC<NavButtonProps> = ({ isActive = false, children, className, ...props }) => {
+  if ('href' in props && props.href) {
+    return (
+      <Link href={props.href} className={classes} onClick={props.onClick}>
+        {children}
+      </Link>
+    );
+  }
+
   return (
-    <button className={clsx(styles['nav-button'], isActive && styles.active, className)} {...props}>
+    <button className={classes} {...(props as ButtonProps)}>
       {children}
     </button>
   );
