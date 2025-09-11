@@ -1,3 +1,5 @@
+import clsx from 'clsx';
+
 import { AuthSection } from './AuthSection';
 import { LangToggle } from './LangToggle';
 import { Logo } from './Logo';
@@ -15,7 +17,7 @@ interface Props {
 
 export const HeaderView = ({ isAuth, username, scrolled, currentLang, onSignOut, onLangChange }: Props) => {
   return (
-    <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
+    <header className={clsx(styles.header, { [styles.scrolled]: scrolled })}>
       <div className={styles.container}>
         <Logo />
         {isAuth && <NavMenu />}

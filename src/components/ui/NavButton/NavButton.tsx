@@ -6,7 +6,7 @@ import styles from './NavButton.module.css';
 import type { NavButtonProps, ButtonProps } from './types';
 
 const NavButton: FC<NavButtonProps> = ({ isActive = false, className, children, ...props }) => {
-  const classes = clsx(styles['navButton'], isActive && styles.active, className);
+  const classes = clsx(styles.navButton, isActive && styles.active, className);
 
   if ('href' in props && props.href) {
     return (
