@@ -10,5 +10,15 @@
     "variables": "Переменные"
   },
   "Footer": { "title": "Футер" },
-  "NotFound": { "title": "Не найдено" }
+  "NotFound": { "title": "Не найдено" },
+  "SignUp": {
+    "name": "Имя",
+    "password": "Пароль",
+    "enterPassword": "Введите пароль",
+    "confirmPassword": "Подтвердите пароль",
+    "signUpTitle": "Регистрация",
+    "signUpBtn": "ЗАРЕГИСТРИРОВАТЬСЯ",
+    "signInInquiry": "У вас уже есть аккаунт?",
+    "signInLink": "Войти"
+  }
 }

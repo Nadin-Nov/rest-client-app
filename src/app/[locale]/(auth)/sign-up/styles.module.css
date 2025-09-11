@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+
+  background-color: #ffd1b0;
+  background-image: url('/assets/images/auth_background.webp');
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 45% auto;
+}

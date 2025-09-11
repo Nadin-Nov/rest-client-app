@@ -10,5 +10,15 @@
     "variables": "Variables"
   },
   "Footer": { "title": "Footer" },
-  "NotFound": { "title": "Not Found" }
+  "NotFound": { "title": "Not Found" },
+  "SignUp": {
+    "name": "Name",
+    "password": "Password",
+    "enterPassword": "Enter password",
+    "confirmPassword": "Confirm password",
+    "signUpTitle": "Sign up",
+    "signUpBtn": "SIGN UP",
+    "signInInquiry": "Already have an account?",
+    "signInLink": "Login here"
+  }
 }
