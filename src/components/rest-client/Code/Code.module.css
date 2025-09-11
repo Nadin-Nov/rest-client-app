@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  border: 2px solid #ffd1b0;
+  border-radius: 10px;
+}
+
+.tab {
+  cursor: pointer;
+  padding: 0.4rem;
+  border-radius: 4px;
+  transition: 0.2s;
+}
+
+.tab:hover {
+  background-color: var(--primary-hover);
+}
+
+.active {
+  background-color: #ffd1b0;
+}
