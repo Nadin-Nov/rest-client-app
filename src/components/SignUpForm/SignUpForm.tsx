@@ -1,11 +1,12 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import { PasswordInput, Stack, TextInput, Title, Anchor, Text } from '@mantine/core';
+import { PasswordInput, Stack, TextInput, Title, Text } from '@mantine/core';
 import { useTranslations } from 'next-intl';
 import { type SubmitHandler, useForm } from 'react-hook-form';
 
 import Button from '@/components/ui/Button/Button';
+import { Link } from '@/i18n/navigation';
 import type { FormData } from '@/types/types';
 import { formSchema } from '@/validation';
 
@@ -81,10 +82,11 @@ export const SignUpForm = () => {
         {t('signUpBtn')}
       </Button>
       <Text ta='center' mt='sm' className={styles.subtitle}>
-        {t('signInInquiry')}{' '}
-        <Anchor component='button' size='sm'>
+        {t('signInInquiry')}
+        <Link className={styles.link} href='/sign-in'>
+          {' '}
           {t('signInLink')}
-        </Anchor>
+        </Link>
       </Text>
     </form>
   );
