@@ -1,0 +1,135 @@
+.header {
+  position: sticky;
+  z-index: 1000;
+  top: 0;
+
+  width: 100%;
+  border-bottom: 1px solid transparent;
+
+  color: #171717;
+
+  background: #fff;
+
+  transition: all 0.3s ease;
+}
+
+.scrolled {
+  transform: translateY(0);
+  border-bottom: 1px solid var(--secondary-color);
+  background: var(--primary-color);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+}
+
+.logo span {
+  color: var(--secondary-color);
+}
+
+.langToggle {
+  cursor: pointer;
+
+  margin-left: 1rem;
+  padding: 4px 8px;
+  border: 1px solid var(--color-gray);
+  border-radius: 6px;
+
+  color: var(--text-color);
+
+  background: var(--background);
+}
+
+.nav {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: 2rem;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.username {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+@media (width <= 768px) {
+  .nav {
+    display: none;
+  }
+
+  .langToggle {
+    margin-left: auto;
+  }
+}
+
+.logo {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.logoImg {
+  width: auto;
+  height: 50px;
+}
+
+.logoText span {
+  color: var(--secondary-color);
+}
+
+.headerLine {
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+.leftSection {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.langSelect {
+  cursor: pointer;
+
+  padding: 6px 12px;
+  border: 1px solid var(--secondary-color);
+  border-radius: 6px;
+
+  font-size: 0.95rem;
+  color: var(--text-color);
+
+  appearance: none;
+  background-color: var(--primary-color);
+}
+
+.langSelect:hover,
+.langSelect:focus {
+  border-color: var(--secondary-color);
+  outline: none;
+}
+
+.authSection {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.authSectionLoggedIn {
+  align-items: center;
+}

@@ -17,6 +17,7 @@ export const BodyRequest: FC<BodyEditorProps> = ({ value, onChange, readOnly }) 
   const toggle = () => {
     setBodyType((prev) => (prev === 'json' ? 'text' : 'json'));
   };
+
   return (
     <>
       <h3>Body:</h3>

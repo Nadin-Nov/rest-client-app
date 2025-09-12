@@ -29,17 +29,22 @@ html,
 body {
   overflow-x: hidden;
   max-width: 100vw;
+  height: 100%;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
   padding: 0 40px;
 
   font-family: 'Inter Tight', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: var(--text-color);
+  color: #171717; /* из feature/footer */
 
-  background: var(--background);
+  background: #fff; /* из feature/footer */
 }
 
 * {

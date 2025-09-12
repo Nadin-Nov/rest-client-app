@@ -1,6 +1,14 @@
 {
   "MainPage": { "title": "Главная" },
-  "Header": { "title": "Заголовок" },
+  "Header": {
+    "signIn": "Войти",
+    "signUp": "Регистрация",
+    "signOut": "Выйти",
+    "language": "Язык",
+    "restClient": "REST Клиент",
+    "history": "История",
+    "variables": "Переменные"
+  },
   "Footer": { "title": "Футер" },
   "NotFound": { "title": "Не найдено" },
   "SignUp": {
@@ -12,5 +20,12 @@
     "signUpBtn": "ЗАРЕГИСТРИРОВАТЬСЯ",
     "signInInquiry": "У вас уже есть аккаунт?",
     "signInLink": "Войти"
+  },
+  "SignIn": {
+    "password": "Пароль",
+    "signInTitle": "Вход",
+    "signInBtn": "ВОЙТИ",
+    "signUpInquiry": "Еще не зарегистрированы?",
+    "signUpLink": "Зарегистрироваться"
   }
 }
