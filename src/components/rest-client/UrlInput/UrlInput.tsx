@@ -1,6 +1,7 @@
 import { TextInput } from '@mantine/core';
 import type { ChangeEvent, FC } from 'react';
 
+import styles from './UrlInput.module.css';
 interface UrlInputProps {
   value: string;
   onChange: (url: string) => void;
@@ -12,8 +13,13 @@ export const UrlInput: FC<UrlInputProps> = ({ value, onChange }) => {
 
   console.log(value);
   return (
-    <div>
-      <TextInput label='Endpoint URL' value={value} onChange={handleChange}></TextInput>
+    <div className={styles.urlInputWrapper}>
+      <TextInput
+        value={value}
+        onChange={handleChange}
+        placeholder='EndpointURL'
+        className={styles.urlInput}
+      ></TextInput>
     </div>
   );
 };

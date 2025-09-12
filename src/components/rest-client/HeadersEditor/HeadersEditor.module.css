@@ -1,0 +1,46 @@
+.headersWrapper {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+
+  max-height: 9rem;
+  padding: 1rem;
+}
+
+.addHeaderButton {
+  display: flex;
+  justify-content: flex-start;
+
+  width: 100%;
+  border: 2px solid #ffd1b0;
+
+  color: black;
+
+  background-color: transparent;
+
+  transition: 0.2s;
+}
+
+.addHeaderButton:hover {
+  color: black;
+  background-color: #ffd1b0;
+}
+
+.removeButton {
+  display: flex;
+  justify-content: flex-start;
+
+  border: 2px solid #ffd1b0;
+
+  color: black;
+
+  background-color: #ffd1b0;
+
+  transition: 0.2s;
+}
+
+.removeButton:hover {
+  color: black;
+  background-color: transparent;
+}

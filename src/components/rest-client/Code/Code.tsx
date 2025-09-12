@@ -1,3 +1,4 @@
+import { Tabs } from '@mantine/core';
 import { type FC, useState } from 'react';
 
 import { TextArea } from '@/components/ui/TextArea/TextArea';
@@ -10,22 +11,30 @@ export const Code: FC = () => {
   const [code, setCode] = useState('');
   const [language, setLanguage] = useState(languages[0]);
 
+  const handleTabChange = (value: string | null) => {
+    if (value && languages.includes(value)) {
+      setLanguage(value);
+    }
+  };
+
   return (
     <div className={styles.container}>
-      <div className={styles.tabs}>
-        {languages.map((el) => {
-          const isActive = el === language;
-          return (
-            <div key={el}>
-              <div className={`${styles.tab} ${isActive ? styles.active : ''}`} onClick={() => setLanguage(el)}>
-                {el}
-              </div>
-            </div>
-          );
-        })}
-      </div>
+      <h3>Code:</h3>
+      <Tabs value={language} onChange={handleTabChange} variant='outline'>
+        <Tabs.List>
+          {languages.map((el) => (
+            <Tabs.Tab key={el} value={el} className={styles.tab}>
+              {el}
+            </Tabs.Tab>
+          ))}
+        </Tabs.List>
 
-      <TextArea placeholder={`Generated code for ${language}...`} value={code} onChange={setCode} readOnly={true} />
+        {languages.map((el) => (
+          <Tabs.Panel key={el} value={el} pt='sm'>
+            <TextArea placeholder={`Generated code for ${el}...`} value={code} onChange={setCode} readOnly />
+          </Tabs.Panel>
+        ))}
+      </Tabs>
     </div>
   );
 };

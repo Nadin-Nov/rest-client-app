@@ -1,6 +1,8 @@
 import { Button, Group, TextInput } from '@mantine/core';
 import { type FC } from 'react';
 
+import styles from './HeadersEditor.module.css';
+
 export interface Header {
   key: string;
   value: string;
@@ -38,23 +40,29 @@ export const HeadersEditor: FC<HeadersEditorProps> = ({ headers, onChange }) => 
 
   return (
     <>
-      <div>Headers:</div>
-      {headers.map((header, index) => (
-        <Group key={index}>
-          <TextInput
-            placeholder='key'
-            value={header.key}
-            onChange={(e) => updateHeaderKey(index, e.currentTarget.value)}
-          ></TextInput>
-          <TextInput
-            placeholder='value'
-            value={header.value}
-            onChange={(e) => updateHeaderValue(index, e.currentTarget.value)}
-          ></TextInput>
-          <Button onClick={() => removeHeder(index)}>Remove</Button>
-        </Group>
-      ))}
-      <Button onClick={addHeader}>Add</Button>
+      <h3>Headers:</h3>
+      <Button onClick={addHeader} className={styles.addHeaderButton}>
+        + Add Header
+      </Button>
+      <div className={styles.headersWrapper}>
+        {headers.map((header, index) => (
+          <Group key={index}>
+            <TextInput
+              placeholder='key'
+              value={header.key}
+              onChange={(e) => updateHeaderKey(index, e.currentTarget.value)}
+            ></TextInput>
+            <TextInput
+              placeholder='value'
+              value={header.value}
+              onChange={(e) => updateHeaderValue(index, e.currentTarget.value)}
+            ></TextInput>
+            <Button onClick={() => removeHeder(index)} className={styles.removeButton}>
+              Remove
+            </Button>
+          </Group>
+        ))}
+      </div>
     </>
   );
 };

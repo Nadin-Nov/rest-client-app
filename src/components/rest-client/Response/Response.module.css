@@ -1,0 +1,16 @@
+.responseContainer {
+  margin: 0.7rem 0;
+}
+
+.statusWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.responseHeader {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}

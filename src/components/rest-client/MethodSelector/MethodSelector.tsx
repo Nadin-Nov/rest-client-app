@@ -1,6 +1,7 @@
 import { Select } from '@mantine/core';
 import type { FC } from 'react';
 
+import styles from './MethodSelector.module.css';
 interface MethodSelectorProps {
   method: string;
   onChange: (method: string) => void;
@@ -10,13 +11,16 @@ export const MethodSelector: FC<MethodSelectorProps> = ({ method, onChange }) =>
 
   console.log(method);
   return (
-    <div>
+    <div className={styles.method}>
       <Select
-        label='Method:'
         data={METHODS}
         value={method}
         placeholder='Pick method'
         onChange={(value) => value && onChange(value)}
+        classNames={{
+          input: styles.selectInput,
+          dropdown: styles.selectDropdown,
+        }}
       ></Select>
     </div>
   );

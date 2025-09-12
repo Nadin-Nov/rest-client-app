@@ -1,5 +1,6 @@
-import { Textarea } from '@mantine/core';
 import type { FC, ChangeEvent } from 'react';
+
+import styles from './TextArea.module.css';
 
 interface MyTextareaProps {
   value: string;
@@ -13,5 +14,13 @@ export const TextArea: FC<MyTextareaProps> = ({ value, onChange, readOnly = fals
     if (onChange) onChange(e.currentTarget.value);
   };
 
-  return <Textarea value={value} onChange={handleChange} readOnly={readOnly} placeholder={placeholder} />;
+  return (
+    <textarea
+      value={value}
+      onChange={handleChange}
+      readOnly={readOnly}
+      placeholder={placeholder}
+      className={styles.customTextarea}
+    />
+  );
 };
