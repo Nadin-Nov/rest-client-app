@@ -1,23 +1,26 @@
+import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
 import { TextArea } from '@/components/ui/TextArea/TextArea';
 
 import styles from './Response.module.css';
 
-interface ResponseStatusProps {
+interface ResponseProps {
   status: number | null;
   body: string;
 }
-export const ResponseStatus: FC<ResponseStatusProps> = ({ status, body }) => {
+export const Response: FC<ResponseProps> = ({ status, body }) => {
+  const t = useTranslations('RestClient');
+
   return (
     <div className={styles.responseContainer}>
-      <h2 className={styles.responseHeader}>Response</h2>
+      <h2 className={styles.responseHeader}>{t('responseHeader')}</h2>
       <div className={styles.statusWrapper}>
-        <h3>Status: </h3>
-        <div>{status !== null ? status : ' No response yet'}</div>
+        <h3>{t('status')}</h3>
+        <div>{status !== null ? status : t('responseStatus')}</div>
       </div>
-      <h3>Body:</h3>
-      <TextArea value={body} placeholder='Response will appear here...' readOnly={true} />
+      <h3>{t('body')}</h3>
+      <TextArea value={body} placeholder={t('placeholderForFutureResponse')} readOnly={true} />
     </div>
   );
 };

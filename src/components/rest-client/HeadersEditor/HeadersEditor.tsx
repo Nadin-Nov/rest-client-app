@@ -1,4 +1,5 @@
 import { Button, Group, TextInput } from '@mantine/core';
+import { useTranslations } from 'next-intl';
 import { type FC } from 'react';
 
 import styles from './HeadersEditor.module.css';
@@ -14,6 +15,8 @@ interface HeadersEditorProps {
 }
 
 export const HeadersEditor: FC<HeadersEditorProps> = ({ headers, onChange }) => {
+  const t = useTranslations('RestClient');
+
   console.log(headers);
 
   const addHeader = () => {
@@ -40,25 +43,25 @@ export const HeadersEditor: FC<HeadersEditorProps> = ({ headers, onChange }) => 
 
   return (
     <>
-      <h3>Headers:</h3>
+      <h3>{t('headers')}</h3>
       <Button onClick={addHeader} className={styles.addHeaderButton}>
-        + Add Header
+        {t('addHeader')}
       </Button>
       <div className={styles.headersWrapper}>
         {headers.map((header, index) => (
           <Group key={index}>
             <TextInput
-              placeholder='key'
+              placeholder={t('keyPlaceholder')}
               value={header.key}
               onChange={(e) => updateHeaderKey(index, e.currentTarget.value)}
             ></TextInput>
             <TextInput
-              placeholder='value'
+              placeholder={t('valuePlaceholder')}
               value={header.value}
               onChange={(e) => updateHeaderValue(index, e.currentTarget.value)}
             ></TextInput>
             <Button onClick={() => removeHeder(index)} className={styles.removeButton}>
-              Remove
+              {t('removeHeader')}
             </Button>
           </Group>
         ))}

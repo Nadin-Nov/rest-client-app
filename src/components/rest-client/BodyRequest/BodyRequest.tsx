@@ -1,4 +1,5 @@
 import { Button, Group } from '@mantine/core';
+import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 import { useState } from 'react';
 
@@ -12,6 +13,8 @@ interface BodyEditorProps {
 }
 
 export const BodyRequest: FC<BodyEditorProps> = ({ value, onChange, readOnly }) => {
+  const t = useTranslations('RestClient');
+
   const [bodyType, setBodyType] = useState<'json' | 'text'>('json');
 
   const toggle = () => {
@@ -20,26 +23,26 @@ export const BodyRequest: FC<BodyEditorProps> = ({ value, onChange, readOnly }) 
 
   return (
     <>
-      <h3>Body:</h3>
+      <h3> {t('body')}</h3>
 
       <div className={styles.switchRow}>
         <div className={styles.toggle} onClick={toggle}>
           <div className={`${styles.dot} ${bodyType === 'text' ? styles.right : styles.left}`} />
         </div>
         <div className={bodyType === 'json' ? styles.activeLabel : ''}>JSON</div>
-        <div className={bodyType === 'text' ? styles.activeLabel : ''}>Text</div>
+        <div className={bodyType === 'text' ? styles.activeLabel : ''}>{t('text')}</div>
       </div>
 
       <TextArea
         value={value}
         onChange={onChange}
         readOnly={readOnly}
-        placeholder={bodyType === 'json' ? 'Write JSON here...' : 'Write plain text here...'}
+        placeholder={bodyType === 'json' ? t('jsonPlaceholder') : t('textPlaceholder')}
       />
 
       <Group>
         <Button style={{ visibility: bodyType === 'json' ? 'visible' : 'hidden' }} className={styles.prettifyButton}>
-          Prettify
+          {t('prettify')}
         </Button>
       </Group>
     </>

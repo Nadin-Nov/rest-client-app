@@ -1,4 +1,5 @@
 import { Tabs } from '@mantine/core';
+import { useTranslations } from 'next-intl';
 import { type FC, useState } from 'react';
 
 import { TextArea } from '@/components/ui/TextArea/TextArea';
@@ -8,6 +9,8 @@ import styles from './Code.module.css';
 const languages = ['curl', 'JavaScript (Fetch api)', 'JavaScript (XHR)', 'NodeJS', 'Python', 'Java', 'C#', 'Go'];
 
 export const Code: FC = () => {
+  const t = useTranslations('RestClient');
+
   const [code, setCode] = useState('');
   const [language, setLanguage] = useState(languages[0]);
 
@@ -19,7 +22,7 @@ export const Code: FC = () => {
 
   return (
     <div className={styles.container}>
-      <h3>Code:</h3>
+      <h3>{t('code')}</h3>
       <Tabs value={language} onChange={handleTabChange} variant='outline'>
         <Tabs.List>
           {languages.map((el) => (
@@ -31,7 +34,7 @@ export const Code: FC = () => {
 
         {languages.map((el) => (
           <Tabs.Panel key={el} value={el} pt='sm'>
-            <TextArea placeholder={`Generated code for ${el}...`} value={code} onChange={setCode} readOnly />
+            <TextArea placeholder={t('generatedCodePlaceholder', { el })} value={code} onChange={setCode} readOnly />
           </Tabs.Panel>
         ))}
       </Tabs>
