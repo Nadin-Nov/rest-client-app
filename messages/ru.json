@@ -1,5 +1,42 @@
 {
-  "MainPage": { "title": "Главная" },
+  "MainPage": {
+    "title": "Главная",
+    "hero": {
+      "welcomeGuest": "Добро пожаловать!",
+      "welcomeUser": "С возвращением, {{username}}!"
+    },
+    "projectInfo": {
+      "title": "О проекте",
+      "description1": "Это лёгкий REST клиент, вдохновлённый Postman и Thunder Client. Вы можете отправлять API-запросы, просматривать ответы, управлять переменными и отслеживать историю.",
+      "description2": "Построено с использованием React 18+, TypeScript, Next.js и современных UI-практик.",
+      "description3": "Коты здесь приветствуются!"
+    },
+    "team": {
+      "title": "Наша команда",
+      "memberAlice": {
+        "name": "27moon",
+        "role": "Frontend Cat 🐾",
+        "description": "Любит гоняться за курсорами и отлаживать CSS своей лапкой.",
+        "url": "https://github.com/27moon"
+      },
+      "memberBob": {
+        "name": "Gnarkill",
+        "role": "Backend Cat 🐱",
+        "description": "Обожает прыгать на баги в API и спать на логах сервера.",
+        "url": "https://github.com/Gnarkill33"
+      },
+      "memberCharlie": {
+        "name": "Nadin",
+        "role": "Fullstack Cat 🐈",
+        "description": "Балансирует между фронтендом и бэкендом, как кот на заборе.",
+        "url": "https://github.com/Nadin-Nov"
+      }
+    },
+    "callToAction": {
+      "title": "Начать прямо сейчас",
+      "button": "Регистрация"
+    }
+  },
   "Header": {
     "signIn": "Войти",
     "signUp": "Регистрация",
@@ -9,6 +46,10 @@
     "history": "История",
     "variables": "Переменные"
   },
-  "Footer": { "title": "Футер" },
-  "NotFound": { "title": "Не найдено" }
+  "Footer": {
+    "title": "Футер"
+  },
+  "NotFound": {
+    "title": "Не найдено"
+  }
 }

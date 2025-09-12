@@ -1,5 +1,42 @@
 {
-  "MainPage": { "title": "Main Page" },
+  "MainPage": {
+    "title": "Main Page",
+    "hero": {
+      "welcomeGuest": "Welcome!",
+      "welcomeUser": "Welcome back, {{username}}!"
+    },
+    "projectInfo": {
+      "title": "About the Project",
+      "description1": "This is a lightweight REST client app, inspired by Postman and Thunder Client. You can make API requests, view responses, manage variables, and track history.",
+      "description2": "Built with React 18+, TypeScript, Next.js, and modern UI practices.",
+      "description3": "Cats are welcome here!"
+    },
+    "team": {
+      "title": "Our Team",
+      "memberAlice": {
+        "name": "27moon",
+        "role": "Frontend Cat 🐾",
+        "description": "Loves chasing cursors and debugging CSS with her paw.",
+        "url": "https://github.com/27moon"
+      },
+      "memberBob": {
+        "name": "Gnarkill",
+        "role": "Backend Cat 🐱",
+        "description": "Enjoys pouncing on API bugs and sleeping on server logs.",
+        "url": "https://github.com/Gnarkill33"
+      },
+      "memberCharlie": {
+        "name": "Nadin",
+        "role": "Fullstack Cat 🐈",
+        "description": "Balances frontend and backend like a cat on a fence.",
+        "url": "https://github.com/Nadin-Nov"
+      }
+    },
+    "callToAction": {
+      "title": "Get Started",
+      "button": "Sign Up"
+    }
+  },
   "Header": {
     "signIn": "Sign In",
     "signUp": "Sign Up",
@@ -9,6 +46,10 @@
     "history": "History",
     "variables": "Variables"
   },
-  "Footer": { "title": "Footer" },
-  "NotFound": { "title": "Not Found" }
+  "Footer": {
+    "title": "Footer"
+  },
+  "NotFound": {
+    "title": "Not Found"
+  }
 }
