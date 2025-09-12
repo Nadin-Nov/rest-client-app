@@ -8,6 +8,7 @@ import type { Header } from '../HeadersEditor/HeadersEditor';
 import { HeadersEditor } from '../HeadersEditor/HeadersEditor';
 import { MethodSelector } from '../MethodSelector/MethodSelector';
 import { ResponseStatus } from '../Response/Response';
+import { SendRequestButton } from '../SendRequestButton/SendRequestButton';
 import { UrlInput } from '../UrlInput/UrlInput';
 
 import styles from './RestClient.module.css';
@@ -26,7 +27,7 @@ export const RestClient: FC = () => {
           <MethodSelector method={method} onChange={setMethod} />
           <UrlInput value={url} onChange={setURL} />
         </div>
-
+        <SendRequestButton />
         <HeadersEditor headers={headers} onChange={setHeaders} />
         <Code />
         <BodyRequest value={body} onChange={setBody} readOnly={false} />

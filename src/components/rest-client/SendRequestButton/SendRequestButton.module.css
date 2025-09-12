@@ -1,0 +1,15 @@
+.sentRequestButton {
+  display: flex;
+  align-self: flex-end;
+
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--color-black);
+
+  background: #ff7f50;
+}
+
+.sentRequestButton:hover {
+  color: black;
+  background-color: #ff9973;
+}
