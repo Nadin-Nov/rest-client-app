@@ -42,7 +42,7 @@ export default tseslint.config(
       '@typescript-eslint/array-type': 'error',
       '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
       '@typescript-eslint/no-explicit-any': 'error',
-      '@typescript-eslint/no-magic-numbers': ['error', { ignore: [0, 1, 8] }],
+      '@typescript-eslint/no-magic-numbers': ['error', { ignore: [0, 1, 2, 3, 4, 8] }],
       'import/order': [
         'error',
         {

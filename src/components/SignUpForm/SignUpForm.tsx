@@ -3,21 +3,26 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { PasswordInput, Stack, TextInput, Title, Text } from '@mantine/core';
 import { useTranslations } from 'next-intl';
+import { useState } from 'react';
 import { type SubmitHandler, useForm } from 'react-hook-form';
 
+import { PasswordStrengthMeter } from '@/components/PasswordStrengthMeter/PasswordStrengthMeter';
 import Button from '@/components/ui/Button/Button';
 import { Link } from '@/i18n/navigation';
 import type { FormData } from '@/types/types';
+import { checkPasswordStrength } from '@/utils/checkPasswordStrength';
 import { formSchema } from '@/validation';
 
 import styles from './SignUpForm.module.css';
 
 export const SignUpForm = () => {
+  const [passwordStrength, setPasswordStrength] = useState('');
   const t = useTranslations('SignUp');
   const {
     register,
     handleSubmit,
     formState: { errors, isDirty, isValid },
+    watch,
   } = useForm<FormData>({
     defaultValues: {
       name: '',
@@ -28,6 +33,15 @@ export const SignUpForm = () => {
     mode: 'onChange',
     resolver: zodResolver(formSchema),
   });
+
+  const passwordWatched = watch('password');
+
+  if (passwordWatched) {
+    const passwordWatchedStrength = checkPasswordStrength(passwordWatched);
+    if (passwordWatchedStrength !== passwordStrength) {
+      setPasswordStrength(passwordWatchedStrength);
+    }
+  }
 
   const onSubmit: SubmitHandler<FormData> = (formData) => console.log(formData);
 
@@ -64,6 +78,7 @@ export const SignUpForm = () => {
             radius='md'
             id='password'
           />
+          {passwordStrength && <PasswordStrengthMeter strength={passwordStrength} />}
           <p className={styles.formErrors}>{errors.password?.message}</p>
         </Stack>
         <Stack gap={0}>
