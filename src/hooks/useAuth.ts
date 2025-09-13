@@ -1,3 +1,3 @@
-export const useAuth = () => {
-  return { isAuth: false, username: '', signOut: () => {} };
-};
+import { useAuthContext } from './useAuthContext';
+
+export const useAuth = () => useAuthContext();
