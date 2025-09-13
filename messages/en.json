@@ -3,38 +3,44 @@
     "title": "Main Page",
     "hero": {
       "welcomeGuest": "Welcome!",
-      "welcomeUser": "Welcome back, {{username}}!"
+      "welcomeUser": "Welcome back, {username}!",
+      "subtitleGuest": "Explore our app!",
+      "subtitleUser": "Glad to see you again!"
     },
     "projectInfo": {
       "title": "About the Project",
       "description1": "This is a lightweight REST client app, inspired by Postman and Thunder Client. You can make API requests, view responses, manage variables, and track history.",
       "description2": "Built with React 18+, TypeScript, Next.js, and modern UI practices.",
-      "description3": "Cats are welcome here!"
+      "description3": "Focused on building responsive and interactive frontend components."
     },
     "team": {
       "title": "Our Team",
-      "memberAlice": {
+      "memberMarta": {
         "name": "27moon",
         "role": "Frontend Cat 🐾",
-        "description": "Loves chasing cursors and debugging CSS with her paw.",
+        "description": "Chases CSS bugs and catches them with lightning-fast paws.",
         "url": "https://github.com/27moon"
       },
-      "memberBob": {
+      "memberKate": {
         "name": "Gnarkill",
-        "role": "Backend Cat 🐱",
-        "description": "Enjoys pouncing on API bugs and sleeping on server logs.",
+        "role": "Frontend Cat 🐾",
+        "description": "Purrfectly integrates APIs while napping on the keyboard.",
         "url": "https://github.com/Gnarkill33"
       },
-      "memberCharlie": {
+      "memberNadin": {
         "name": "Nadin",
-        "role": "Fullstack Cat 🐈",
-        "description": "Balances frontend and backend like a cat on a fence.",
+        "role": "Frontend Cat 🐾",
+        "description": "Balances components and state like a cat on a fence.",
         "url": "https://github.com/Nadin-Nov"
       }
     },
     "callToAction": {
       "title": "Get Started",
-      "button": "Sign Up"
+      "signInButton": "Sign In",
+      "signUpButton": "Sign Up"
+    },
+    "thanx": {
+      "text": "thanks to <link>@someone</link> for щщщщщщ"
     }
   },
   "Header": {

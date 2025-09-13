@@ -3,38 +3,44 @@
     "title": "Главная",
     "hero": {
       "welcomeGuest": "Добро пожаловать!",
-      "welcomeUser": "С возвращением, {{username}}!"
+      "welcomeUser": "С возвращением, {username}!",
+      "subtitleGuest": "Исследуй наше приложение!",
+      "subtitleUser": "Рады видеть вас снова!"
     },
     "projectInfo": {
       "title": "О проекте",
-      "description1": "Это лёгкий REST клиент, вдохновлённый Postman и Thunder Client. Вы можете отправлять API-запросы, просматривать ответы, управлять переменными и отслеживать историю.",
-      "description2": "Построено с использованием React 18+, TypeScript, Next.js и современных UI-практик.",
-      "description3": "Коты здесь приветствуются!"
+      "description1": "Лёгкое REST-клиент приложение, вдохновлённое Postman и Thunder Client. Делай запросы, смотри ответы, управляй переменными и следи за историей.",
+      "description2": "Построено на React 18+, TypeScript, Next.js с современным подходом к интерфейсу.",
+      "description3": "Создаём отзывчивые и интерактивные фронтенд-компоненты."
     },
     "team": {
       "title": "Наша команда",
-      "memberAlice": {
+      "memberMarta": {
         "name": "27moon",
         "role": "Frontend Cat 🐾",
-        "description": "Любит гоняться за курсорами и отлаживать CSS своей лапкой.",
+        "description": "Охотится на баги CSS и ловит их мгновенно.",
         "url": "https://github.com/27moon"
       },
-      "memberBob": {
+      "memberKate": {
         "name": "Gnarkill",
-        "role": "Backend Cat 🐱",
-        "description": "Обожает прыгать на баги в API и спать на логах сервера.",
+        "role": "Frontend Cat 🐾",
+        "description": "Идеально интегрирует API и иногда дремлет на клавиатуре.",
         "url": "https://github.com/Gnarkill33"
       },
-      "memberCharlie": {
+      "memberNadin": {
         "name": "Nadin",
-        "role": "Fullstack Cat 🐈",
-        "description": "Балансирует между фронтендом и бэкендом, как кот на заборе.",
+        "role": "Frontend Cat 🐾",
+        "description": "Балансирует состояние и компоненты, словно кот на заборе.",
         "url": "https://github.com/Nadin-Nov"
       }
     },
     "callToAction": {
-      "title": "Начать прямо сейчас",
-      "button": "Регистрация"
+      "title": "Начать",
+      "signInButton": "Войти",
+      "signUpButton": "Регистрация"
+    },
+    "thanx": {
+      "text": "thanks to <link>@someone</link> for щщщщщщ"
     }
   },
   "Header": {
