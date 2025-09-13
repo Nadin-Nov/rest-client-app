@@ -14,3 +14,19 @@
   font-weight: 700;
   color: rgb(60 60 60 / 85%);
 }
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+
+  width: 100%;
+  max-width: 400px;
+  margin-top: 1rem;
+}
+
+.buttons button {
+  flex: 1;
+  min-width: 120px;
+  max-width: 200px;
+}
