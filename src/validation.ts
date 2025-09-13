@@ -7,9 +7,9 @@ export const formSchema = z
     password: z
       .string()
       .min(8, 'Password must be minimum 8 symbols long')
-      .regex(/[0-9]/, 'Password shoud contain 1 digit')
-      .regex(/\p{L}/u, 'Password shoud contain 1 letter')
-      .regex(/[\W_]/, 'Password shoud contain 1 special character'),
+      .regex(/[0-9]/, 'Password should contain 1 digit')
+      .regex(/\p{L}/u, 'Password should contain 1 letter')
+      .regex(/[\W_]/, 'Password should contain 1 special character'),
     confirmPassword: z.string(),
   })
   .refine((data) => data.password === data.confirmPassword, {
