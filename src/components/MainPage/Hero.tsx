@@ -17,9 +17,16 @@ const Hero: FC<HeroProps> = ({ isAuth, username }) => {
   return (
     <section className={styles.hero}>
       <div className={styles.card}>
-        <h1 className={styles.title}>{isAuth && username ? t('welcomeUser', { username }) : t('welcomeGuest')}</h1>
-        <p className={styles.subtitle}>{isAuth ? 'Glad to see you again!' : 'Explore our app!'}</p>
-        <Image src='/cat-main.png' alt='Cute cartoon cat' width={300} height={300} className={styles.heroCat} />
+        <h1 className={styles.title}>{username ? t('welcomeUser', { username }) : t('welcomeGuest')}</h1>
+        <p className={styles.subtitle}>{isAuth ? t('subtitleUser') : t('subtitleGuest')}</p>
+        <Image
+          src='/cat-main.png'
+          alt='Cute cartoon cat'
+          width={300}
+          height={300}
+          className={styles.heroCat}
+          priority
+        />
       </div>
     </section>
   );

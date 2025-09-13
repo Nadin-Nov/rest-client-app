@@ -1,26 +1,22 @@
 'use client';
 
-import { usePathname, useRouter } from 'next/navigation';
-import { type FC } from 'react';
+import { useRouter, usePathname } from 'next/navigation';
+import type { FC } from 'react';
 
+import { useAuth } from '@/hooks/useAuth';
+import { useLocalePrefix } from '@/hooks/useLocalePrefix';
 import { useSticky } from '@/hooks/useSticky';
 
 import { HeaderView } from './HeaderView';
 
 const SCROLL_THRESHOLD = 10;
 
-interface HeaderProps {
-  isAuth?: boolean;
-  username?: string;
-  onSignOut?: () => void;
-}
-
-const Header: FC<HeaderProps> = ({ isAuth = false, username, onSignOut }) => {
+const Header: FC = () => {
+  const { isAuth, username, signOut } = useAuth();
   const scrolled = useSticky(SCROLL_THRESHOLD);
   const router = useRouter();
   const pathname = usePathname();
-
-  const currentLang = pathname.startsWith('/ru') ? 'ru' : 'en';
+  const localePrefix = useLocalePrefix();
 
   const handleLangChange = (lang: string) => {
     const newPath = pathname.replace(/^\/(en|ru)/, `/${lang}`);
@@ -32,8 +28,8 @@ const Header: FC<HeaderProps> = ({ isAuth = false, username, onSignOut }) => {
       isAuth={isAuth}
       username={username}
       scrolled={scrolled}
-      currentLang={currentLang}
-      onSignOut={onSignOut}
+      currentLang={localePrefix.replace('/', '')}
+      onSignOut={signOut}
       onLangChange={handleLangChange}
     />
   );

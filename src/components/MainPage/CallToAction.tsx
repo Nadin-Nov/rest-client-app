@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
@@ -10,16 +11,17 @@ import styles from './callToAction.module.css';
 const CallToAction: FC = () => {
   const t = useTranslations('MainPage.callToAction');
 
-  const handleClick = () => {
-    alert('Action triggered!');
-  };
-
   return (
     <section className={styles.callToAction}>
       <h2 className={styles.title}>{t('title')}</h2>
-      <Button variant='secondary' onClick={handleClick}>
-        {t('button')}
-      </Button>
+      <div className={styles.buttons}>
+        <Link href='/signin'>
+          <Button variant='secondary'>{t('signInButton')}</Button>
+        </Link>
+        <Link href='/signup'>
+          <Button variant='secondary'>{t('signUpButton')}</Button>
+        </Link>
+      </div>
     </section>
   );
 };

@@ -2,15 +2,12 @@
 
 import type { FC } from 'react';
 
+import type { ProjectInfoMessages } from '@/types/main';
+
 import styles from './projectInfo.module.css';
 
 interface ProjectInfoProps {
-  messages: {
-    title: string;
-    description1: string;
-    description2: string;
-    description3: string;
-  };
+  messages: ProjectInfoMessages;
 }
 
 const ProjectInfo: FC<ProjectInfoProps> = ({ messages }) => {
