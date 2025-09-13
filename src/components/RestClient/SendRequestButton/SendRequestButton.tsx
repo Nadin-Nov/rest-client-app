@@ -7,5 +7,5 @@ import styles from './SendRequestButton.module.css';
 export const SendRequestButton: FC = () => {
   const t = useTranslations('RestClient');
 
-  return <Button className={styles.sentRequestButton}>{t('sendRequestBtn')}</Button>;
+  return <Button className={styles.sendRequestButton}>{t('sendRequestBtn')}</Button>;
 };

@@ -1,4 +1,4 @@
-.sentRequestButton {
+.sendRequestButton {
   display: flex;
   align-self: flex-end;
 
@@ -11,7 +11,7 @@
   transition: 0.2s;
 }
 
-.sentRequestButton:hover {
+.sendRequestButton:hover {
   color: var(--color-black);
   background-color: #ff9973;
 }
