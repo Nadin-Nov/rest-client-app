@@ -7,9 +7,11 @@
   color: var(--color-black);
 
   background: #ff7f50;
+
+  transition: 0.2s;
 }
 
 .sentRequestButton:hover {
-  color: black;
+  color: var(--color-black);
   background-color: #ff9973;
 }

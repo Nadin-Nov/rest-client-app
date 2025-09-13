@@ -6,13 +6,14 @@ import { useState } from 'react';
 import { TextArea } from '@/components/ui/TextArea/TextArea';
 
 import styles from './BodyRequest.module.css';
-interface BodyEditorProps {
+
+interface BodyRequestProps {
   value: string;
   onChange: (value: string) => void;
   readOnly?: boolean;
 }
 
-export const BodyRequest: FC<BodyEditorProps> = ({ value, onChange, readOnly }) => {
+export const BodyRequest: FC<BodyRequestProps> = ({ value, onChange, readOnly }) => {
   const t = useTranslations('RestClient');
 
   const [bodyType, setBodyType] = useState<'json' | 'text'>('json');
@@ -25,7 +26,7 @@ export const BodyRequest: FC<BodyEditorProps> = ({ value, onChange, readOnly }) 
     <>
       <h3> {t('body')}</h3>
 
-      <div className={styles.switchRow}>
+      <div className={styles.switchRowWrapper}>
         <div className={styles.toggle} onClick={toggle}>
           <div className={`${styles.dot} ${bodyType === 'text' ? styles.right : styles.left}`} />
         </div>

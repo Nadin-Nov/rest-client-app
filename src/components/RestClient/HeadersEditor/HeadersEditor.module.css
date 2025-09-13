@@ -15,7 +15,7 @@
   width: 100%;
   border: 2px solid #ffd1b0;
 
-  color: black;
+  color: var(--color-black);
 
   background-color: transparent;
 
@@ -23,7 +23,7 @@
 }
 
 .addHeaderButton:hover {
-  color: black;
+  color: var(--color-black);
   background-color: #ffd1b0;
 }
 
@@ -33,7 +33,7 @@
 
   border: 2px solid #ffd1b0;
 
-  color: black;
+  color: var(--color-black);
 
   background-color: #ffd1b0;
 
@@ -41,6 +41,6 @@
 }
 
 .removeButton:hover {
-  color: black;
+  color: var(--color-black);
   background-color: transparent;
 }

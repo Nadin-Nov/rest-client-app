@@ -1,4 +1,4 @@
-import { RestClient } from '@/components/rest-client/RestClientComponent/RestClient';
+import { RestClient } from '@/components/RestClient/RestClientComponent/RestClient';
 
 import styles from './styles.module.css';
 

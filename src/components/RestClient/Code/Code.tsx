@@ -6,10 +6,9 @@ import { TextArea } from '@/components/ui/TextArea/TextArea';
 
 import styles from './Code.module.css';
 
-const languages = ['curl', 'JavaScript (Fetch api)', 'JavaScript (XHR)', 'NodeJS', 'Python', 'Java', 'C#', 'Go'];
-
 export const Code: FC = () => {
   const t = useTranslations('RestClient');
+  const languages = ['curl', 'JavaScript (Fetch api)', 'JavaScript (XHR)', 'NodeJS', 'Python', 'Java', 'C#', 'Go'];
 
   const [code, setCode] = useState('');
   const [language, setLanguage] = useState(languages[0]);
