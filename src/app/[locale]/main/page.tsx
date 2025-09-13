@@ -1,8 +1,8 @@
 import { notFound } from 'next/navigation';
 import { getMessages } from 'next-intl/server';
 
-import type { MainMessages } from '@/components/MainPage/Main';
 import Main from '@/components/MainPage/Main';
+import type { MainMessages } from '@/types/main';
 
 interface MainPageProps {
   params: Promise<{ locale: 'en' | 'ru' }>;
@@ -16,11 +16,23 @@ export default async function MainPage({ params }: MainPageProps) {
   }
 
   const allMessages = (await getMessages({ locale })) as Record<string, unknown>;
+  const mainMessagesRaw = allMessages['MainPage'];
 
-  const mainMessages = allMessages['MainPage'];
-  if (!mainMessages || typeof mainMessages !== 'object') {
+  if (!mainMessagesRaw || typeof mainMessagesRaw !== 'object') {
     notFound();
   }
 
-  return <Main messages={mainMessages as MainMessages} />;
+  const mainMessages = mainMessagesRaw as MainMessages;
+
+  const mainMessagesWithAvatars: MainMessages = {
+    ...mainMessages,
+    team: {
+      title: mainMessages.team.title,
+      memberMarta: { ...mainMessages.team.memberMarta, urlAvatar: '/avatars/marta.png' },
+      memberKate: { ...mainMessages.team.memberKate, urlAvatar: '/avatars/kate.png' },
+      memberNadin: { ...mainMessages.team.memberNadin, urlAvatar: '/avatars/nadin.png' },
+    },
+  };
+
+  return <Main messages={mainMessagesWithAvatars} />;
 }
