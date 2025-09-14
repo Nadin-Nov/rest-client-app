@@ -4,20 +4,8 @@ export const getPasswordStrength = (password: string) => {
   const hasDigit = /[0-9]/.test(password);
   const hasSymbol = /[\W_]/.test(password);
 
-  const criteriaMatched = [hasMinLength, hasLetter, hasDigit, hasSymbol].filter((criteria) => criteria === true);
+  const criteriaMatched = [hasMinLength, hasLetter, hasDigit, hasSymbol].filter(Boolean);
   const passwordScore = criteriaMatched.length;
 
-  let passwordStrength;
-
-  if (passwordScore === 4) {
-    passwordStrength = 'Strong';
-  } else if (passwordScore >= 2) {
-    passwordStrength = 'Medium';
-  } else if (passwordScore >= 1) {
-    passwordStrength = 'Weak';
-  } else {
-    passwordStrength = '';
-  }
-
-  return passwordStrength;
+  return [, 'Weak', 'Medium', 'Strong', 'Very strong'][passwordScore] ?? '';
 };
