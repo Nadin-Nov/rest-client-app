@@ -3,9 +3,9 @@
 import Image from 'next/image';
 import type { FC } from 'react';
 
-import type { TeamProps } from '@/types/main';
+import type { TeamProps } from '@/components/MainPage/types';
 
-import styles from './team.module.css';
+import styles from './Team.module.css';
 
 const Team: FC<TeamProps> = ({ messages }) => {
   const teamMembers = [messages.memberMarta, messages.memberKate, messages.memberNadin];

@@ -2,9 +2,9 @@
 
 import type { FC } from 'react';
 
-import type { ProjectInfoMessages } from '@/types/main';
+import type { ProjectInfoMessages } from '@/components/MainPage/types';
 
-import styles from './projectInfo.module.css';
+import styles from './ProjectInfo.module.css';
 
 interface ProjectInfoProps {
   messages: ProjectInfoMessages;

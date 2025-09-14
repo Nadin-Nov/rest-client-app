@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
-import styles from './thanx.module.css';
+import styles from './Thanx.module.css';
 
 const Thanx: FC = () => {
   const t = useTranslations('MainPage.thanx');

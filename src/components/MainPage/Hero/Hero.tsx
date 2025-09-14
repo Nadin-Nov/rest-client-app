@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
-import styles from './hero.module.css';
+import styles from './Hero.module.css';
 
 interface HeroProps {
   isAuth: boolean;

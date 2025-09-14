@@ -2,15 +2,16 @@
 
 import type { FC } from 'react';
 
+import type { MainMessages } from '@/components/MainPage/types';
 import { useAuth } from '@/hooks/useAuth';
-import type { MainMessages } from '@/types/main';
 
-import CallToAction from './CallToAction';
-import Hero from './Hero';
-import ProjectInfo from './ProjectInfo';
-import Team from './Team';
-import Thanx from './Thanx';
-import styles from './main.module.css';
+import CallToAction from '../CallToAction/CallToAction';
+import Hero from '../Hero/Hero';
+import ProjectInfo from '../ProjectInfo/ProjectInfo';
+import Team from '../Team/Team';
+import Thanx from '../Thanx/Thanx';
+
+import styles from './Main.module.css';
 
 interface MainProps {
   messages: MainMessages;

@@ -1,8 +1,8 @@
 import { notFound } from 'next/navigation';
 import { getMessages } from 'next-intl/server';
 
-import Main from '@/components/MainPage/Main';
-import type { MainMessages } from '@/types/main';
+import Main from '@/components/MainPage/Main/Main';
+import type { MainMessages } from '@/components/MainPage/types';
 
 interface MainPageProps {
   params: Promise<{ locale: 'en' | 'ru' }>;

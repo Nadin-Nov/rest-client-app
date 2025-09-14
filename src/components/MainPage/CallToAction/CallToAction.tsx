@@ -6,7 +6,7 @@ import type { FC } from 'react';
 
 import Button from '@/components/ui/Button/Button';
 
-import styles from './callToAction.module.css';
+import styles from './CallToAction.module.css';
 
 const CallToAction: FC = () => {
   const t = useTranslations('MainPage.callToAction');
