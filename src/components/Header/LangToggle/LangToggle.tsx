@@ -1,4 +1,4 @@
-import styles from './header.module.css';
+import styles from '../Header/Header.module.css';
 
 interface Props {
   currentLang: string;

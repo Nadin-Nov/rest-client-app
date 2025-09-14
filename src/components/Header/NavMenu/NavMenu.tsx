@@ -3,7 +3,7 @@
 import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
-import styles from '@/components/Header/header.module.css';
+import styles from '@/components/Header/Header/Header.module.css';
 import NavButton from '@/components/ui/NavButton/NavButton';
 import { useLocalePrefix } from '@/hooks/useLocalePrefix';
 

@@ -4,7 +4,7 @@ import { getMessages } from 'next-intl/server';
 import type { ReactNode } from 'react';
 
 import Footer from '@/components/Footer/Footer';
-import Header from '@/components/Header/Header';
+import Header from '@/components/Header/Header/Header';
 import { routing } from '@/i18n/routing';
 import { AuthProvider } from '@/providers/AuthProvider';
 

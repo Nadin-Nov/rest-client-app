@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import Image from 'next/image';
 
-import styles from '@/components/Footer/footer.module.css';
+import styles from '@/components/Footer/Footer.module.css';
 
 const Footer = () => {
   const authors = [

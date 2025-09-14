@@ -7,7 +7,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { useLocalePrefix } from '@/hooks/useLocalePrefix';
 import { useSticky } from '@/hooks/useSticky';
 
-import { HeaderView } from './HeaderView';
+import { HeaderView } from '../HeaderView/HeaderView';
 
 const SCROLL_THRESHOLD = 10;
 

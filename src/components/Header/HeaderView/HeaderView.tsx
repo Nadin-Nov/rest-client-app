@@ -1,8 +1,8 @@
-import { AuthSection } from './AuthSection';
-import { LangToggle } from './LangToggle';
-import { Logo } from './Logo';
-import { NavMenu } from './NavMenu';
-import styles from './header.module.css';
+import { AuthSection } from '../AuthSection/AuthSection';
+import styles from '../Header/Header.module.css';
+import { LangToggle } from '../LangToggle/LangToggle';
+import { Logo } from '../Logo/Logo';
+import { NavMenu } from '../NavMenu/NavMenu';
 
 interface Props {
   isAuth: boolean;
