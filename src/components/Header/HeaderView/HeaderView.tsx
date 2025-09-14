@@ -1,5 +1,7 @@
 import clsx from 'clsx';
 
+import type { routing } from '@/i18n/routing';
+
 import { AuthSection } from '../AuthSection/AuthSection';
 import styles from '../Header/Header.module.css';
 import { LangToggle } from '../LangToggle/LangToggle';
@@ -12,7 +14,7 @@ interface Props {
   sticky: boolean;
   currentLang: string;
   onSignOut?: () => void;
-  onLangChange?: (lang: string) => void;
+  onLangChange?: (lang: (typeof routing.locales)[number]) => void;
 }
 
 export const HeaderView = ({ isAuth, username, sticky, currentLang, onSignOut, onLangChange }: Props) => {

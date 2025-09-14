@@ -1,11 +1,12 @@
 'use client';
 
-import { useRouter, usePathname } from 'next/navigation';
 import type { FC } from 'react';
 
 import { useAuthContext } from '@/hooks/useAuthContext';
 import { useLocalePrefix } from '@/hooks/useLocalePrefix';
 import { useSticky } from '@/hooks/useSticky';
+import { useRouter as useIntlRouter, usePathname as useIntlPathname } from '@/i18n/navigation';
+import type { routing } from '@/i18n/routing';
 
 import { HeaderView } from '../HeaderView/HeaderView';
 
@@ -13,15 +14,14 @@ const SCROLL_THRESHOLD = 10;
 
 const Header: FC = () => {
   const { isAuth, username, signOut } = useAuthContext();
-
   const sticky = useSticky(SCROLL_THRESHOLD);
-  const router = useRouter();
-  const pathname = usePathname();
   const localePrefix = useLocalePrefix();
 
-  const handleLangChange = (lang: string) => {
-    const newPath = pathname.replace(/^\/(en|ru)/, `/${lang}`);
-    router.push(newPath);
+  const router = useIntlRouter();
+  const pathname = useIntlPathname();
+
+  const handleLangChange = (lang: (typeof routing.locales)[number]) => {
+    router.push(pathname, { locale: lang });
   };
 
   return (
