@@ -1,4 +1,4 @@
-export const checkPasswordStrength = (password: string) => {
+export const getPasswordStrength = (password: string) => {
   const hasMinLength = /^.{8,}$/.test(password);
   const hasLetter = /\p{L}/u.test(password);
   const hasDigit = /[0-9]/.test(password);
@@ -11,12 +11,12 @@ export const checkPasswordStrength = (password: string) => {
 
   if (passwordScore === 4) {
     passwordStrength = 'Strong';
-  } else if (passwordScore >= 3) {
-    passwordStrength = 'Reliable';
   } else if (passwordScore >= 2) {
     passwordStrength = 'Medium';
-  } else {
+  } else if (passwordScore >= 1) {
     passwordStrength = 'Weak';
+  } else {
+    passwordStrength = '';
   }
 
   return passwordStrength;

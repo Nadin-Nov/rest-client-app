@@ -3,20 +3,18 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { PasswordInput, Stack, TextInput, Title, Text } from '@mantine/core';
 import { useTranslations } from 'next-intl';
-import { useState } from 'react';
 import { type SubmitHandler, useForm } from 'react-hook-form';
 
 import { PasswordStrengthMeter } from '@/components/PasswordStrengthMeter/PasswordStrengthMeter';
 import Button from '@/components/ui/Button/Button';
 import { Link } from '@/i18n/navigation';
 import type { FormData } from '@/types/types';
-import { checkPasswordStrength } from '@/utils/checkPasswordStrength';
+import { getPasswordStrength } from '@/utils/getPasswordStrength';
 import { formSchema } from '@/validation';
 
 import styles from './SignUpForm.module.css';
 
 export const SignUpForm = () => {
-  const [passwordStrength, setPasswordStrength] = useState('');
   const t = useTranslations('SignUp');
   const {
     register,
@@ -35,13 +33,7 @@ export const SignUpForm = () => {
   });
 
   const passwordWatched = watch('password');
-
-  if (passwordWatched) {
-    const passwordWatchedStrength = checkPasswordStrength(passwordWatched);
-    if (passwordWatchedStrength !== passwordStrength) {
-      setPasswordStrength(passwordWatchedStrength);
-    }
-  }
+  const passwordStrength = getPasswordStrength(passwordWatched);
 
   const onSubmit: SubmitHandler<FormData> = (formData) => console.log(formData);
 
