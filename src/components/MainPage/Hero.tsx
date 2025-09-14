@@ -20,7 +20,7 @@ const Hero: FC<HeroProps> = ({ isAuth, username }) => {
         <h1 className={styles.title}>{username ? t('welcomeUser', { username }) : t('welcomeGuest')}</h1>
         <p className={styles.subtitle}>{isAuth ? t('subtitleUser') : t('subtitleGuest')}</p>
         <Image
-          src='/cat-main.png'
+          src='/cat-main.webp'
           alt='Cute cartoon cat'
           width={300}
           height={300}
