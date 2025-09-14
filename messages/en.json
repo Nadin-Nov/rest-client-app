@@ -57,5 +57,22 @@
   },
   "NotFound": {
     "title": "Not Found"
+  },
+  "SignUp": {
+    "name": "Name",
+    "password": "Password",
+    "enterPassword": "Enter password",
+    "confirmPassword": "Confirm password",
+    "signUpTitle": "Sign up",
+    "signUpBtn": "SIGN UP",
+    "signInInquiry": "Already have an account?",
+    "signInLink": "Login here"
+  },
+  "SignIn": {
+    "password": "Password",
+    "signInTitle": "Sign in",
+    "signInBtn": "SIGN IN",
+    "signUpInquiry": "Aren’t registered just yet?",
+    "signUpLink": "Sign up here"
   }
 }
