@@ -30,7 +30,7 @@ export const RestClient: FC<RestClientProps> = ({ className }) => {
   return (
     <>
       <div className={clsx(styles.container, className)}>
-        <div className={styles.containerComp}>
+        <div className={styles.wrapper}>
           <h1>{t('restClientHeader')}</h1>
           <div className={styles.methodUrlContainer}>
             <MethodSelector method={method} onChange={setMethod} />
