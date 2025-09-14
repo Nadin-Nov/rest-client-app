@@ -11,7 +11,7 @@ interface TextareaProps {
 
 export const TextArea: FC<TextareaProps> = ({ value, onChange, readOnly = false, placeholder = '' }) => {
   const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    if (onChange) onChange(e.currentTarget.value);
+    onChange?.(e.currentTarget.value);
   };
 
   return (
