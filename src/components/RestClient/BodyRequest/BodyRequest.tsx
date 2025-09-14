@@ -1,4 +1,5 @@
 import { Button, Group } from '@mantine/core';
+import clsx from 'clsx';
 import { useTranslations } from 'next-intl';
 import { useState, type FC } from 'react';
 
@@ -29,8 +30,8 @@ export const BodyRequest: FC<BodyRequestProps> = ({ value, onChange, readOnly })
         <div className={styles.toggle} onClick={toggle}>
           <div className={`${styles.dot} ${bodyType === 'text' ? styles.right : styles.left}`} />
         </div>
-        <div className={bodyType === 'json' ? styles.activeLabel : ''}>JSON</div>
-        <div className={bodyType === 'text' ? styles.activeLabel : ''}>{t('text')}</div>
+        <div className={clsx(bodyType === 'json' && styles.activeLabel)}>JSON</div>
+        <div className={clsx(bodyType === 'text' && styles.activeLabel)}>{t('text')}</div>
       </div>
 
       <TextArea
