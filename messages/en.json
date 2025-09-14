@@ -41,6 +41,7 @@
     "responseHeader": "Response",
     "status": "Status:",
     "responseStatus": "No response yet",
+    "methodPlaceholder": "Pick method",
     "endpointUrlPlaceholder": "EndpointURL",
     "keyPlaceholder": "key",
     "valuePlaceholder": "value",

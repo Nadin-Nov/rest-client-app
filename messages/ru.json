@@ -41,6 +41,7 @@
     "responseHeader": "Ответ",
     "status": "Статус:",
     "responseStatus": "Ответа пока нет",
+    "methodPlaceholder": "Выберите метод",
     "endpointUrlPlaceholder": "Эндпоинт URL",
     "keyPlaceholder": "ключ",
     "valuePlaceholder": "значение",
