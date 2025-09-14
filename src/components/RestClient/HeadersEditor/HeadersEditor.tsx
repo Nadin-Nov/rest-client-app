@@ -27,10 +27,10 @@ export const HeadersEditor: FC<HeadersEditorProps> = ({ headers, onChange }) => 
     onChange(headers.filter((_, i) => i !== index));
   };
 
-  const handleUpdateHeaderKey = (index: number, newValue: string) => {
+  const handleUpdateHeaderKey = (index: number, newKey: string) => {
     const newHeaders = [...headers];
 
-    newHeaders[index] = { ...headers[index], key: newValue };
+    newHeaders[index] = { ...headers[index], key: newKey };
     onChange(newHeaders);
   };
 
