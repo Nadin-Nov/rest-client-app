@@ -13,7 +13,7 @@ const SCROLL_THRESHOLD = 10;
 
 const Header: FC = () => {
   const { isAuth, username, signOut } = useAuth();
-  const scrolled = useSticky(SCROLL_THRESHOLD);
+  const sticky = useSticky(SCROLL_THRESHOLD);
   const router = useRouter();
   const pathname = usePathname();
   const localePrefix = useLocalePrefix();
@@ -27,7 +27,7 @@ const Header: FC = () => {
     <HeaderView
       isAuth={isAuth}
       username={username}
-      scrolled={scrolled}
+      sticky={sticky}
       currentLang={localePrefix.replace('/', '')}
       onSignOut={signOut}
       onLangChange={handleLangChange}

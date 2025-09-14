@@ -13,7 +13,7 @@
   transition: all 0.3s ease;
 }
 
-.scrolled {
+.sticky {
   transform: translateY(0);
   border-bottom: 1px solid var(--secondary-color);
   background: var(--primary-color);

@@ -9,15 +9,15 @@ import { NavMenu } from '../NavMenu/NavMenu';
 interface Props {
   isAuth: boolean;
   username?: string;
-  scrolled: boolean;
+  sticky: boolean;
   currentLang: string;
   onSignOut?: () => void;
   onLangChange?: (lang: string) => void;
 }
 
-export const HeaderView = ({ isAuth, username, scrolled, currentLang, onSignOut, onLangChange }: Props) => {
+export const HeaderView = ({ isAuth, username, sticky, currentLang, onSignOut, onLangChange }: Props) => {
   return (
-    <header className={clsx(styles.header, { [styles.scrolled]: scrolled })}>
+    <header className={clsx(styles.header, { [styles.sticky]: sticky })}>
       <div className={styles.container}>
         <Logo />
         {isAuth && <NavMenu />}

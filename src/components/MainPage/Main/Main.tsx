@@ -21,7 +21,7 @@ const Main: FC<MainProps> = ({ messages }) => {
   const { isAuth, username } = useAuth();
 
   return (
-    <div className={styles.mainWrapper}>
+    <main className={styles.mainWrapper}>
       <Hero isAuth={isAuth} username={isAuth ? username : undefined} />
 
       {!isAuth && <CallToAction />}
@@ -29,7 +29,7 @@ const Main: FC<MainProps> = ({ messages }) => {
       <Team messages={messages.team} />
       <Thanx />
       <ProjectInfo messages={messages.projectInfo} />
-    </div>
+    </main>
   );
 };
 
