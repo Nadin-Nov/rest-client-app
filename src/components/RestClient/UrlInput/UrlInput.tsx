@@ -24,7 +24,7 @@ export const UrlInput: FC<UrlInputProps> = ({ value, onChange }) => {
         onChange={handleChange}
         placeholder={t('endpointUrlPlaceholder')}
         className={styles.urlInput}
-      ></TextInput>
+      />
     </div>
   );
 };
