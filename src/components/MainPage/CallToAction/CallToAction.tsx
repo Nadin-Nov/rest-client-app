@@ -15,10 +15,10 @@ const CallToAction: FC = () => {
     <section className={styles.callToAction}>
       <h2 className={styles.title}>{t('title')}</h2>
       <div className={styles.buttons}>
-        <Link href='/signin'>
+        <Link href='/sign-in'>
           <Button variant='secondary'>{t('signInButton')}</Button>
         </Link>
-        <Link href='/signup'>
+        <Link href='/sign-up'>
           <Button variant='secondary'>{t('signUpButton')}</Button>
         </Link>
       </div>
