@@ -8,9 +8,9 @@ import { type SubmitHandler, useForm } from 'react-hook-form';
 import { PasswordStrengthMeter } from '@/components/PasswordStrengthMeter/PasswordStrengthMeter';
 import Button from '@/components/ui/Button/Button';
 import { Link } from '@/i18n/navigation';
-import type { FormData } from '@/types/types';
+import type { SignUpFormData } from '@/types/types';
 import { getPasswordStrength } from '@/utils/getPasswordStrength';
-import { formSchema } from '@/validation';
+import { signUpFormSchema } from '@/validation';
 
 import styles from './SignUpForm.module.css';
 
@@ -21,7 +21,7 @@ export const SignUpForm = () => {
     handleSubmit,
     formState: { errors, isDirty, isValid },
     watch,
-  } = useForm<FormData>({
+  } = useForm<SignUpFormData>({
     defaultValues: {
       name: '',
       email: '',
@@ -29,13 +29,13 @@ export const SignUpForm = () => {
       confirmPassword: '',
     },
     mode: 'onChange',
-    resolver: zodResolver(formSchema),
+    resolver: zodResolver(signUpFormSchema),
   });
 
   const passwordWatched = watch('password');
   const passwordStrength = getPasswordStrength(passwordWatched);
 
-  const onSubmit: SubmitHandler<FormData> = (formData) => console.log(formData);
+  const onSubmit: SubmitHandler<SignUpFormData> = (formData) => console.log(formData);
 
   return (
     <form className={styles.form} noValidate onSubmit={(event) => void handleSubmit(onSubmit)(event)}>

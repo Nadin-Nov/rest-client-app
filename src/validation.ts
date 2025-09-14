@@ -1,6 +1,6 @@
 import * as z from 'zod';
 
-export const formSchema = z
+export const signUpFormSchema = z
   .object({
     name: z.string().regex(/\p{Lu}/u, 'Name should start with a capital letter'),
     email: z.email('Email should have valid format'),
@@ -16,6 +16,6 @@ export const formSchema = z
     message: "Passwords don't match",
     path: ['confirmPassword'],
     when(payload) {
-      return formSchema.pick({ password: true, confirmPassword: true }).safeParse(payload.value).success;
+      return signUpFormSchema.pick({ password: true, confirmPassword: true }).safeParse(payload.value).success;
     },
   });
