@@ -17,7 +17,7 @@ export const Response: FC<ResponseProps> = ({ status, body }) => {
       <h2 className={styles.responseHeader}>{t('responseHeader')}</h2>
       <div className={styles.statusWrapper}>
         <h3>{t('status')}</h3>
-        <div>{status !== null ? status : t('responseStatus')}</div>
+        <div>{status ?? t('responseStatus')}</div>
       </div>
       <h3>{t('body')}</h3>
       <TextArea value={body} placeholder={t('placeholderForFutureResponse')} readOnly={true} />

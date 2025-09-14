@@ -3,12 +3,12 @@ import { useTranslations } from 'next-intl';
 import { type FC, useState } from 'react';
 
 import { TextArea } from '@/components/ui/TextArea/TextArea';
+import { languages } from '@/constants/constants';
 
 import styles from './Code.module.css';
 
 export const Code: FC = () => {
   const t = useTranslations('RestClient');
-  const languages = ['curl', 'JavaScript (Fetch api)', 'JavaScript (XHR)', 'NodeJS', 'Python', 'Java', 'C#', 'Go'];
 
   const [code, setCode] = useState('');
   const [language, setLanguage] = useState(languages[0]);

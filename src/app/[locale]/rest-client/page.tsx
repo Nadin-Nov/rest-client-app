@@ -2,10 +2,6 @@ import { RestClient } from '@/components/RestClient/RestClientComponent/RestClie
 
 import styles from './styles.module.css';
 
-export default function RESTClient() {
-  return (
-    <div className={styles.container}>
-      <RestClient />
-    </div>
-  );
+export default function RESTClientPage() {
+  return <RestClient className={styles.container} />;
 }

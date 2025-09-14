@@ -1,7 +1,6 @@
 import { Button, Group } from '@mantine/core';
 import { useTranslations } from 'next-intl';
-import type { FC } from 'react';
-import { useState } from 'react';
+import { useState, type FC } from 'react';
 
 import { TextArea } from '@/components/ui/TextArea/TextArea';
 

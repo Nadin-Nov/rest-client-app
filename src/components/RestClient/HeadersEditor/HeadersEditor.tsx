@@ -19,22 +19,22 @@ export const HeadersEditor: FC<HeadersEditorProps> = ({ headers, onChange }) => 
 
   console.log(headers);
 
-  const addHeader = () => {
+  const handleAddHeader = () => {
     onChange([...headers, { key: '', value: '' }]);
   };
 
-  const removeHeder = (index: number) => {
+  const handleRemoveHeader = (index: number) => {
     onChange(headers.filter((_, i) => i !== index));
   };
 
-  const updateHeaderKey = (index: number, newValue: string) => {
+  const handleUpdateHeaderKey = (index: number, newValue: string) => {
     const newHeaders = [...headers];
 
     newHeaders[index] = { ...headers[index], key: newValue };
     onChange(newHeaders);
   };
 
-  const updateHeaderValue = (index: number, newValue: string) => {
+  const handleUpdateHeaderValue = (index: number, newValue: string) => {
     const newHeaders = [...headers];
 
     newHeaders[index] = { ...headers[index], value: newValue };
@@ -44,7 +44,7 @@ export const HeadersEditor: FC<HeadersEditorProps> = ({ headers, onChange }) => 
   return (
     <>
       <h3>{t('headers')}</h3>
-      <Button onClick={addHeader} className={styles.addHeaderButton}>
+      <Button onClick={handleAddHeader} className={styles.addHeaderButton}>
         {t('addHeader')}
       </Button>
       <div className={styles.headersWrapper}>
@@ -53,14 +53,14 @@ export const HeadersEditor: FC<HeadersEditorProps> = ({ headers, onChange }) => 
             <TextInput
               placeholder={t('keyPlaceholder')}
               value={header.key}
-              onChange={(e) => updateHeaderKey(index, e.currentTarget.value)}
+              onChange={(e) => handleUpdateHeaderKey(index, e.currentTarget.value)}
             ></TextInput>
             <TextInput
               placeholder={t('valuePlaceholder')}
               value={header.value}
-              onChange={(e) => updateHeaderValue(index, e.currentTarget.value)}
+              onChange={(e) => handleUpdateHeaderValue(index, e.currentTarget.value)}
             ></TextInput>
-            <Button onClick={() => removeHeder(index)} className={styles.removeButton}>
+            <Button onClick={() => handleRemoveHeader(index)} className={styles.removeButton}>
               {t('removeHeader')}
             </Button>
           </Group>

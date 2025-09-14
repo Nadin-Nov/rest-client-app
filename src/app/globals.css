@@ -42,9 +42,9 @@ body {
   font-family: 'Inter Tight', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #171717; /* из feature/footer */
+  color: #171717;
 
-  background: #fff; /* из feature/footer */
+  background: #fff;
 }
 
 * {

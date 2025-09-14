@@ -41,7 +41,7 @@
     "responseHeader": "Ответ",
     "status": "Статус:",
     "responseStatus": "Ответа пока нет",
-    "endpointUrlPlaceholder": "URL-адрес конечной точки",
+    "endpointUrlPlaceholder": "Эндпоинт URL",
     "keyPlaceholder": "ключ",
     "valuePlaceholder": "значение",
     "generatedCodePlaceholder": "Сгенерированный код для {el}...",

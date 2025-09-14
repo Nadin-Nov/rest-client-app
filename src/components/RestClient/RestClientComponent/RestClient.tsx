@@ -1,5 +1,6 @@
 'use client';
 
+import clsx from 'clsx';
 import { useTranslations } from 'next-intl';
 import { useState, type FC } from 'react';
 
@@ -14,7 +15,11 @@ import { UrlInput } from '../UrlInput/UrlInput';
 
 import styles from './RestClient.module.css';
 
-export const RestClient: FC = () => {
+interface RestClientProps {
+  className: string;
+}
+
+export const RestClient: FC<RestClientProps> = ({ className }) => {
   const t = useTranslations('RestClient');
 
   const [method, setMethod] = useState('GET');
@@ -24,18 +29,20 @@ export const RestClient: FC = () => {
 
   return (
     <>
-      <div className={styles.container}>
-        <h1>{t('restClientHeader')}</h1>
-        <div className={styles.methodUrlContainer}>
-          <MethodSelector method={method} onChange={setMethod} />
-          <UrlInput value={url} onChange={setURL} />
-        </div>
-        <SendRequestButton />
-        <HeadersEditor headers={headers} onChange={setHeaders} />
-        <Code />
-        <BodyRequest value={body} onChange={setBody} readOnly={false} />
-        <div>
-          <Response status={null} body={''} />
+      <div className={clsx(styles.container, className)}>
+        <div className={styles.containerComp}>
+          <h1>{t('restClientHeader')}</h1>
+          <div className={styles.methodUrlContainer}>
+            <MethodSelector method={method} onChange={setMethod} />
+            <UrlInput value={url} onChange={setURL} />
+          </div>
+          <SendRequestButton className={styles.sendRequestBtn} />
+          <HeadersEditor headers={headers} onChange={setHeaders} />
+          <Code />
+          <BodyRequest value={body} onChange={setBody} readOnly={false} />
+          <div>
+            <Response status={null} body={''} />
+          </div>
         </div>
       </div>
     </>
