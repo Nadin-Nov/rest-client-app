@@ -3,7 +3,7 @@
 import { useRouter, usePathname } from 'next/navigation';
 import type { FC } from 'react';
 
-import { useAuth } from '@/hooks/useAuth';
+import { useAuthContext } from '@/hooks/useAuthContext';
 import { useLocalePrefix } from '@/hooks/useLocalePrefix';
 import { useSticky } from '@/hooks/useSticky';
 
@@ -12,7 +12,8 @@ import { HeaderView } from '../HeaderView/HeaderView';
 const SCROLL_THRESHOLD = 10;
 
 const Header: FC = () => {
-  const { isAuth, username, signOut } = useAuth();
+  const { isAuth, username, signOut } = useAuthContext();
+
   const sticky = useSticky(SCROLL_THRESHOLD);
   const router = useRouter();
   const pathname = usePathname();

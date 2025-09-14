@@ -3,7 +3,7 @@
 import type { FC } from 'react';
 
 import type { MainMessages } from '@/components/MainPage/types';
-import { useAuth } from '@/hooks/useAuth';
+import { useAuthContext } from '@/hooks/useAuthContext';
 
 import CallToAction from '../CallToAction/CallToAction';
 import Hero from '../Hero/Hero';
@@ -18,7 +18,7 @@ interface MainProps {
 }
 
 const Main: FC<MainProps> = ({ messages }) => {
-  const { isAuth, username } = useAuth();
+  const { isAuth, username } = useAuthContext();
 
   return (
     <main className={styles.mainWrapper}>
