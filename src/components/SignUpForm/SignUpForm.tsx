@@ -3,6 +3,7 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { PasswordInput, Stack, TextInput, Title, Text } from '@mantine/core';
 import { useTranslations } from 'next-intl';
+import { useEffect } from 'react';
 import { type SubmitHandler, useForm } from 'react-hook-form';
 
 import { PasswordStrengthMeter } from '@/components/PasswordStrengthMeter/PasswordStrengthMeter';
@@ -21,6 +22,7 @@ export const SignUpForm = () => {
     handleSubmit,
     formState: { errors, isDirty, isValid },
     watch,
+    trigger,
   } = useForm<SignUpFormData>({
     defaultValues: {
       name: '',
@@ -34,6 +36,10 @@ export const SignUpForm = () => {
 
   const passwordWatched = watch('password');
   const passwordStrength = getPasswordStrength(passwordWatched);
+
+  useEffect(() => {
+    void trigger('confirmPassword');
+  }, [passwordWatched, trigger]);
 
   const onSubmit: SubmitHandler<SignUpFormData> = (formData) => console.log(formData);
 
