@@ -3,7 +3,8 @@
   align-items: center;
   justify-content: center;
 
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
 
   background-color: #ffd1b0;
   background-image: url('/assets/images/auth_background.webp');

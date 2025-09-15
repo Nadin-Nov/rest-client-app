@@ -27,5 +27,27 @@
     "signInBtn": "SIGN IN",
     "signUpInquiry": "Aren’t registered just yet?",
     "signUpLink": "Sign up here"
+  },
+  "RestClient": {
+    "restClientHeader": "REST Client",
+    "sendRequestBtn": "Send Request",
+    "headers": "Headers:",
+    "addHeader": "+ Add Header",
+    "removeHeader": "Remove",
+    "code": "Code:",
+    "body": "Body:",
+    "text": "Text",
+    "prettify": "Prettify",
+    "responseHeader": "Response",
+    "status": "Status:",
+    "responseStatus": "No response yet",
+    "methodPlaceholder": "Pick method",
+    "endpointUrlPlaceholder": "EndpointURL",
+    "keyPlaceholder": "key",
+    "valuePlaceholder": "value",
+    "generatedCodePlaceholder": "Generated code for {el}...",
+    "jsonPlaceholder": "Write JSON here...",
+    "textPlaceholder": "Write plain text here...",
+    "placeholderForFutureResponse": "Response will appear here..."
   }
 }
