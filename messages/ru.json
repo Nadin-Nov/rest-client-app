@@ -1,0 +1,78 @@
+{
+  "MainPage": {
+    "title": "Главная",
+    "hero": {
+      "welcomeGuest": "Добро пожаловать!",
+      "welcomeUser": "С возвращением, {username}!",
+      "subtitleGuest": "Исследуй наше приложение!",
+      "subtitleUser": "Рады видеть вас снова!"
+    },
+    "projectInfo": {
+      "title": "О проекте",
+      "description1": "Лёгкое REST-клиент приложение, вдохновлённое Postman и Thunder Client. Отправляй запросы, получай и смотри ответы, управляй переменными и отслеживай историю.",
+      "description2": "Разработано с использованием React 18+, TypeScript, Next.js - передовой стек для динамичного пользовательского опыта",
+      "description3": "Создаём современные UI-элементы /фронтенд-компоненты: адаптивные, интерактивные и удобные в использовании."
+    },
+    "team": {
+      "title": "Наша команда",
+      "memberMarta": {
+        "name": "27moon",
+        "role": "Frontend Cat 🐾",
+        "description": "Охотится на баги CSS и ловит их мгновенно.",
+        "url": "https://github.com/27moon"
+      },
+      "memberKate": {
+        "name": "Gnarkill",
+        "role": "Frontend Cat 🐾",
+        "description": "Идеально интегрирует API и иногда дремлет на клавиатуре.",
+        "url": "https://github.com/Gnarkill33"
+      },
+      "memberNadin": {
+        "name": "Nadin",
+        "role": "Frontend Cat 🐾",
+        "description": "Балансирует состояние и компоненты, словно кот на заборе.",
+        "url": "https://github.com/Nadin-Nov"
+      }
+    },
+    "callToAction": {
+      "title": "Начать",
+      "signInButton": "Войти",
+      "signUpButton": "Регистрация"
+    },
+    "thanx": {
+      "text": "thanks to <link>@someone</link> for щщщщщщ"
+    }
+  },
+  "Header": {
+    "signIn": "Войти",
+    "signUp": "Регистрация",
+    "signOut": "Выйти",
+    "language": "Язык",
+    "restClient": "REST Клиент",
+    "history": "История",
+    "variables": "Переменные"
+  },
+  "Footer": {
+    "title": "Футер"
+  },
+  "NotFound": {
+    "title": "Не найдено"
+  },
+  "SignUp": {
+    "name": "Имя",
+    "password": "Пароль",
+    "enterPassword": "Введите пароль",
+    "confirmPassword": "Подтвердите пароль",
+    "signUpTitle": "Регистрация",
+    "signUpBtn": "ЗАРЕГИСТРИРОВАТЬСЯ",
+    "signInInquiry": "У вас уже есть аккаунт?",
+    "signInLink": "Войти"
+  },
+  "SignIn": {
+    "password": "Пароль",
+    "signInTitle": "Вход",
+    "signInBtn": "ВОЙТИ",
+    "signUpInquiry": "Еще не зарегистрированы?",
+    "signUpLink": "Зарегистрироваться"
+  }
+}

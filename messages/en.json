@@ -1,0 +1,78 @@
+{
+  "MainPage": {
+    "title": "Main Page",
+    "hero": {
+      "welcomeGuest": "Welcome!",
+      "welcomeUser": "Welcome back, {username}!",
+      "subtitleGuest": "Explore our app!",
+      "subtitleUser": "Glad to see you again!"
+    },
+    "projectInfo": {
+      "title": "About the Project",
+      "description1": "This is a lightweight REST client app, inspired by Postman and Thunder Client. You can make API requests, view responses, manage variables, and track history.",
+      "description2": "Built with React 18+, TypeScript, Next.js, and modern UI practices.",
+      "description3": "Focused on building responsive and interactive frontend components."
+    },
+    "team": {
+      "title": "Our Team",
+      "memberMarta": {
+        "name": "27moon",
+        "role": "Frontend Cat 🐾",
+        "description": "Chases CSS bugs and catches them with lightning-fast paws.",
+        "url": "https://github.com/27moon"
+      },
+      "memberKate": {
+        "name": "Gnarkill",
+        "role": "Frontend Cat 🐾",
+        "description": "Purrfectly integrates APIs while napping on the keyboard.",
+        "url": "https://github.com/Gnarkill33"
+      },
+      "memberNadin": {
+        "name": "Nadin",
+        "role": "Frontend Cat 🐾",
+        "description": "Balances components and state like a cat on a fence.",
+        "url": "https://github.com/Nadin-Nov"
+      }
+    },
+    "callToAction": {
+      "title": "Get Started",
+      "signInButton": "Sign In",
+      "signUpButton": "Sign Up"
+    },
+    "thanx": {
+      "text": "thanks to <link>@someone</link> for щщщщщщ"
+    }
+  },
+  "Header": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "signOut": "Sign Out",
+    "language": "Language",
+    "restClient": "REST Client",
+    "history": "History",
+    "variables": "Variables"
+  },
+  "Footer": {
+    "title": "Footer"
+  },
+  "NotFound": {
+    "title": "Not Found"
+  },
+  "SignUp": {
+    "name": "Name",
+    "password": "Password",
+    "enterPassword": "Enter password",
+    "confirmPassword": "Confirm password",
+    "signUpTitle": "Sign up",
+    "signUpBtn": "SIGN UP",
+    "signInInquiry": "Already have an account?",
+    "signInLink": "Login here"
+  },
+  "SignIn": {
+    "password": "Password",
+    "signInTitle": "Sign in",
+    "signInBtn": "SIGN IN",
+    "signUpInquiry": "Aren’t registered just yet?",
+    "signUpLink": "Sign up here"
+  }
+}

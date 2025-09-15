@@ -1,0 +1,31 @@
+.navButton {
+  cursor: pointer;
+
+  display: inline-block;
+
+  padding: 6px 12px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-black);
+  text-decoration: none;
+
+  background: none;
+
+  transition: border-color 0.2s ease;
+}
+
+.navButton:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.navButton:hover:not(:disabled) {
+  border-color: var(--primary-color);
+}
+
+.navButton.active {
+  border-color: var(--primary-color);
+}
