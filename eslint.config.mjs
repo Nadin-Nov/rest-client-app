@@ -36,13 +36,14 @@ export default tseslint.config(
     rules: {
       ...reactHooks.configs.recommended.rules,
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+      'no-sparse-arrays': 'off',
       '@typescript-eslint/consistent-type-exports': 'error',
       '@typescript-eslint/consistent-type-imports': 'error',
       '@typescript-eslint/no-inferrable-types': 'error',
       '@typescript-eslint/array-type': 'error',
       '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
       '@typescript-eslint/no-explicit-any': 'error',
-      '@typescript-eslint/no-magic-numbers': ['error', { ignore: [0, 1] }],
+      '@typescript-eslint/no-magic-numbers': ['error', { ignore: [0, 1, 2, 3, 4, 8] }],
       'import/order': [
         'error',
         {

@@ -52,12 +52,8 @@
     "history": "История",
     "variables": "Переменные"
   },
-  "Footer": {
-    "title": "Футер"
-  },
-  "NotFound": {
-    "title": "Не найдено"
-  },
+  "Footer": { "title": "Футер" },
+  "NotFound": { "title": "Не найдено" },
   "SignUp": {
     "name": "Имя",
     "password": "Пароль",
@@ -74,5 +70,27 @@
     "signInBtn": "ВОЙТИ",
     "signUpInquiry": "Еще не зарегистрированы?",
     "signUpLink": "Зарегистрироваться"
+  },
+  "RestClient": {
+    "restClientHeader": "REST Клиент",
+    "sendRequestBtn": "Отправить запрос",
+    "headers": "Заголовки:",
+    "addHeader": "+ Добавить заголовок",
+    "removeHeader": "Удалить",
+    "code": "Код:",
+    "body": "Тело:",
+    "text": "Текст",
+    "prettify": "Отформатировать",
+    "responseHeader": "Ответ",
+    "status": "Статус:",
+    "responseStatus": "Ответа пока нет",
+    "methodPlaceholder": "Выберите метод",
+    "endpointUrlPlaceholder": "Эндпоинт URL",
+    "keyPlaceholder": "ключ",
+    "valuePlaceholder": "значение",
+    "generatedCodePlaceholder": "Сгенерированный код для {el}...",
+    "jsonPlaceholder": "Запрос в формате JSON...",
+    "textPlaceholder": "Запрос в текстовом формате...",
+    "placeholderForFutureResponse": "Ответ появится тут..."
   }
 }
