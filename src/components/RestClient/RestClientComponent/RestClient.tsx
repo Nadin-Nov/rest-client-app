@@ -4,6 +4,8 @@ import clsx from 'clsx';
 import { useTranslations } from 'next-intl';
 import { useState, type FC } from 'react';
 
+import { MakeRequest } from '@/hooks/sendRequest';
+
 import { BodyRequest } from '../BodyRequest/BodyRequest';
 import { Code } from '../Code/Code';
 import type { Header } from '../HeadersEditor/HeadersEditor';
@@ -25,26 +27,24 @@ export const RestClient: FC<RestClientProps> = ({ className }) => {
   const [method, setMethod] = useState('GET');
   const [url, setURL] = useState('');
   const [headers, setHeaders] = useState<Header[]>([{ key: '', value: '' }]);
-  const [body, setBody] = useState('');
+  const [bodyRequest, setBodyRequest] = useState('');
+
+  const { status, bodyResponse, sendRequest } = MakeRequest();
 
   return (
-    <>
-      <div className={clsx(styles.container, className)}>
-        <div className={styles.wrapper}>
-          <h1>{t('restClientHeader')}</h1>
-          <div className={styles.methodUrlContainer}>
-            <MethodSelector method={method} onChange={setMethod} />
-            <UrlInput value={url} onChange={setURL} />
-          </div>
-          <SendRequestButton className={styles.sendRequestBtn} />
-          <HeadersEditor headers={headers} onChange={setHeaders} />
-          <Code />
-          <BodyRequest value={body} onChange={setBody} readOnly={false} />
-          <div>
-            <Response status={null} body={''} />
-          </div>
+    <div className={clsx(styles.container, className)}>
+      <div className={styles.wrapper}>
+        <h1>{t('restClientHeader')}</h1>
+        <div className={styles.methodUrlContainer}>
+          <MethodSelector method={method} onChange={setMethod} />
+          <UrlInput value={url} onChange={setURL} />
         </div>
+        <SendRequestButton className={styles.sendRequestBtn} onClick={() => void sendRequest(method, url)} />
+        <HeadersEditor headers={headers} onChange={setHeaders} />
+        <Code />
+        <BodyRequest value={bodyRequest} onChange={setBodyRequest} readOnly={false} />
+        <Response status={status} body={bodyResponse} />
       </div>
-    </>
+    </div>
   );
 };

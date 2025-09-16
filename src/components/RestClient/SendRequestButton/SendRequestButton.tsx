@@ -7,9 +7,15 @@ import styles from './SendRequestButton.module.css';
 
 interface SendRequestButtonProps {
   className?: string;
+  onClick: () => void;
 }
-export const SendRequestButton: FC<SendRequestButtonProps> = ({ className }) => {
+
+export const SendRequestButton: FC<SendRequestButtonProps> = ({ className, onClick }) => {
   const t = useTranslations('RestClient');
 
-  return <Button className={clsx(styles.sendRequestButton, className)}>{t('sendRequestBtn')}</Button>;
+  return (
+    <Button className={clsx(styles.sendRequestButton, className)} onClick={onClick}>
+      {t('sendRequestBtn')}
+    </Button>
+  );
 };
