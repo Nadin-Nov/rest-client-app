@@ -39,7 +39,7 @@ export const RestClient: FC<RestClientProps> = ({ className }) => {
           <MethodSelector method={method} onChange={setMethod} />
           <UrlInput value={url} onChange={setURL} />
         </div>
-        <SendRequestButton className={styles.sendRequestBtn} onClick={() => void sendRequest(method, url)} />
+        <SendRequestButton className={styles.sendRequestBtn} onClick={() => void sendRequest(method, url, headers)} />
         <HeadersEditor headers={headers} onChange={setHeaders} />
         <Code />
         <BodyRequest value={bodyRequest} onChange={setBodyRequest} readOnly={false} />
