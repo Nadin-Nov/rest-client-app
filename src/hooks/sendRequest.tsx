@@ -1,24 +1,30 @@
+import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 
 import { isValidURL } from '@/helpers/helpers';
 
+export type RequestStatus = number | 'noURL' | 'error' | null;
+
 export function MakeRequest() {
-  const [status, setStatus] = useState<number | null>(null);
+  const t = useTranslations('MakeRequestHook');
+
+  const [status, setStatus] = useState<RequestStatus>(null);
   const [bodyResponse, setBodyResponse] = useState('');
 
   async function sendRequest(method: string, url: string) {
     const trimmedURL = url.trim();
 
     if (!trimmedURL) {
-      setStatus(status);
-      setBodyResponse('URL cannot be empty');
+      setStatus('noURL');
+      setBodyResponse(t('emptyURL'));
       return;
     }
     if (!isValidURL(trimmedURL)) {
-      setStatus(status);
-      setBodyResponse('Invalid URL');
+      setStatus('error');
+      setBodyResponse(t('invalidURL'));
       return;
     }
+
     try {
       const response = await fetch(trimmedURL, { method });
       const responseText = await response.text();
@@ -26,7 +32,7 @@ export function MakeRequest() {
       setStatus(response.status);
       setBodyResponse(responseText);
     } catch (error) {
-      setStatus(null);
+      setStatus('error');
       if (error instanceof Error) {
         setBodyResponse(error.message);
       }

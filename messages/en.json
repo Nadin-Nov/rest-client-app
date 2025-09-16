@@ -41,6 +41,7 @@
     "responseHeader": "Response",
     "status": "Status:",
     "responseStatus": "No response yet",
+    "responseError": "Error",
     "methodPlaceholder": "Pick method",
     "endpointUrlPlaceholder": "EndpointURL",
     "keyPlaceholder": "key",
@@ -49,5 +50,9 @@
     "jsonPlaceholder": "Write JSON here...",
     "textPlaceholder": "Write plain text here...",
     "placeholderForFutureResponse": "Response will appear here..."
+  },
+  "MakeRequestHook": {
+    "emptyURL": "URL cannot be empty",
+    "invalidURL": "Invalid URL"
   }
 }
