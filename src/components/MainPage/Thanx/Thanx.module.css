@@ -1,0 +1,21 @@
+.thanx {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.thanx h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: rgb(60 60 60 / 85%);
+}
+
+.thanx p {
+  font-size: 1.2rem;
+  color: rgb(60 60 60 / 85%);
+}
+
+.thanx a {
+  color: rgb(60 60 60 / 85%);
+}

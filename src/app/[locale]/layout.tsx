@@ -1,26 +1,39 @@
 import { notFound } from 'next/navigation';
-import { hasLocale, NextIntlClientProvider } from 'next-intl';
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
 import type { ReactNode } from 'react';
 
 import Footer from '@/components/Footer/Footer';
-import Header from '@/components/Header/Header';
+import Header from '@/components/Header/Header/Header';
 import { routing } from '@/i18n/routing';
+import { AuthProvider } from '@/providers/AuthProvider';
+
+import MantineProviderWrapper from '../../providers/MantineProviderWrapper';
 
 interface LocaleLayoutProps {
   children: ReactNode;
-  params: Promise<{ locale: string }>;
+  params: { locale: string } | Promise<{ locale: string }>;
 }
 
-export default async function LocaleLayout({ children, params }: LocaleLayoutProps) {
-  const { locale } = await params;
+export default async function LocaleLayout({ children, params: p }: LocaleLayoutProps) {
+  const params = await p;
+  const locale = params.locale as (typeof routing.locales)[number];
 
-  if (!hasLocale(routing.locales, locale)) notFound();
+  if (!routing.locales.includes(locale)) {
+    notFound();
+  }
+
+  const messages = await getMessages({ locale });
 
   return (
-    <NextIntlClientProvider>
-      <Header />
-      <main>{children}</main>
-      <Footer />
+    <NextIntlClientProvider locale={locale} messages={messages}>
+      <AuthProvider>
+        <MantineProviderWrapper>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </MantineProviderWrapper>
+      </AuthProvider>
     </NextIntlClientProvider>
   );
 }

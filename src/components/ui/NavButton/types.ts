@@ -1,9 +1,9 @@
-import type { ButtonHTMLAttributes, ReactNode } from 'react';
+import type { ButtonHTMLAttributes } from 'react';
 
 export interface BaseProps {
   isActive?: boolean;
   className?: string;
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
 export type ButtonProps = BaseProps & ButtonHTMLAttributes<HTMLButtonElement> & { href?: undefined };
