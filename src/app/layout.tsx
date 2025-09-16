@@ -1,4 +1,6 @@
 import './globals.css';
+import '@mantine/core/styles.css';
+
 import type { ReactNode } from 'react';
 
 export default function RootLayout({ children }: { children: ReactNode }) {
