@@ -28,6 +28,7 @@ export const RestClient: FC<RestClientProps> = ({ className }) => {
   const [url, setURL] = useState('');
   const [headers, setHeaders] = useState<Header[]>([{ key: '', value: '' }]);
   const [bodyRequest, setBodyRequest] = useState('');
+  const [bodyType, setBodyType] = useState<'text' | 'json'>('json');
 
   const { status, bodyResponse, sendRequest } = MakeRequest();
 
@@ -39,10 +40,19 @@ export const RestClient: FC<RestClientProps> = ({ className }) => {
           <MethodSelector method={method} onChange={setMethod} />
           <UrlInput value={url} onChange={setURL} />
         </div>
-        <SendRequestButton className={styles.sendRequestBtn} onClick={() => void sendRequest(method, url, headers)} />
+        <SendRequestButton
+          className={styles.sendRequestBtn}
+          onClick={() => void sendRequest(method, url, headers, bodyType, bodyRequest)}
+        />
         <HeadersEditor headers={headers} onChange={setHeaders} />
         <Code />
-        <BodyRequest value={bodyRequest} onChange={setBodyRequest} readOnly={false} />
+        <BodyRequest
+          value={bodyRequest}
+          onChange={setBodyRequest}
+          onBodyTypeChange={setBodyType}
+          bodyType={bodyType}
+          readOnly={false}
+        />
         <Response status={status} body={bodyResponse} />
       </div>
     </div>

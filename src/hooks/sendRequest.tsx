@@ -12,7 +12,7 @@ export function MakeRequest() {
   const [status, setStatus] = useState<RequestStatus>(null);
   const [bodyResponse, setBodyResponse] = useState('');
 
-  async function sendRequest(method: string, url: string, headers: Header[]) {
+  async function sendRequest(method: string, url: string, headers: Header[], bodyType: string, bodyRequest?: string) {
     const trimmedURL = url.trim();
 
     if (!trimmedURL) {
@@ -31,9 +31,27 @@ export function MakeRequest() {
         headers.filter((header) => header.key.trim()).map((header) => [header.key, header.value])
       );
 
-      const response = await fetch(trimmedURL, { method, headers: headersObj });
-      console.log(trimmedURL, { method, headers: headersObj });
+      if (bodyRequest) {
+        if (bodyType === 'json') {
+          try {
+            JSON.parse(bodyRequest);
+            headersObj['Content-Type'] = 'application/json';
+          } catch (error) {
+            setStatus('error');
+            if (error instanceof Error) {
+              setBodyResponse(`Invalid JSON: ${error.message}`);
+            }
+            return;
+          }
+        }
+        if (bodyType === 'text') {
+          headersObj['Content-Type'] = 'text/plain';
+        }
+      }
+
+      const response = await fetch(trimmedURL, { method, headers: headersObj, body: bodyRequest });
       const responseText = await response.text();
+      console.log({ method, trimmedURL, headersObj, body: bodyRequest });
 
       setStatus(response.status);
       setBodyResponse(responseText);

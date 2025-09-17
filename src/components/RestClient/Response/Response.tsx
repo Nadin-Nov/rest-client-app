@@ -18,7 +18,7 @@ export const Response: FC<ResponseProps> = ({ status, body }) => {
     if (status === 'error') return t('responseError');
     if (typeof status === 'number') return status;
   }
-  console.log(status);
+
   return (
     <div className={styles.responseContainer}>
       <h2 className={styles.responseHeader}>{t('responseHeader')}</h2>

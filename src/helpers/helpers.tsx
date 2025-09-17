@@ -6,3 +6,11 @@ export function isValidURL(value: string) {
     return false;
   }
 }
+
+// export function prettify(value: string) {
+//   if (value === 'json') {
+//     const parsed: unknown = JSON.parse(value);
+//     return JSON.stringify(parsed, null, 2);
+//   }
+//   return;
+// }
