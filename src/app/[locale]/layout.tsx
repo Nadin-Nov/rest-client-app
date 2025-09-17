@@ -7,6 +7,7 @@ import Footer from '@/components/Footer/Footer';
 import Header from '@/components/Header/Header/Header';
 import { routing } from '@/i18n/routing';
 import { AuthProvider } from '@/providers/AuthProvider';
+import { VariablesProvider } from '@/providers/VariablesProvider';
 
 import MantineProviderWrapper from '../../providers/MantineProviderWrapper';
 
@@ -28,11 +29,13 @@ export default async function LocaleLayout({ children, params: p }: LocaleLayout
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
       <AuthProvider>
-        <MantineProviderWrapper>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        </MantineProviderWrapper>
+        <VariablesProvider>
+          <MantineProviderWrapper>
+            <Header />
+            <main>{children}</main>
+            <Footer />
+          </MantineProviderWrapper>
+        </VariablesProvider>
       </AuthProvider>
     </NextIntlClientProvider>
   );
