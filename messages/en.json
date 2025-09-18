@@ -102,6 +102,7 @@
     "keyPlaceholder": "Enter variable name",
     "valuePlaceholder": "Enter variable value",
     "addVariable": "Add Variable",
-    "removeVariable": "Remove"
+    "removeVariable": "Remove",
+    "editVariable": "Edit Variable"
   }
 }

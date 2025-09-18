@@ -99,9 +99,10 @@
   },
   "Variables": {
     "variablesHeader": "Переменные",
-    "keyPlaceholder": "Введите имя переменной",
-    "valuePlaceholder": "Введите значение переменной",
+    "keyPlaceholder": "Введите имя",
+    "valuePlaceholder": "Введите значение",
     "addVariable": "Добавить переменную",
-    "removeVariable": "Удалить"
+    "removeVariable": "Удалить",
+    "editVariable": "Редактировать переменную"
   }
 }

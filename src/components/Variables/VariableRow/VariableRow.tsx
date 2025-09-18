@@ -1,6 +1,7 @@
 'use client';
 
 import { TextInput } from '@mantine/core';
+import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 import { useState } from 'react';
 
@@ -17,6 +18,7 @@ interface VariableRowProps {
 }
 
 const VariableRow: FC<VariableRowProps> = ({ idx, variable, onUpdate, onDelete }) => {
+  const t = useTranslations('Variables');
   const [isEditing, setIsEditing] = useState(false);
   const [row, setRow] = useState(variable);
 
@@ -44,13 +46,18 @@ const VariableRow: FC<VariableRowProps> = ({ idx, variable, onUpdate, onDelete }
       />
       <div className={styles.buttonWrapper}>
         {isEditing ? (
-          <IconButton icon={<IconSave />} variant='save' onClick={handleSave} />
+          <IconButton icon={<IconSave />} variant='save' onClick={handleSave} aria-label={t('addVariable')} />
         ) : (
-          <IconButton icon={<IconEdit />} variant='edit' onClick={toggleEdit} />
+          <IconButton icon={<IconEdit />} variant='edit' onClick={toggleEdit} aria-label={t('editVariable')} />
         )}
       </div>
       <div className={styles.buttonWrapper}>
-        <IconButton icon={<IconMinus />} variant='delete' onClick={() => onDelete(idx)} />
+        <IconButton
+          icon={<IconMinus />}
+          variant='delete'
+          onClick={() => onDelete(idx)}
+          aria-label={t('removeVariable')}
+        />
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 'use client';
 
 import { TextInput } from '@mantine/core';
+import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 import { useState } from 'react';
 
@@ -19,6 +20,7 @@ interface NewVariableRowProps {
 }
 
 const NewVariableRow: FC<NewVariableRowProps> = ({ onSave }) => {
+  const t = useTranslations('Variables');
   const [newVar, setNewVar] = useState<VariableRowType>({ key: '', value: '' });
 
   const handleSave = () => {
@@ -31,22 +33,27 @@ const NewVariableRow: FC<NewVariableRowProps> = ({ onSave }) => {
     <div className={styles.row}>
       <TextInput
         className={styles.input}
-        placeholder='Enter variable name'
+        placeholder={t('keyPlaceholder')}
         type='search'
         value={newVar.key}
         onChange={(e) => setNewVar({ ...newVar, key: e.currentTarget.value })}
       />
       <TextInput
         className={styles.input}
-        placeholder='Enter variable value'
+        placeholder={t('valuePlaceholder')}
         type='search'
         value={newVar.value}
         onChange={(e) => setNewVar({ ...newVar, value: e.currentTarget.value })}
       />
       <div className={styles.buttonWrapper}>
-        <IconButton icon={<IconSave />} variant='save' onClick={handleSave} disabled={!newVar.key || !newVar.value} />
+        <IconButton
+          icon={<IconSave />}
+          variant='save'
+          onClick={handleSave}
+          disabled={!newVar.key || !newVar.value}
+          aria-label={t('addVariable')}
+        />
       </div>
-      <div className={styles.buttonWrapper}>{}</div>
     </div>
   );
 };
