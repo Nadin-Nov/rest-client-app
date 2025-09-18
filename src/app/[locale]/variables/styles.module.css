@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  padding: 0.5rem;
+
+  background-color: #ffd1b0;
+  background-image: url('/assets/images/paws-background.png');
+  background-attachment: fixed;
+  background-position: left;
+  background-size: contain;
+}
