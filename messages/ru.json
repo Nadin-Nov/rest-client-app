@@ -52,8 +52,12 @@
     "history": "История",
     "variables": "Переменные"
   },
-  "Footer": { "title": "Футер" },
-  "NotFound": { "title": "Не найдено" },
+  "Footer": {
+    "title": "Футер"
+  },
+  "NotFound": {
+    "title": "Не найдено"
+  },
   "SignUp": {
     "name": "Имя",
     "password": "Пароль",
@@ -92,5 +96,12 @@
     "jsonPlaceholder": "Запрос в формате JSON...",
     "textPlaceholder": "Запрос в текстовом формате...",
     "placeholderForFutureResponse": "Ответ появится тут..."
+  },
+  "Variables": {
+    "variablesHeader": "Переменные",
+    "keyPlaceholder": "Введите имя переменной",
+    "valuePlaceholder": "Введите значение переменной",
+    "addVariable": "Добавить переменную",
+    "removeVariable": "Удалить"
   }
 }

@@ -52,8 +52,12 @@
     "history": "History",
     "variables": "Variables"
   },
-  "Footer": { "title": "Footer" },
-  "NotFound": { "title": "Not Found" },
+  "Footer": {
+    "title": "Footer"
+  },
+  "NotFound": {
+    "title": "Not Found"
+  },
   "SignUp": {
     "name": "Name",
     "password": "Password",
@@ -92,5 +96,12 @@
     "jsonPlaceholder": "Write JSON here...",
     "textPlaceholder": "Write plain text here...",
     "placeholderForFutureResponse": "Response will appear here..."
+  },
+  "Variables": {
+    "variablesHeader": "Variables",
+    "keyPlaceholder": "Enter variable name",
+    "valuePlaceholder": "Enter variable value",
+    "addVariable": "Add Variable",
+    "removeVariable": "Remove"
   }
 }
