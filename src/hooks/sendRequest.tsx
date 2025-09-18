@@ -49,7 +49,21 @@ export function MakeRequest() {
         }
       }
 
-      const response = await fetch(trimmedURL, { method, headers: headersObj, body: bodyRequest });
+      const requestOptions: RequestInit = {
+        method,
+        headers: headersObj,
+      };
+
+      if (bodyRequest && ['POST', 'PUT', 'PATCH', 'DELETE'].includes(method.toUpperCase())) {
+        requestOptions.body = bodyRequest;
+      }
+
+      const response = await fetch(trimmedURL, {
+        method,
+        headers: headersObj,
+        body: bodyRequest,
+      });
+
       const responseText = await response.text();
       console.log({ method, trimmedURL, headersObj, body: bodyRequest });
 
