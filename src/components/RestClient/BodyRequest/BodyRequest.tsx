@@ -30,7 +30,15 @@ export const BodyRequest: FC<BodyRequestProps> = ({ value, onChange, bodyType, o
   };
 
   const prettify = () => {
-    console.log('make it pretty');
+    if (bodyType === 'json') {
+      try {
+        const parsedData: unknown = JSON.parse(value);
+        const makeItPretty = JSON.stringify(parsedData, null, 2);
+        onChange(makeItPretty);
+      } catch {
+        //empty because ReactCodeMirror already manages errors in JSON
+      }
+    }
   };
 
   return (
