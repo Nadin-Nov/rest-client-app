@@ -13,7 +13,7 @@ interface Props {
   username?: string | null;
   sticky: boolean;
   currentLang: string;
-  onSignOut?: () => void;
+  onSignOut: () => Promise<void>;
   onLangChange?: (lang: (typeof routing.locales)[number]) => void;
 }
 

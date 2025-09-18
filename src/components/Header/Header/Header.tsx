@@ -30,7 +30,7 @@ const Header: FC = () => {
       username={authUser?.name}
       sticky={sticky}
       currentLang={localePrefix.replace('/', '')}
-      onSignOut={() => signOutUser}
+      onSignOut={signOutUser}
       onLangChange={handleLangChange}
     />
   );

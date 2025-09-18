@@ -8,7 +8,7 @@ import { useLocalePrefix } from '@/hooks/useLocalePrefix';
 interface AuthSectionProps {
   isAuth: boolean;
   username?: string | null;
-  onSignOut?: () => void;
+  onSignOut: () => Promise<void>;
 }
 
 export const AuthSection: FC<AuthSectionProps> = ({ isAuth, username, onSignOut }) => {
@@ -24,7 +24,7 @@ export const AuthSection: FC<AuthSectionProps> = ({ isAuth, username, onSignOut 
       {isAuth ? (
         <>
           <span>{username}</span>
-          <NavButton onClick={onSignOut}>{t('signOut')}</NavButton>
+          <NavButton onClick={() => void onSignOut()}>{t('signOut')}</NavButton>
         </>
       ) : (
         <>
