@@ -1,0 +1,50 @@
+.button {
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  border-radius: 6px;
+
+  transition: background 0.2s;
+}
+
+.button svg {
+  width: 20px;
+  height: 20px;
+  fill: white;
+}
+
+.save {
+  background-color: rgb(76 175 80 / 60%);
+}
+
+.save:hover {
+  background-color: rgb(76 175 80 / 80%);
+}
+
+.delete {
+  background-color: rgb(223 105 81 / 60%);
+}
+
+.delete:hover {
+  background-color: rgb(223 105 81 / 80%);
+}
+
+.edit {
+  background-color: rgb(255 193 7 / 60%);
+}
+
+.edit:hover {
+  background-color: rgb(255 193 7 / 80%);
+}
+
+.disabled {
+  cursor: default;
+  opacity: 0.5;
+}
