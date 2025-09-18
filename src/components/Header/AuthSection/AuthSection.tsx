@@ -7,7 +7,7 @@ import { useLocalePrefix } from '@/hooks/useLocalePrefix';
 
 interface AuthSectionProps {
   isAuth: boolean;
-  username?: string;
+  username?: string | null;
   onSignOut?: () => void;
 }
 

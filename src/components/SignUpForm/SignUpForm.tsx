@@ -8,6 +8,7 @@ import { type SubmitHandler, useForm } from 'react-hook-form';
 
 import { PasswordStrengthMeter } from '@/components/PasswordStrengthMeter/PasswordStrengthMeter';
 import Button from '@/components/ui/Button/Button';
+import { useAuth } from '@/hooks/useAuth';
 import { Link } from '@/i18n/navigation';
 import type { SignUpFormData } from '@/types/types';
 import { getPasswordStrength } from '@/utils/getPasswordStrength';
@@ -16,6 +17,7 @@ import { signUpFormSchema } from '@/validation';
 import styles from './SignUpForm.module.css';
 
 export const SignUpForm = () => {
+  const { signUpUser } = useAuth();
   const t = useTranslations('SignUp');
   const {
     register,
@@ -41,7 +43,10 @@ export const SignUpForm = () => {
     void trigger('confirmPassword');
   }, [passwordWatched, trigger]);
 
-  const onSubmit: SubmitHandler<SignUpFormData> = (formData) => console.log(formData);
+  const onSubmit: SubmitHandler<SignUpFormData> = (formData) =>
+    signUpUser(formData.email, formData.password).then((authUser) => {
+      console.log('New user is registered', authUser);
+    });
 
   return (
     <form className={styles.form} noValidate onSubmit={(event) => void handleSubmit(onSubmit)(event)}>
