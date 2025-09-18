@@ -4,6 +4,7 @@ import {
   signInWithEmailAndPassword,
   signOut,
   type User,
+  updateProfile,
 } from 'firebase/auth';
 import { useEffect, useState } from 'react';
 
@@ -13,15 +14,12 @@ import { formatAuthUser } from '@/utils/formatAuthUser';
 
 export const useFirebaseAuth = () => {
   const [authUser, setAuthUser] = useState<AuthUser | null>(null);
-  const [loading, setLoading] = useState(true);
 
   const authStateChanged = (authState: User | null) => {
     if (!authState) {
-      setLoading(false);
       return;
     }
     setAuthUser(formatAuthUser(authState));
-    setLoading(false);
   };
 
   useEffect(() => {
@@ -29,9 +27,22 @@ export const useFirebaseAuth = () => {
     return () => unsubscribe();
   }, []);
 
-  const signUpUser = async (email: string, password: string) => {
+  const signUpUser = async (email: string, password: string, displayName: string) => {
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      const result = await createUserWithEmailAndPassword(auth, email, password);
+      const newUser = result.user;
+      if (displayName) {
+        await updateProfile(newUser, {
+          displayName: displayName,
+        });
+
+        await newUser.reload();
+
+        const updatedUser = auth.currentUser;
+        if (updatedUser) {
+          setAuthUser(formatAuthUser(updatedUser));
+        }
+      }
     } catch (error) {
       console.error('Failed to sign up', error);
     }
@@ -49,11 +60,10 @@ export const useFirebaseAuth = () => {
     try {
       await signOut(auth);
       setAuthUser(null);
-      setLoading(false);
     } catch (error) {
       console.error('Failed to sign out', error);
     }
   };
 
-  return { authUser, loading, signUpUser, signInUser, signOutUser };
+  return { authUser, signUpUser, signInUser, signOutUser };
 };
