@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useReducer, type FC, type ReactNode } from 'react';
+import { useEffect, useReducer, useRef, type FC, type ReactNode } from 'react';
 
 import { useAuthContext } from '@/hooks/useAuthContext';
 
@@ -36,14 +36,16 @@ interface VariablesProviderProps {
 export const VariablesProvider: FC<VariablesProviderProps> = ({ children }) => {
   const { username } = useAuthContext();
   const [state, dispatch] = useReducer(variablesReducer, []);
+  const isLoadedRef = useRef(false);
 
   useEffect(() => {
-    if (!username) return;
+    if (!username || isLoadedRef.current) return;
+
+    const raw = localStorage.getItem(`variables_${username}`);
+    if (!raw) return;
 
     try {
-      const raw = localStorage.getItem(`variables_${username}`);
-      const parsed: unknown = raw ? JSON.parse(raw) : [];
-
+      const parsed: unknown = JSON.parse(raw);
       const variables: Variable[] = Array.isArray(parsed)
         ? parsed.filter(
             (item): item is Variable =>
@@ -57,8 +59,9 @@ export const VariablesProvider: FC<VariablesProviderProps> = ({ children }) => {
         : [];
 
       dispatch({ type: 'LOAD', payload: variables });
+      isLoadedRef.current = true;
     } catch {
-      dispatch({ type: 'LOAD', payload: [] });
+      console.log('Failed to parse variables from localStorage');
     }
   }, [username]);
 
@@ -67,11 +70,7 @@ export const VariablesProvider: FC<VariablesProviderProps> = ({ children }) => {
     localStorage.setItem(`variables_${username}`, JSON.stringify(state));
   }, [state, username]);
 
-  const value: VariablesContextValue = {
-    state,
-    dispatch,
-    hasVariables: state.length > 0,
-  };
+  const value: VariablesContextValue = { state, dispatch, hasVariables: state.length > 0 };
 
   return <VariablesContext.Provider value={value}>{children}</VariablesContext.Provider>;
 };
