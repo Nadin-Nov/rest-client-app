@@ -1,0 +1,25 @@
+.container {
+  background-color: #ffd1b0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.title {
+  font-size: 32px;
+  margin-top: 20px;
+}
+
+.subtitle {
+  font-size: 18px;
+  margin: 10px 0 20px;
+}
+
+.buttonWrapper {
+  cursor: pointer;
+}
