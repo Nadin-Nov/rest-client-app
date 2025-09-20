@@ -1,7 +1,11 @@
-import { useTranslations } from 'next-intl';
+import { redirect } from 'next/navigation';
 
-export default function MainPage() {
-  const t = useTranslations('MainPage');
+interface LocalePageProps {
+  params: Promise<{ locale: string }>;
+}
 
-  return <div>{t('title')}</div>;
+export default async function LocalePage({ params }: LocalePageProps) {
+  const { locale } = await params;
+
+  redirect(`/${locale}/main`);
 }

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import styles from './header.module.css';
+import styles from '../Header/Header.module.css';
 
 export const Logo = () => (
   <Link href='/main' className={styles.logo}>
