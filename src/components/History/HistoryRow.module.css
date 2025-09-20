@@ -1,0 +1,51 @@
+.row {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr 1.5fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: #f9f9f9;
+  border-radius: 0.5rem;
+}
+
+.row:hover {
+  background-color: #e6f7ff;
+}
+
+.link {
+  display: contents;
+}
+
+.method {
+  font-weight: bold;
+  color: #1f6feb;
+}
+
+.url {
+  overflow-x: auto;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.status {
+  text-align: center;
+}
+
+.timestamp {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.duration {
+  text-align: right;
+}
+
+.reqSize,
+.resSize {
+  text-align: right;
+}
+
+.error {
+  color: #d32f2f;
+  font-weight: 500;
+}
