@@ -4,7 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { PasswordInput, Stack, TextInput, Title, Text } from '@mantine/core';
 import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { type SubmitHandler, useForm } from 'react-hook-form';
 
 import { PasswordStrengthMeter } from '@/components/PasswordStrengthMeter/PasswordStrengthMeter';
@@ -15,12 +15,16 @@ import type { SignUpFormData } from '@/types/types';
 import { getPasswordStrength } from '@/utils/getPasswordStrength';
 import { signUpFormSchema } from '@/validation';
 
+import { PawSpinner } from '../ui/PawSpinner/PawSpinner';
+
 import styles from './SignUpForm.module.css';
 
 export const SignUpForm = () => {
   const { signUpUser } = useAuth();
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
   const t = useTranslations('SignUp');
+
   const {
     register,
     handleSubmit,
@@ -46,9 +50,11 @@ export const SignUpForm = () => {
   }, [passwordWatched, trigger]);
 
   const onSubmit: SubmitHandler<SignUpFormData> = (formData) => {
+    setLoading(true);
     signUpUser(formData.email, formData.password, formData.name)
       .then(() => router.replace('/main'))
-      .catch((error) => console.log('Failed to sign up', error));
+      .catch((error) => console.log('Failed to sign up', error))
+      .finally(() => setLoading(false));
   };
 
   return (
@@ -107,9 +113,17 @@ export const SignUpForm = () => {
             <p className={styles.formErrors}>{errors.confirmPassword?.message}</p>
           </Stack>
         </fieldset>
-        <Button className={styles.authBtn} disabled={!isDirty || !isValid}>
-          {t('signUpBtn')}
-        </Button>
+
+        {loading ? (
+          <div className={styles.spinnerWrapper}>
+            <PawSpinner size={40} pawColor='var(--color-primary)' />
+          </div>
+        ) : (
+          <Button className={styles.authBtn} disabled={!isDirty || !isValid}>
+            {t('signUpBtn')}
+          </Button>
+        )}
+
         <Text ta='center' mt='sm' className={styles.subtitle}>
           {t('signInInquiry')}
           <Link className={styles.link} href='/sign-in'>

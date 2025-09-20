@@ -37,3 +37,9 @@
 .link {
   text-decoration: none;
 }
+
+.spinnerWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
