@@ -4,6 +4,7 @@
   justify-content: center;
 
   width: 100%;
+  min-height: 77vh;
   padding: 0.5rem;
 
   background-color: #ffd1b0;
