@@ -2,7 +2,7 @@ import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
 import { TextArea } from '@/components/ui/TextArea/TextArea';
-import type { RequestStatus } from '@/hooks/sendRequest';
+import type { RequestStatus } from '@/hooks/useMakeRequest';
 
 import styles from './Response.module.css';
 

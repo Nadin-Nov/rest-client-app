@@ -14,7 +14,7 @@ export const SendRequestButton: FC<SendRequestButtonProps> = ({ className, onCli
   const t = useTranslations('RestClient');
 
   return (
-    <Button className={clsx(styles.sendRequestButton, className)} onClick={onClick}>
+    <Button className={clsx(styles.sendRequestButton, className)} onClick={onClick} type='button'>
       {t('sendRequestBtn')}
     </Button>
   );

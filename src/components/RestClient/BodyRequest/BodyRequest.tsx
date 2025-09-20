@@ -25,6 +25,7 @@ interface BodyRequestProps {
 
 export const BodyRequest: FC<BodyRequestProps> = ({ value, onChange, bodyType, onBodyTypeChange }) => {
   const t = useTranslations('RestClient');
+
   const toggle = () => {
     onBodyTypeChange(bodyType === 'json' ? 'text' : 'json');
   };
@@ -36,7 +37,7 @@ export const BodyRequest: FC<BodyRequestProps> = ({ value, onChange, bodyType, o
         const makeItPretty = JSON.stringify(parsedData, null, 2);
         onChange(makeItPretty);
       } catch {
-        //empty because ReactCodeMirror already manages errors in JSON
+        //left empty because ReactCodeMirror already manages errors in JSON
       }
     }
   };

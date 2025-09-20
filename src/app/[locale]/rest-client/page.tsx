@@ -3,5 +3,5 @@ import { RestClient } from '@/components/RestClient/RestClientComponent/RestClie
 import styles from './styles.module.css';
 
 export default function RESTClientPage() {
-  return <RestClient className={styles.container} />;
+  return <RestClient className={styles.container} initialMethod={''} />;
 }

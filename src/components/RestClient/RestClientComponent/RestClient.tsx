@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import { useTranslations } from 'next-intl';
 import { useState, type FC } from 'react';
 
-import { MakeRequest } from '@/hooks/sendRequest';
+import { useMakeRequest } from '@/hooks/useMakeRequest';
 
 import { BodyRequest } from '../BodyRequest/BodyRequest';
 import { Code } from '../Code/Code';
@@ -19,18 +19,30 @@ import styles from './RestClient.module.css';
 
 interface RestClientProps {
   className: string;
+  initialMethod: string;
+  initialUrl?: string;
+  initialBody?: string;
+  initialHeaders?: Header[];
+  initialBodyType?: 'json' | 'text';
 }
 
-export const RestClient: FC<RestClientProps> = ({ className }) => {
+export const RestClient: FC<RestClientProps> = ({
+  className,
+  initialMethod,
+  initialUrl,
+  initialBody,
+  initialHeaders = [{ key: '', value: '' }],
+  initialBodyType = 'json',
+}) => {
   const t = useTranslations('RestClient');
 
-  const [method, setMethod] = useState('GET');
-  const [url, setURL] = useState('');
-  const [headers, setHeaders] = useState<Header[]>([{ key: '', value: '' }]);
-  const [bodyRequest, setBodyRequest] = useState('');
-  const [bodyType, setBodyType] = useState<'text' | 'json'>('json');
+  const [method, setMethod] = useState(initialMethod || 'GET');
+  const [url, setURL] = useState(initialUrl || '');
+  const [headers, setHeaders] = useState<Header[]>(initialHeaders);
+  const [bodyRequest, setBodyRequest] = useState(initialBody || '');
+  const [bodyType, setBodyType] = useState<'text' | 'json'>(initialBodyType);
 
-  const { status, bodyResponse, sendRequest } = MakeRequest();
+  const { status, bodyResponse, sendRequest } = useMakeRequest();
 
   return (
     <div className={clsx(styles.container, className)}>

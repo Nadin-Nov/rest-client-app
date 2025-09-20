@@ -2,17 +2,18 @@ import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 
 import type { Header } from '@/components/RestClient/HeadersEditor/HeadersEditor';
-import { isValidURL } from '@/helpers/helpers';
+import { buildURL } from '@/helpers/buildURL';
+import { isValidURL } from '@/helpers/isValidURL';
 
 export type RequestStatus = number | 'noURL' | 'error' | null;
 
-export function MakeRequest() {
+export function useMakeRequest() {
   const t = useTranslations('MakeRequestHook');
 
   const [status, setStatus] = useState<RequestStatus>(null);
   const [bodyResponse, setBodyResponse] = useState('');
 
-  async function sendRequest(method: string, url: string, headers: Header[], bodyType: string, bodyRequest?: string) {
+  async function sendRequest(method: string, url: string, headers: Header[], bodyType: string, body?: string) {
     const trimmedURL = url.trim();
 
     if (!trimmedURL) {
@@ -27,14 +28,17 @@ export function MakeRequest() {
     }
 
     try {
-      const headersObj = Object.fromEntries(
-        headers.filter((header) => header.key.trim()).map((header) => [header.key, header.value])
-      );
+      const headersObj: Record<string, string> = {};
+      for (const header of headers) {
+        if (header.key.trim()) {
+          headersObj[header.key.trim()] = header.value.trim();
+        }
+      }
 
-      if (bodyRequest) {
+      if (body) {
         if (bodyType === 'json') {
           try {
-            JSON.parse(bodyRequest);
+            JSON.parse(body);
             headersObj['Content-Type'] = 'application/json';
           } catch (error) {
             setStatus('error');
@@ -54,18 +58,17 @@ export function MakeRequest() {
         headers: headersObj,
       };
 
-      if (bodyRequest && ['POST', 'PUT', 'PATCH', 'DELETE'].includes(method.toUpperCase())) {
-        requestOptions.body = bodyRequest;
+      if (body && ['POST', 'PUT', 'PATCH', 'DELETE'].includes(method)) {
+        requestOptions.body = body;
       }
 
-      const response = await fetch(trimmedURL, {
-        method,
-        headers: headersObj,
-        body: bodyRequest,
-      });
+      const currentLocale = window.location.pathname.split('/')[1];
+      const routeURL = buildURL(currentLocale, method, trimmedURL, headers, body || undefined);
+      window.history.pushState(null, '', routeURL);
+
+      const response = await fetch(trimmedURL, requestOptions);
 
       const responseText = await response.text();
-      console.log({ method, trimmedURL, headersObj, body: bodyRequest });
 
       setStatus(response.status);
       setBodyResponse(responseText);
@@ -76,5 +79,6 @@ export function MakeRequest() {
       }
     }
   }
+
   return { status, bodyResponse, sendRequest };
 }
