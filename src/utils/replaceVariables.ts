@@ -1,4 +1,4 @@
-import type { Variable } from '@/contexts/VariablesContextTypes';
+import type { Variable } from '@/types/variablesContext';
 
 export function replaceVariables(text: string | null | undefined, vars: Variable[]): string {
   if (!text) return text ?? '';

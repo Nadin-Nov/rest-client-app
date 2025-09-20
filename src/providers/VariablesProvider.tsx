@@ -1,16 +1,10 @@
 'use client';
 
-import { useEffect, useReducer, useRef, type FC, type ReactNode } from 'react';
+import { useEffect, useReducer, type FC, type ReactNode } from 'react';
 
+import { VariablesContext } from '@/contexts/variablesContextCore';
 import { useAuthContext } from '@/hooks/useAuthContext';
-
-import type {
-  Variable,
-  VariablesAction,
-  VariablesState,
-  VariablesContextValue,
-} from '../contexts/VariablesContextTypes';
-import { VariablesContext } from '../contexts/variablesContextCore';
+import type { Variable, VariablesAction, VariablesState, VariablesContextValue } from '@/types/variablesContext';
 
 const variablesReducer = (state: VariablesState, action: VariablesAction): VariablesState => {
   switch (action.type) {
@@ -36,10 +30,9 @@ interface VariablesProviderProps {
 export const VariablesProvider: FC<VariablesProviderProps> = ({ children }) => {
   const { username } = useAuthContext();
   const [state, dispatch] = useReducer(variablesReducer, []);
-  const isLoadedRef = useRef(false);
 
   useEffect(() => {
-    if (!username || isLoadedRef.current) return;
+    if (!username) return;
 
     const raw = localStorage.getItem(`variables_${username}`);
     if (!raw) return;
@@ -59,9 +52,9 @@ export const VariablesProvider: FC<VariablesProviderProps> = ({ children }) => {
         : [];
 
       dispatch({ type: 'LOAD', payload: variables });
-      isLoadedRef.current = true;
     } catch {
       console.log('Failed to parse variables from localStorage');
+      dispatch({ type: 'LOAD', payload: [] });
     }
   }, [username]);
 

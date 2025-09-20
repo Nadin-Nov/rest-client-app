@@ -6,7 +6,7 @@ import type { FC } from 'react';
 import { useState } from 'react';
 
 import IconButton from '@/components/ui/IconButton/IconButton';
-import { IconSave } from '@/components/ui/icons';
+import { IconPlus } from '@/components/ui/icons';
 
 import styles from './NewVariableRow.module.css';
 
@@ -34,20 +34,20 @@ const NewVariableRow: FC<NewVariableRowProps> = ({ onSave }) => {
       <TextInput
         className={styles.input}
         placeholder={t('keyPlaceholder')}
-        type='search'
+        type='text'
         value={newVar.key}
         onChange={(e) => setNewVar({ ...newVar, key: e.currentTarget.value })}
       />
       <TextInput
         className={styles.input}
         placeholder={t('valuePlaceholder')}
-        type='search'
+        type='text'
         value={newVar.value}
         onChange={(e) => setNewVar({ ...newVar, value: e.currentTarget.value })}
       />
       <div className={styles.buttonWrapper}>
         <IconButton
-          icon={<IconSave />}
+          icon={<IconPlus />}
           variant='save'
           onClick={handleSave}
           disabled={!newVar.key || !newVar.value}

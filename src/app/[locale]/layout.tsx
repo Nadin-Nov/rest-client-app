@@ -7,9 +7,8 @@ import Footer from '@/components/Footer/Footer';
 import Header from '@/components/Header/Header/Header';
 import { routing } from '@/i18n/routing';
 import { AuthProvider } from '@/providers/AuthProvider';
+import MantineProviderWrapper from '@/providers/MantineProviderWrapper';
 import { VariablesProvider } from '@/providers/VariablesProvider';
-
-import MantineProviderWrapper from '../../providers/MantineProviderWrapper';
 
 interface LocaleLayoutProps {
   children: ReactNode;
