@@ -1,3 +1,4 @@
+import { Notifications } from '@mantine/notifications';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
@@ -9,6 +10,8 @@ import { routing } from '@/i18n/routing';
 import { AuthProvider } from '@/providers/AuthProvider';
 
 import MantineProviderWrapper from '../../providers/MantineProviderWrapper';
+
+import '@mantine/notifications/styles.css';
 
 interface LocaleLayoutProps {
   children: ReactNode;
@@ -29,6 +32,7 @@ export default async function LocaleLayout({ children, params: p }: LocaleLayout
     <NextIntlClientProvider locale={locale} messages={messages}>
       <AuthProvider>
         <MantineProviderWrapper>
+          <Notifications />
           <Header />
           <main>{children}</main>
           <Footer />

@@ -31,11 +31,11 @@ export const useFirebaseAuth = () => {
     try {
       const result = await createUserWithEmailAndPassword(auth, email, password);
       const newUser = result.user;
+
       if (displayName) {
         await updateProfile(newUser, {
           displayName: displayName,
         });
-
         await newUser.reload();
 
         const updatedUser = auth.currentUser;
@@ -45,6 +45,7 @@ export const useFirebaseAuth = () => {
       }
     } catch (error) {
       console.error('Failed to sign up', error);
+      throw error;
     }
   };
 

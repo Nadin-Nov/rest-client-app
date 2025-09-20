@@ -2,6 +2,7 @@
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { PasswordInput, Stack, TextInput, Title, Text } from '@mantine/core';
+import { notifications } from '@mantine/notifications';
 import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
@@ -49,12 +50,25 @@ export const SignUpForm = () => {
     void trigger('confirmPassword');
   }, [passwordWatched, trigger]);
 
-  const onSubmit: SubmitHandler<SignUpFormData> = (formData) => {
+  const onSubmit: SubmitHandler<SignUpFormData> = async (formData) => {
     setLoading(true);
-    signUpUser(formData.email, formData.password, formData.name)
-      .then(() => router.replace('/main'))
-      .catch((error) => console.log('Failed to sign up', error))
-      .finally(() => setLoading(false));
+    try {
+      await signUpUser(formData.email, formData.password, formData.name);
+      router.replace('/main');
+      notifications.show({
+        title: 'Welcome!',
+        message: 'You successfully signed up! 😺',
+        className: styles.success,
+      });
+    } catch {
+      notifications.show({
+        title: 'Oops!',
+        message: 'Something went wrong 😿',
+        className: styles.fail,
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
