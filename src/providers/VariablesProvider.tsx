@@ -33,6 +33,8 @@ export const VariablesProvider: FC<VariablesProviderProps> = ({ children }) => {
   const [state, dispatch] = useReducer(variablesReducer, []);
 
   useEffect(() => {
+    dispatch({ type: 'CLEAR' });
+
     if (!email) return;
 
     const raw = localStorage.getItem(`variables_${email}`);

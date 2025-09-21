@@ -11,7 +11,11 @@ import styles from './styles.module.css';
 
 const Variables = dynamic(() => import('@/components/Variables/VariablesComponent/Variables'), {
   ssr: false,
-  loading: () => <PawSpinner />,
+  loading: () => (
+    <div className={styles.container}>
+      <PawSpinner />
+    </div>
+  ),
 });
 
 export default function VariablesPage() {
@@ -20,11 +24,16 @@ export default function VariablesPage() {
 
   useEffect(() => {
     if (!loading && !authUser) {
-      router.replace('/sign-in');
+      router.replace('/main');
     }
   }, [loading, authUser, router]);
 
-  if (loading || !authUser) return <PawSpinner />;
+  if (loading || !authUser)
+    return (
+      <div className={styles.container}>
+        <PawSpinner />
+      </div>
+    );
 
   return (
     <div className={styles.container}>

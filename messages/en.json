@@ -98,11 +98,18 @@
     "placeholderForFutureResponse": "Response will appear here..."
   },
   "Variables": {
-    "variablesHeader": "Variables",
-    "keyPlaceholder": "Enter variable name",
+    "variablesHeader": "Your Variables",
+    "successTitle": "Success! 😺",
+    "addedVariable": "Variable added",
+    "updatedVariable": "Variable updated",
+    "deletedVariable": "Variable deleted",
+    "errorTitle": "Error 😿",
+    "duplicateKey": "This key already exists",
+    "saveVariable": "Save variable",
+    "editVariable": "Edit variable",
+    "removeVariable": "Remove variable",
+    "keyPlaceholder": "Enter variable key",
     "valuePlaceholder": "Enter variable value",
-    "addVariable": "Add Variable",
-    "removeVariable": "Remove",
-    "editVariable": "Edit Variable"
+    "addVariable": "Add new variable"
   }
 }

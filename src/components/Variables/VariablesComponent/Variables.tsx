@@ -1,5 +1,6 @@
 'use client';
 
+import { notifications } from '@mantine/notifications';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
@@ -16,14 +17,33 @@ const Variables: FC = () => {
 
   const handleAdd = (newVar: { key: string; value: string }) => {
     dispatch({ type: 'ADD', payload: newVar });
+
+    notifications.show({
+      title: t('successTitle') || 'Success',
+      message: t('addedVariable') || 'Variable added',
+      color: 'green',
+    });
   };
 
   const handleUpdate = (idx: number, updatedVar: { key: string; value: string }) => {
     dispatch({ type: 'UPDATE', key: updatedVar.key, value: updatedVar.value });
+
+    notifications.show({
+      title: t('successTitle') || 'Success',
+      message: t('updatedVariable') || 'Variable updated',
+      color: 'green',
+    });
   };
 
   const handleDelete = (idx: number) => {
-    dispatch({ type: 'REMOVE', key: state[idx].key });
+    const deletedVar = state[idx];
+    dispatch({ type: 'REMOVE', key: deletedVar.key });
+
+    notifications.show({
+      title: t('successTitle') || 'Success',
+      message: t('deletedVariable') || 'Variable removed',
+      color: 'green',
+    });
   };
 
   return (

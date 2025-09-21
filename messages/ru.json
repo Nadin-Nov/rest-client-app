@@ -98,11 +98,18 @@
     "placeholderForFutureResponse": "Ответ появится тут..."
   },
   "Variables": {
-    "variablesHeader": "Переменные",
-    "keyPlaceholder": "Введите имя",
+    "variablesHeader": "Ваши переменные",
+    "successTitle": "Успех! 😺",
+    "addedVariable": "Переменная добавлена",
+    "updatedVariable": "Переменная обновлена",
+    "deletedVariable": "Переменная удалена",
+    "errorTitle": "Ошибка 😿",
+    "duplicateKey": "Такой ключ уже существует",
+    "saveVariable": "Сохранить переменную",
+    "editVariable": "Редактировать переменную",
+    "removeVariable": "Удалить переменную",
+    "keyPlaceholder": "Введите ключ",
     "valuePlaceholder": "Введите значение",
-    "addVariable": "Добавить переменную",
-    "removeVariable": "Удалить",
-    "editVariable": "Редактировать переменную"
+    "addVariable": "Добавить новую переменную"
   }
 }
