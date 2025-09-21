@@ -54,6 +54,7 @@ export const useFirebaseAuth = () => {
       await signInWithEmailAndPassword(auth, email, password);
     } catch (error) {
       console.error('Failed to sign in', error);
+      throw error;
     }
   };
 

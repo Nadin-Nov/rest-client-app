@@ -62,14 +62,22 @@
     "signUpTitle": "Регистрация",
     "signUpBtn": "ЗАРЕГИСТРИРОВАТЬСЯ",
     "signInInquiry": "У вас уже есть аккаунт?",
-    "signInLink": "Войти"
+    "signInLink": "Войти",
+    "SuccessTitle": "Добро пожаловать!",
+    "SuccessDescription": "Вы успешно зарегистрировались!",
+    "FailTitle": "Ой!",
+    "FailDescription": "Случилась неприятность"
   },
   "SignIn": {
     "password": "Пароль",
     "signInTitle": "Вход",
     "signInBtn": "ВОЙТИ",
     "signUpInquiry": "Еще не зарегистрированы?",
-    "signUpLink": "Зарегистрироваться"
+    "signUpLink": "Зарегистрироваться",
+    "SuccessTitle": "Рады видеть вас снова!",
+    "SuccessDescription": "Вы успешно вошли!",
+    "FailTitle": "Ой!",
+    "FailDescription": "Случилась неприятность"
   },
   "RestClient": {
     "restClientHeader": "REST Клиент",
