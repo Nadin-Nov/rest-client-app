@@ -2,7 +2,10 @@ import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  reactStrictMode: true,
+  images: {
+    domains: ['github.com'],
+  },
 };
 
 const withNextIntl = createNextIntlPlugin();

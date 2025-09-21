@@ -56,14 +56,14 @@ export const SignUpForm = () => {
       await signUpUser(formData.email, formData.password, formData.name);
       router.replace('/main');
       notifications.show({
-        title: 'Welcome!',
-        message: 'You successfully signed up! 😺',
+        title: t('SuccessTitle'),
+        message: `${t('SuccessDescription')} 😺`,
         className: styles.success,
       });
     } catch {
       notifications.show({
-        title: 'Oops!',
-        message: 'Something went wrong 😿',
+        title: t('FailTitle'),
+        message: `${t('FailDescription')} 😿`,
         className: styles.fail,
       });
     } finally {

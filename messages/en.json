@@ -44,7 +44,7 @@
       "signUpButton": "Sign Up"
     },
     "thanx": {
-      "text": "A huge purr-thank-you to our wonderful mentor <link>@gentoosiast</link> for meetings where there was always time for guidance, for thoughtful code reviews, and for the patience worthy of the wisest cat 🐾."
+      "text": "A huge purr-thank-you to our wonderful mentor <link>@gentoosiast</link> for meetings where there was always time for guidance, for thoughtful code reviews, and for the patience worthy of the wisest cat 🐾. You're the softest kitty of all!"
     }
   },
   "Header": {
@@ -70,14 +70,22 @@
     "signUpTitle": "Sign up",
     "signUpBtn": "SIGN UP",
     "signInInquiry": "Already have an account?",
-    "signInLink": "Login here"
+    "signInLink": "Login here",
+    "SuccessTitle": "Welcome!",
+    "SuccessDescription": "You successfully signed up!",
+    "FailTitle": "Oops!",
+    "FailDescription": "Something went wrong"
   },
   "SignIn": {
     "password": "Password",
     "signInTitle": "Sign in",
     "signInBtn": "SIGN IN",
     "signUpInquiry": "Aren’t registered just yet?",
-    "signUpLink": "Sign up here"
+    "signUpLink": "Sign up here",
+    "SuccessTitle": "Welcome back!",
+    "SuccessDescription": "You successfully signed in!",
+    "FailTitle": "Oops!",
+    "FailDescription": "Something went wrong"
   },
   "RestClient": {
     "restClientHeader": "REST Client",
@@ -86,12 +94,15 @@
     "addHeader": "+ Add Header",
     "removeHeader": "Remove",
     "code": "Code:",
+    "newLangMap": "Failed to generate {lang} code",
+    "loading": "...",
     "body": "Body:",
     "text": "Text",
     "prettify": "Prettify",
     "responseHeader": "Response",
     "status": "Status:",
     "responseStatus": "No response yet",
+    "responseError": "Error",
     "methodPlaceholder": "Pick method",
     "endpointUrlPlaceholder": "EndpointURL",
     "keyPlaceholder": "key",
@@ -100,6 +111,10 @@
     "jsonPlaceholder": "Write JSON here...",
     "textPlaceholder": "Write plain text here...",
     "placeholderForFutureResponse": "Response will appear here..."
+  },
+  "MakeRequestHook": {
+    "emptyURL": "URL cannot be empty",
+    "invalidURL": "Invalid URL"
   },
   "Variables": {
     "variablesHeader": "Your Variables",

@@ -1,6 +1,6 @@
 import type * as z from 'zod';
 
-import type { signUpFormSchema } from '@/validation';
+import type { signInFormSchema, signUpFormSchema } from '@/validation';
 export interface Messages {
   MainPage?: {
     title: string;
@@ -17,6 +17,8 @@ export interface Messages {
 }
 
 export type SignUpFormData = z.infer<typeof signUpFormSchema>;
+
+export type SignInFormData = z.infer<typeof signInFormSchema>;
 
 export interface AuthUser {
   name: string | null;

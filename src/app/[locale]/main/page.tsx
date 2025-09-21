@@ -28,9 +28,9 @@ export default async function MainPage({ params }: MainPageProps) {
     ...mainMessages,
     team: {
       title: mainMessages.team.title,
-      memberMarta: { ...mainMessages.team.memberMarta, urlAvatar: '/avatars/marta.png' },
-      memberKate: { ...mainMessages.team.memberKate, urlAvatar: '/avatars/kate.png' },
-      memberNadin: { ...mainMessages.team.memberNadin, urlAvatar: '/avatars/nadin.png' },
+      memberMarta: { ...mainMessages.team.memberMarta, avatar: '/avatars/marta.png' },
+      memberKate: { ...mainMessages.team.memberKate, avatar: '/avatars/kate.png' },
+      memberNadin: { ...mainMessages.team.memberNadin, avatar: '/avatars/nadin.png' },
     },
   };
 

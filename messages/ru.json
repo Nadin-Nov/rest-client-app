@@ -43,7 +43,7 @@
       "signUpButton": "Регистрация"
     },
     "thanx": {
-      "text": "Огромное мур-спасибо нашему великолепному ментору <link>@gentoosiast</link> за митинги, где всегда находилось время для подсказки, за внимательные код-ревью и за терпение, достойное самого мудрого кота 🐾."
+      "text": "Огромное спасибо нашему замурчательному ментору <link>@gentoosiast</link> за встречи, где мы всегда могли рассчитывать на твой совет и поддержку, за вдумчивые код-ревью и за терпение, достойное мудрейшего кота. Ты самый добрый и пушистый наставник!"
     }
   },
   "Header": {
@@ -69,14 +69,22 @@
     "signUpTitle": "Регистрация",
     "signUpBtn": "ЗАРЕГИСТРИРОВАТЬСЯ",
     "signInInquiry": "У вас уже есть аккаунт?",
-    "signInLink": "Войти"
+    "signInLink": "Войти",
+    "SuccessTitle": "Добро пожаловать!",
+    "SuccessDescription": "Вы успешно зарегистрировались!",
+    "FailTitle": "Ой!",
+    "FailDescription": "Случилась неприятность"
   },
   "SignIn": {
     "password": "Пароль",
     "signInTitle": "Вход",
     "signInBtn": "ВОЙТИ",
     "signUpInquiry": "Еще не зарегистрированы?",
-    "signUpLink": "Зарегистрироваться"
+    "signUpLink": "Зарегистрироваться",
+    "SuccessTitle": "Рады видеть вас снова!",
+    "SuccessDescription": "Вы успешно вошли!",
+    "FailTitle": "Ой!",
+    "FailDescription": "Случилась неприятность"
   },
   "RestClient": {
     "restClientHeader": "REST Клиент",
@@ -85,12 +93,15 @@
     "addHeader": "+ Добавить заголовок",
     "removeHeader": "Удалить",
     "code": "Код:",
+    "newLangMap": "Ошибка при генерации кода {lang}",
+   "loading": "...",
     "body": "Тело:",
     "text": "Текст",
     "prettify": "Отформатировать",
     "responseHeader": "Ответ",
     "status": "Статус:",
     "responseStatus": "Ответа пока нет",
+    "responseError": "Ошибка",
     "methodPlaceholder": "Выберите метод",
     "endpointUrlPlaceholder": "Эндпоинт URL",
     "keyPlaceholder": "ключ",
@@ -99,6 +110,10 @@
     "jsonPlaceholder": "Запрос в формате JSON...",
     "textPlaceholder": "Запрос в текстовом формате...",
     "placeholderForFutureResponse": "Ответ появится тут..."
+  },
+  "MakeRequestHook": {
+    "emptyURL": "URL не может быть пустым",
+    "invalidURL": "Некорректный URL"
   },
   "Variables": {
     "variablesHeader": "Ваши переменные",
