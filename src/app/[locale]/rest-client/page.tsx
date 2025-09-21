@@ -40,7 +40,7 @@ export default function RESTClientPage() {
 
   return (
     <div className={styles.container}>
-      <RestClient className={styles.container} />
+      <RestClient className={styles.container} initialMethod={''} />
     </div>
   );
 }

@@ -14,7 +14,6 @@ interface MethodSelectorProps {
 export const MethodSelector: FC<MethodSelectorProps> = ({ method, onChange }) => {
   const t = useTranslations('RestClient');
 
-  console.log(method);
   return (
     <div className={styles.method}>
       <Select
