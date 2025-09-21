@@ -52,3 +52,13 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.success {
+  color: var(--color-white);
+  background-color: var(--color-success);
+}
+
+.fail {
+  color: var(--color-white);
+  background-color: var(--color-error);
+}
