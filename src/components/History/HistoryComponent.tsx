@@ -15,7 +15,6 @@ const HistoryComponent = () => {
   useEffect(() => {
     const savedHistory = localStorage.getItem('requestHistory');
     if (savedHistory) {
-      // Приведение типа для TypeScript
       setHistory(JSON.parse(savedHistory) as HistoryItem[]);
     }
   }, []);

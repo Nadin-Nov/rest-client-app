@@ -1,13 +1,3 @@
-.row {
-  display: grid;
-  grid-template-columns: 1fr 3fr 1fr 1.5fr 1fr 1fr 1fr 1fr 1fr;
-  gap: 0.5rem;
-  align-items: center;
-  padding: 0.5rem 1rem;
-  background-color: #f9f9f9;
-  border-radius: 0.5rem;
-}
-
 .row:hover {
   background-color: #e6f7ff;
 }
@@ -24,7 +14,6 @@
 .url {
   overflow-x: auto;
   white-space: nowrap;
-  text-overflow: ellipsis;
 }
 
 .status {
@@ -46,6 +35,6 @@
 }
 
 .error {
-  color: #d32f2f;
   font-weight: 500;
+  color: #d32f2f;
 }

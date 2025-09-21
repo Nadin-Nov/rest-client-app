@@ -17,21 +17,24 @@
       "title": "Наша команда",
       "memberMarta": {
         "name": "27moon",
-        "role": "Frontend Cat 🐾",
-        "description": "Охотится на баги CSS и ловит их мгновенно.",
-        "url": "https://github.com/27moon"
+        "role": "Фронтенд-кот 🐾",
+        "description": "Ловко охотится за библиотеками и мастерски приручает REST-клиенты — настоящий Postman-котик!",
+        "url": "https://github.com/27moon",
+        "avatar": "https://github.com/27moon.png"
       },
       "memberKate": {
         "name": "Gnarkill",
-        "role": "Frontend Cat 🐾",
-        "description": "Идеально интегрирует API и иногда дремлет на клавиатуре.",
-        "url": "https://github.com/Gnarkill33"
+        "role": "Фронтенд-кот 🐾",
+        "description": "Грациозно преодолевает запутанные авторизации, словно котик, который всегда приземляется на лапки.",
+        "url": "https://github.com/Gnarkill33",
+        "avatar": "https://github.com/Gnarkill33.png"
       },
       "memberNadin": {
         "name": "Nadin",
-        "role": "Frontend Cat 🐾",
-        "description": "Балансирует состояние и компоненты, словно кот на заборе.",
-        "url": "https://github.com/Nadin-Nov"
+        "role": "Фронтенд-кот 🐾",
+        "description": "Идеально балансирует переменные и состояние, будто котик-акробат на тонком канате.",
+        "url": "https://github.com/Nadin-Nov",
+        "avatar": "https://github.com/Nadin-Nov.png"
       }
     },
     "callToAction": {
@@ -40,7 +43,7 @@
       "signUpButton": "Регистрация"
     },
     "thanx": {
-      "text": "thanks to <link>@someone</link> for щщщщщщ"
+      "text": "Огромное мур-спасибо нашему великолепному ментору <link>@gentoosiast</link> за митинги, где всегда находилось время для подсказки, за внимательные код-ревью и за терпение, достойное самого мудрого кота 🐾."
     }
   },
   "Header": {
@@ -52,8 +55,12 @@
     "history": "История",
     "variables": "Переменные"
   },
-  "Footer": { "title": "Футер" },
-  "NotFound": { "title": "Не найдено" },
+  "Footer": {
+    "title": "Футер"
+  },
+  "NotFound": {
+    "title": "Не найдено"
+  },
   "SignUp": {
     "name": "Имя",
     "password": "Пароль",
@@ -92,5 +99,35 @@
     "jsonPlaceholder": "Запрос в формате JSON...",
     "textPlaceholder": "Запрос в текстовом формате...",
     "placeholderForFutureResponse": "Ответ появится тут..."
+  },
+  "Variables": {
+    "variablesHeader": "Ваши переменные",
+    "successTitle": "Успех! 😺",
+    "addedVariable": "Переменная добавлена",
+    "updatedVariable": "Переменная обновлена",
+    "deletedVariable": "Переменная удалена",
+    "errorTitle": "Ошибка 😿",
+    "duplicateKey": "Такой ключ уже существует",
+    "saveVariable": "Сохранить переменную",
+    "editVariable": "Редактировать переменную",
+    "removeVariable": "Удалить переменную",
+    "keyPlaceholder": "Введите ключ",
+    "valuePlaceholder": "Введите значение",
+    "addVariable": "Добавить новую переменную"
+  },
+  "History": {
+    "historyHeader": "История запросов",
+    "method": "Метод",
+    "url": "URL",
+    "status": "Статус",
+    "timestamp": "Время",
+    "duration": "Длительность (мс)",
+    "requestSize": "Размер запроса",
+    "responseSize": "Размер ответа",
+    "error": "Ошибка",
+    "actions": "Действия",
+    "noRequests": "Вы еще не выполняли запросы",
+    "tryRestClient": "Попробуйте REST Клиент",
+    "replay": "Повторить"
   }
 }

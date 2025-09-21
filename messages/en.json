@@ -18,21 +18,25 @@
       "memberMarta": {
         "name": "27moon",
         "role": "Frontend Cat 🐾",
-        "description": "Chases CSS bugs and catches them with lightning-fast paws.",
-        "url": "https://github.com/27moon"
+        "description": "Swiftly hunts down libraries and tames REST clients — a true Postman cat!",
+        "url": "https://github.com/27moon",
+        "avatar": "https://github.com/27moon.png"
       },
       "memberKate": {
         "name": "Gnarkill",
         "role": "Frontend Cat 🐾",
-        "description": "Purrfectly integrates APIs while napping on the keyboard.",
-        "url": "https://github.com/Gnarkill33"
+        "description": "Gracefully slips through tricky authorizations, like a cat always landing on its paws.",
+        "url": "https://github.com/Gnarkill33",
+        "avatar": "https://github.com/Gnarkill33.png"
       },
       "memberNadin": {
         "name": "Nadin",
         "role": "Frontend Cat 🐾",
-        "description": "Balances components and state like a cat on a fence.",
-        "url": "https://github.com/Nadin-Nov"
-      }
+        "description": "Keeps variables and state in perfect balance, like an acrobat kitten on a tightrope.",
+        "url": "https://github.com/Nadin-Nov",
+        "avatar": "https://github.com/Nadin-Nov.png"
+      },
+      "tagline": "A team of curious cats crafting cozy digital worlds."
     },
     "callToAction": {
       "title": "Get Started",
@@ -40,7 +44,7 @@
       "signUpButton": "Sign Up"
     },
     "thanx": {
-      "text": "thanks to <link>@someone</link> for щщщщщщ"
+      "text": "A huge purr-thank-you to our wonderful mentor <link>@gentoosiast</link> for meetings where there was always time for guidance, for thoughtful code reviews, and for the patience worthy of the wisest cat 🐾."
     }
   },
   "Header": {
@@ -52,8 +56,12 @@
     "history": "History",
     "variables": "Variables"
   },
-  "Footer": { "title": "Footer" },
-  "NotFound": { "title": "Not Found" },
+  "Footer": {
+    "title": "Footer"
+  },
+  "NotFound": {
+    "title": "Not Found"
+  },
   "SignUp": {
     "name": "Name",
     "password": "Password",
@@ -92,6 +100,21 @@
     "jsonPlaceholder": "Write JSON here...",
     "textPlaceholder": "Write plain text here...",
     "placeholderForFutureResponse": "Response will appear here..."
+  },
+  "Variables": {
+    "variablesHeader": "Your Variables",
+    "successTitle": "Success! 😺",
+    "addedVariable": "Variable added",
+    "updatedVariable": "Variable updated",
+    "deletedVariable": "Variable deleted",
+    "errorTitle": "Error 😿",
+    "duplicateKey": "This key already exists",
+    "saveVariable": "Save variable",
+    "editVariable": "Edit variable",
+    "removeVariable": "Remove variable",
+    "keyPlaceholder": "Enter variable key",
+    "valuePlaceholder": "Enter variable value",
+    "addVariable": "Add new variable"
   },
   "History": {
     "historyHeader": "Request History",
