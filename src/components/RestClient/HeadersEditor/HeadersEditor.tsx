@@ -17,8 +17,6 @@ interface HeadersEditorProps {
 export const HeadersEditor: FC<HeadersEditorProps> = ({ headers, onChange }) => {
   const t = useTranslations('RestClient');
 
-  console.log(headers);
-
   const handleAddHeader = () => {
     onChange([...headers, { key: '', value: '' }]);
   };
