@@ -17,9 +17,9 @@ const Team: FC<TeamProps> = ({ messages }) => {
         {teamMembers.map((member) => (
           <div key={member.name} className={styles.member}>
             <div className={styles.avatar}>
-              {member.urlAvatar ? (
+              {member.avatar ? (
                 <Image
-                  src={member.urlAvatar}
+                  src={member.avatar}
                   alt={`${member.name} avatar`}
                   width={80}
                   height={80}

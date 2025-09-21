@@ -10,7 +10,7 @@ export interface TeamMember {
   role: string;
   description: string;
   url: string;
-  urlAvatar?: string;
+  avatar?: string;
 }
 
 export interface TeamMessages {
