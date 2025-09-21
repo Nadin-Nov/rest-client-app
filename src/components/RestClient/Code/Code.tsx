@@ -1,17 +1,67 @@
 import { Tabs } from '@mantine/core';
 import { useTranslations } from 'next-intl';
-import { type FC, useState } from 'react';
+import { type FC, useEffect, useState } from 'react';
 
 import { TextArea } from '@/components/ui/TextArea/TextArea';
-import { languages } from '@/constants/constants';
+import { languageMap, languages } from '@/constants/constants';
+import { decodeBase64UrlForCode } from '@/helpers/base64';
 
 import styles from './Code.module.css';
 
-export const Code: FC = () => {
+interface CodeProps {
+  method: string;
+  url: string;
+  headers: { key: string; value: string }[];
+  body?: string;
+  bodyType?: 'json' | 'text';
+}
+
+interface GenerateCodeResponse {
+  snippet: string;
+}
+
+export const Code: FC<CodeProps> = ({ method, url, headers, body, bodyType }) => {
   const t = useTranslations('RestClient');
 
-  const [code, setCode] = useState('');
   const [language, setLanguage] = useState(languages[0]);
+  const [codeMap, setCodeMap] = useState<Record<string, string>>({});
+
+  useEffect(() => {
+    const generateAll = async () => {
+      const newLangMap: Record<string, string> = {};
+      const decodedUrl = decodeBase64UrlForCode(url);
+
+      const validHeaders = headers?.filter((h) => h.key.trim() && h.value.trim()) || [];
+
+      for (const lang of languages) {
+        const { lang: langCode, variant } = languageMap[lang];
+        try {
+          const res = await fetch('/api/generateCode', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              method,
+              url: decodedUrl,
+              headers: validHeaders,
+              body,
+              bodyType: bodyType || (body ? 'json' : undefined),
+              language: langCode,
+              variant,
+            }),
+          });
+
+          const data = (await res.json()) as GenerateCodeResponse;
+          newLangMap[lang] = data.snippet || t('newLangMap', { lang });
+        } catch {
+          newLangMap[lang] = t('newLangMap', { lang });
+        }
+      }
+
+      setCodeMap(newLangMap);
+    };
+
+    void generateAll();
+  }, [method, url, headers, body, bodyType, t]);
 
   const handleTabChange = (value: string | null) => {
     if (value && languages.includes(value)) {
@@ -33,7 +83,11 @@ export const Code: FC = () => {
 
         {languages.map((el) => (
           <Tabs.Panel key={el} value={el} pt='sm'>
-            <TextArea placeholder={t('generatedCodePlaceholder', { el })} value={code} onChange={setCode} readOnly />
+            <TextArea
+              placeholder={t('generatedCodePlaceholder', { el })}
+              value={codeMap[el] || t('loading')}
+              readOnly
+            />
           </Tabs.Panel>
         ))}
       </Tabs>

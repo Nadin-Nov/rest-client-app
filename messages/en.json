@@ -78,6 +78,8 @@
     "addHeader": "+ Add Header",
     "removeHeader": "Remove",
     "code": "Code:",
+    "newLangMap": "Failed to generate {lang} code",
+    "loading": "...",
     "body": "Body:",
     "text": "Text",
     "prettify": "Prettify",

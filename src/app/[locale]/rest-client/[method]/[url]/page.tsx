@@ -5,7 +5,7 @@ import React from 'react';
 
 import type { Header } from '@/components/RestClient/HeadersEditor/HeadersEditor';
 import { RestClient } from '@/components/RestClient/RestClientComponent/RestClient';
-import { base64Decode, base64DecodeUrl } from '@/helpers/base64';
+import { base64Decode } from '@/helpers/base64';
 
 import styles from '../../styles.module.css';
 
@@ -21,7 +21,6 @@ interface PageProps {
 export default function RouteRC({ params }: PageProps) {
   const routeParams = React.use(params);
   const searchParams = useSearchParams();
-
   const method = routeParams.method || 'GET';
   const url = base64Decode(routeParams.url);
 
@@ -31,7 +30,7 @@ export default function RouteRC({ params }: PageProps) {
   });
 
   const bodyParam = searchParams.get('body');
-  const body = bodyParam ? base64DecodeUrl(bodyParam) : undefined;
+  const body = bodyParam ? base64Decode(bodyParam) : undefined;
 
   return (
     <RestClient

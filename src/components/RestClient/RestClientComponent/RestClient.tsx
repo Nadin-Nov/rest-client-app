@@ -57,7 +57,7 @@ export const RestClient: FC<RestClientProps> = ({
           onClick={() => void sendRequest(method, url, headers, bodyType, bodyRequest)}
         />
         <HeadersEditor headers={headers} onChange={setHeaders} />
-        <Code />
+        <Code method={method} url={url} headers={headers} body={bodyRequest} bodyType={bodyType} />
         <BodyRequest
           value={bodyRequest}
           onChange={setBodyRequest}
