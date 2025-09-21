@@ -46,8 +46,8 @@ export const BodyRequest: FC<BodyRequestProps> = ({ value, onChange, bodyType, o
     <>
       <h3> {t('body')}</h3>
 
-      <div className={styles.switchRowWrapper}>
-        <div className={styles.toggle} onClick={toggle}>
+      <div className={styles.switchRowWrapper} role='group'>
+        <div className={styles.toggle} onClick={toggle} data-testid='body-toggle'>
           <div className={`${styles.dot} ${bodyType === 'text' ? styles.right : styles.left}`} />
         </div>
         <div className={clsx(bodyType === 'json' && styles.activeLabel)}>JSON</div>
