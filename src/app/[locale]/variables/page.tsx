@@ -1,7 +1,8 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 
 import { PawSpinner } from '@/components/ui/PawSpinner/PawSpinner';
 import { useAuthContext } from '@/hooks/useAuthContext';
@@ -14,11 +15,16 @@ const Variables = dynamic(() => import('@/components/Variables/VariablesComponen
 });
 
 export default function VariablesPage() {
-  const { authUser } = useAuthContext();
+  const { authUser, loading } = useAuthContext();
+  const router = useRouter();
 
-  if (!authUser) {
-    redirect('/sign-in');
-  }
+  useEffect(() => {
+    if (!loading && !authUser) {
+      router.replace('/sign-in');
+    }
+  }, [loading, authUser, router]);
+
+  if (loading || !authUser) return <PawSpinner />;
 
   return (
     <div className={styles.container}>
