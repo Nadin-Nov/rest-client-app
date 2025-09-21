@@ -52,8 +52,12 @@
     "history": "История",
     "variables": "Переменные"
   },
-  "Footer": { "title": "Футер" },
-  "NotFound": { "title": "Не найдено" },
+  "Footer": {
+    "title": "Футер"
+  },
+  "NotFound": {
+    "title": "Не найдено"
+  },
   "SignUp": {
     "name": "Имя",
     "password": "Пароль",
@@ -99,5 +103,20 @@
   "MakeRequestHook": {
     "emptyURL": "URL не может быть пустым",
     "invalidURL": "Некорректный URL"
+  },
+  "Variables": {
+    "variablesHeader": "Ваши переменные",
+    "successTitle": "Успех! 😺",
+    "addedVariable": "Переменная добавлена",
+    "updatedVariable": "Переменная обновлена",
+    "deletedVariable": "Переменная удалена",
+    "errorTitle": "Ошибка 😿",
+    "duplicateKey": "Такой ключ уже существует",
+    "saveVariable": "Сохранить переменную",
+    "editVariable": "Редактировать переменную",
+    "removeVariable": "Удалить переменную",
+    "keyPlaceholder": "Введите ключ",
+    "valuePlaceholder": "Введите значение",
+    "addVariable": "Добавить новую переменную"
   }
 }

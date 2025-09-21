@@ -14,16 +14,13 @@ import { formatAuthUser } from '@/utils/formatAuthUser';
 
 export const useFirebaseAuth = () => {
   const [authUser, setAuthUser] = useState<AuthUser | null>(null);
-
-  const authStateChanged = (authState: User | null) => {
-    if (!authState) {
-      return;
-    }
-    setAuthUser(formatAuthUser(authState));
-  };
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, authStateChanged);
+    const unsubscribe = onAuthStateChanged(auth, (user: User | null) => {
+      setAuthUser(user ? formatAuthUser(user) : null);
+      setLoading(false);
+    });
     return () => unsubscribe();
   }, []);
 
@@ -33,15 +30,10 @@ export const useFirebaseAuth = () => {
       const newUser = result.user;
 
       if (displayName) {
-        await updateProfile(newUser, {
-          displayName: displayName,
-        });
+        await updateProfile(newUser, { displayName });
         await newUser.reload();
-
         const updatedUser = auth.currentUser;
-        if (updatedUser) {
-          setAuthUser(formatAuthUser(updatedUser));
-        }
+        if (updatedUser) setAuthUser(formatAuthUser(updatedUser));
       }
     } catch (error) {
       console.error('Failed to sign up', error);
@@ -66,5 +58,5 @@ export const useFirebaseAuth = () => {
     }
   };
 
-  return { authUser, signUpUser, signInUser, signOutUser };
+  return { authUser, loading, signUpUser, signInUser, signOutUser };
 };
