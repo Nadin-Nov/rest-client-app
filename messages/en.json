@@ -70,14 +70,22 @@
     "signUpTitle": "Sign up",
     "signUpBtn": "SIGN UP",
     "signInInquiry": "Already have an account?",
-    "signInLink": "Login here"
+    "signInLink": "Login here",
+    "SuccessTitle": "Welcome!",
+    "SuccessDescription": "You successfully signed up!",
+    "FailTitle": "Oops!",
+    "FailDescription": "Something went wrong"
   },
   "SignIn": {
     "password": "Password",
     "signInTitle": "Sign in",
     "signInBtn": "SIGN IN",
     "signUpInquiry": "Aren’t registered just yet?",
-    "signUpLink": "Sign up here"
+    "signUpLink": "Sign up here",
+    "SuccessTitle": "Welcome back!",
+    "SuccessDescription": "You successfully signed in!",
+    "FailTitle": "Oops!",
+    "FailDescription": "Something went wrong"
   },
   "RestClient": {
     "restClientHeader": "REST Client",
