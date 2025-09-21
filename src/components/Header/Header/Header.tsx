@@ -2,7 +2,7 @@
 
 import type { FC } from 'react';
 
-import { useAuthContext } from '@/hooks/useAuthContext';
+import { useAuth } from '@/hooks/useAuth';
 import { useLocalePrefix } from '@/hooks/useLocalePrefix';
 import { useSticky } from '@/hooks/useSticky';
 import { useRouter as useIntlRouter, usePathname as useIntlPathname } from '@/i18n/navigation';
@@ -13,7 +13,7 @@ import { HeaderView } from '../HeaderView/HeaderView';
 const SCROLL_THRESHOLD = 10;
 
 const Header: FC = () => {
-  const { isAuth, username, signOut } = useAuthContext();
+  const { authUser, signOutUser } = useAuth();
   const sticky = useSticky(SCROLL_THRESHOLD);
   const localePrefix = useLocalePrefix();
 
@@ -26,11 +26,11 @@ const Header: FC = () => {
 
   return (
     <HeaderView
-      isAuth={isAuth}
-      username={username}
+      isAuth={!!authUser?.name}
+      username={authUser?.name}
       sticky={sticky}
       currentLang={localePrefix.replace('/', '')}
-      onSignOut={signOut}
+      onSignOut={signOutUser}
       onLangChange={handleLangChange}
     />
   );
