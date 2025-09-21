@@ -14,9 +14,11 @@ const Variables = dynamic(() => import('@/components/Variables/VariablesComponen
 });
 
 export default function VariablesPage() {
-  const { isAuth } = useAuthContext();
+  const { authUser } = useAuthContext();
 
-  if (!isAuth) redirect('/sign-in');
+  if (!authUser) {
+    redirect('/sign-in');
+  }
 
   return (
     <div className={styles.container}>

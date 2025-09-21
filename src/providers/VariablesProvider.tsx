@@ -28,13 +28,14 @@ interface VariablesProviderProps {
 }
 
 export const VariablesProvider: FC<VariablesProviderProps> = ({ children }) => {
-  const { username } = useAuthContext();
+  const { authUser } = useAuthContext();
+  const email = authUser?.email;
   const [state, dispatch] = useReducer(variablesReducer, []);
 
   useEffect(() => {
-    if (!username) return;
+    if (!email) return;
 
-    const raw = localStorage.getItem(`variables_${username}`);
+    const raw = localStorage.getItem(`variables_${email}`);
     if (!raw) return;
 
     try {
@@ -56,12 +57,12 @@ export const VariablesProvider: FC<VariablesProviderProps> = ({ children }) => {
       console.log('Failed to parse variables from localStorage');
       dispatch({ type: 'LOAD', payload: [] });
     }
-  }, [username]);
+  }, [email]);
 
   useEffect(() => {
-    if (!username) return;
-    localStorage.setItem(`variables_${username}`, JSON.stringify(state));
-  }, [state, username]);
+    if (!email) return;
+    localStorage.setItem(`variables_${email}`, JSON.stringify(state));
+  }, [state, email]);
 
   const value: VariablesContextValue = { state, dispatch, hasVariables: state.length > 0 };
 

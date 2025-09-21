@@ -8,7 +8,7 @@ import styles from './Hero.module.css';
 
 interface HeroProps {
   isAuth: boolean;
-  username?: string;
+  username?: string | null;
 }
 
 const Hero: FC<HeroProps> = ({ isAuth, username }) => {

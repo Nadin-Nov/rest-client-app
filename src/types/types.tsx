@@ -17,3 +17,9 @@ export interface Messages {
 }
 
 export type SignUpFormData = z.infer<typeof signUpFormSchema>;
+
+export interface AuthUser {
+  name: string | null;
+  email: string | null;
+  uid: string;
+}
