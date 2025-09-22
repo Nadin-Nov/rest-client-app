@@ -9,7 +9,6 @@ import enMessages from '../../../../messages/en.json';
 
 import Main from './Main';
 
-// Мокаем хук
 vi.mock('@/hooks/useAuth');
 const mockedUseAuth = vi.mocked(useAuth);
 
