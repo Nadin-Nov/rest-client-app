@@ -47,8 +47,8 @@ it('should successfully send a GET request', async () => {
   vi.spyOn(buildURL, 'buildURL').mockReturnValue('/mocked-url');
 
   const { result } = renderHook(() => useMakeRequest());
-  await result.current.sendRequest('GET', 'https://example.com', [], 'json');
 
+  await result.current.sendRequest('GET', 'https://example.com', [], 'json');
   await waitFor(() => {
     expect(result.current.status).toBe(successfulStatus);
     expect(result.current.bodyResponse).toBe('OK');
@@ -58,12 +58,11 @@ it('should successfully send a GET request', async () => {
 it('should show error on failed fetch', async () => {
   vi.spyOn(helpers, 'isValidURL').mockReturnValue(true);
   vi.spyOn(global, 'fetch').mockRejectedValue(new Error('failed to fetch'));
-
   vi.spyOn(buildURL, 'buildURL').mockReturnValue('/some error in url');
 
   const { result } = renderHook(() => useMakeRequest());
-  await result.current.sendRequest('GET', 'https://example.com', [], 'json');
 
+  await result.current.sendRequest('GET', 'https://example.com', [], 'json');
   await waitFor(() => {
     expect(result.current.status).toBe('error');
     expect(result.current.bodyResponse).toBe('failed to fetch');

@@ -10,7 +10,6 @@ import LocalePage from './page';
 describe('LocalePage', () => {
   it('should redirect correctly', async () => {
     const params = Promise.resolve({ locale: 'en' });
-
     await LocalePage({ params });
 
     expect(redirect).toHaveBeenCalledWith('/en/main');

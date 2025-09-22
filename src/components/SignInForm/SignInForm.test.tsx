@@ -46,7 +46,7 @@ describe('SignInForm', () => {
     vi.clearAllMocks();
   });
 
-  it('should renders form inputs and button', () => {
+  it('should render form inputs and button', () => {
     renderWithProvider();
     expect(screen.getByLabelText('Email')).toBeInTheDocument();
     expect(screen.getByLabelText('password')).toBeInTheDocument();
