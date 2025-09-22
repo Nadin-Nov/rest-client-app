@@ -27,6 +27,7 @@ export default defineConfig({
         'src/helpers',
         'src/contexts',
         'src/components/ui/icons.tsx',
+        'src/utils/pawsObjectForPassword.ts',
       ],
       thresholds: {
         statements: 80,
