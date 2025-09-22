@@ -35,5 +35,22 @@
 }
 
 .link {
+  text-align: center;
   text-decoration: none;
+}
+
+.spinnerWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.success {
+  color: var(--color-white);
+  background-color: var(--color-success);
+}
+
+.fail {
+  color: var(--color-white);
+  background-color: var(--color-error);
 }

@@ -19,3 +19,13 @@ export const signUpFormSchema = z
       return signUpFormSchema.pick({ password: true, confirmPassword: true }).safeParse(payload.value).success;
     },
   });
+
+export const signInFormSchema = z.object({
+  email: z.email('Email should have valid format'),
+  password: z
+    .string()
+    .min(8, 'Password must be minimum 8 symbols long')
+    .regex(/\d/, 'Password should contain 1 digit')
+    .regex(/\p{L}/u, 'Password should contain 1 letter')
+    .regex(/[\W_]/, 'Password should contain 1 special character'),
+});
