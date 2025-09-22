@@ -22,6 +22,12 @@ export default defineConfig({
         'src/middleware.ts',
         'src/lib',
         'src/types',
+        'src/validation.ts',
+        'src/components/MainPage/types.ts',
+        'src/helpers',
+        'src/contexts',
+        'src/components/ui/icons.tsx',
+        'src/utils/pawsObjectForPassword.ts',
       ],
       thresholds: {
         statements: 80,
