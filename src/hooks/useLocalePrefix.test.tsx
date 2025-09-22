@@ -8,7 +8,7 @@ vi.mock('next/navigation', () => ({
 }));
 
 describe('useLocalePrefix', () => {
-  it('returns /ru for ru path', () => {
+  it('should return /ru for ru path', () => {
     const { result } = renderHook(() => useLocalePrefix());
     expect(result.current).toBe('/ru');
   });
