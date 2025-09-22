@@ -1,5 +1,5 @@
 import { MantineProvider } from '@mantine/core';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { vi, describe, it, expect, beforeEach } from 'vitest';
 
 import VariableRow from './VariableRow';
@@ -18,6 +18,14 @@ vi.mock('@/hooks/useVariables', () => ({
   useVariables: () => ({
     state: [],
   }),
+}));
+
+vi.mock('@/components/ui/IconButton/IconButton', () => ({
+  default: ({ onClick, 'aria-label': ariaLabel }: { onClick: () => void; 'aria-label'?: string }) => (
+    <button onClick={onClick} aria-label={ariaLabel}>
+      Btn
+    </button>
+  ),
 }));
 
 describe('VariableRow', () => {
@@ -41,5 +49,21 @@ describe('VariableRow', () => {
     renderWithProvider();
     expect(screen.getByDisplayValue('foo')).toBeInTheDocument();
     expect(screen.getByDisplayValue('bar')).toBeInTheDocument();
+  });
+
+  it('should manage edit, save, delete', () => {
+    render(
+      <MantineProvider>
+        <VariableRow idx={0} variable={variable} onUpdate={onUpdate} onDelete={onDelete} />
+      </MantineProvider>
+    );
+
+    fireEvent.click(screen.getByLabelText('editVariable'));
+
+    fireEvent.click(screen.getByLabelText('saveVariable'));
+    expect(onUpdate).toHaveBeenCalled();
+
+    fireEvent.click(screen.getByLabelText('removeVariable'));
+    expect(onDelete).toHaveBeenCalled();
   });
 });

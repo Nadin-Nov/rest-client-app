@@ -17,7 +17,6 @@ export default defineConfig({
         'src/index.{js,jsx,ts,tsx}',
         'src/setupTests.{js,ts}',
         'src/**/*.d.ts',
-        'src/main.tsx',
         'src/i18n',
         'src/middleware.ts',
         'src/lib',
@@ -28,6 +27,9 @@ export default defineConfig({
         'src/contexts',
         'src/components/ui/icons.tsx',
         'src/utils/pawsObjectForPassword.ts',
+        'src/hooks/useAuthContext.ts',
+        'src/hooks/useFirebaseAuth.ts',
+        'src/hooks/useAuth.ts',
       ],
       thresholds: {
         statements: 80,

@@ -10,6 +10,7 @@ vi.mock('@/components/NotFound/NotFound', () => ({
 describe('GlobalNotFound', () => {
   it('should render NotFound component', () => {
     render(<GlobalNotFound />);
+
     expect(screen.getByTestId('not-found')).toBeInTheDocument();
   });
 });
