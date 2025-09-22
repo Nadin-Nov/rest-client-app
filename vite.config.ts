@@ -28,6 +28,8 @@ export default defineConfig({
         'src/contexts',
         'src/components/ui/icons.tsx',
         'src/utils/pawsObjectForPassword.ts',
+        'src/hooks/useAuthContext.ts',
+        'src/hooks/useFirebaseAuth.ts',
       ],
       thresholds: {
         statements: 80,
