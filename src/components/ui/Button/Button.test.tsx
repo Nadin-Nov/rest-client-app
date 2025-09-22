@@ -4,24 +4,24 @@ import { describe, it, expect, vi } from 'vitest';
 import Button from './Button';
 
 describe('Button', () => {
-  it('should renders with text', () => {
+  it('renders with text', () => {
     render(<Button>Click me</Button>);
     expect(screen.getByRole('button')).toHaveTextContent('Click me');
   });
 
-  it('should applies the primary variant class by default', () => {
+  it('applies the primary variant class by default', () => {
     const { container } = render(<Button>Primary</Button>);
     const button = container.querySelector('button');
-    expect(button).toHaveClass('primary');
+    expect(button?.className).toMatch(/primary/);
   });
 
-  it('should applies the secondary variant class', () => {
+  it('applies the secondary variant class', () => {
     const { container } = render(<Button variant='secondary'>Secondary</Button>);
     const button = container.querySelector('button');
-    expect(button).toHaveClass('secondary');
+    expect(button?.className).toMatch(/secondary/);
   });
 
-  it('should calls onClick handler when clicked', () => {
+  it('calls onClick handler when clicked', () => {
     const handleClick = vi.fn();
     render(<Button onClick={handleClick}>Click me</Button>);
     fireEvent.click(screen.getByRole('button'));
