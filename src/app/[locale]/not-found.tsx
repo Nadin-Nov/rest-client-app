@@ -1,7 +1,5 @@
-import { useTranslations } from 'next-intl';
+import NotFound from '@/components/NotFound/NotFound';
 
-export default function NotFound() {
-  const t = useTranslations('NotFound');
-
-  return <div>{t('title')}</div>;
+export default function GlobalNotFound() {
+  return <NotFound />;
 }

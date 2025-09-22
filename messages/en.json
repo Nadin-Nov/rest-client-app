@@ -60,7 +60,9 @@
     "title": "Footer"
   },
   "NotFound": {
-    "title": "Not Found"
+    "title": "Oops! This page hid in the box 🐾",
+    "subtitle": "Meowman looked, but found nothing.",
+    "button": "Return to the cats"
   },
   "SignUp": {
     "name": "Name",
@@ -130,5 +132,20 @@
     "keyPlaceholder": "Enter variable key",
     "valuePlaceholder": "Enter variable value",
     "addVariable": "Add new variable"
+  },
+  "History": {
+    "historyHeader": "Request History",
+    "method": "Method",
+    "url": "URL",
+    "status": "Status",
+    "timestamp": "Timestamp",
+    "duration": "Duration (ms)",
+    "requestSize": "Req. Size",
+    "responseSize": "Resp. Size",
+    "error": "Error",
+    "actions": "Actions",
+    "noRequests": "You haven't executed any requests yet",
+    "tryRestClient": "Try REST Client",
+    "replay": "Replay"
   }
 }

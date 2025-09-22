@@ -6,7 +6,7 @@ import { describe, expect, it, vi } from 'vitest';
 import { BodyRequest } from './BodyRequest';
 
 describe('BodyRequest', () => {
-  it('renders ui components', () => {
+  it('should render ui components', () => {
     render(
       <MantineProvider>
         <NextIntlClientProvider locale='en'>
@@ -25,7 +25,7 @@ describe('BodyRequest', () => {
     expect(prettifyBtn).toBeInTheDocument();
   });
 
-  it('prettifies JSON', () => {
+  it('should prettify JSON', () => {
     const jsonValue = '{"user":"name"}';
     const onBodyTypeChangeMock = vi.fn();
 
@@ -50,12 +50,12 @@ describe('BodyRequest', () => {
 }`);
   });
 
-  it('switches between json/text', () => {
+  it('should switch between json/text', () => {
     const onBodyTypeChangeMock = vi.fn();
 
     render(
       <MantineProvider>
-        <NextIntlClientProvider locale='en' messages={{}}>
+        <NextIntlClientProvider locale='en'>
           <BodyRequest value='' onChange={() => {}} bodyType='json' onBodyTypeChange={onBodyTypeChangeMock} />
         </NextIntlClientProvider>
       </MantineProvider>
@@ -65,5 +65,22 @@ describe('BodyRequest', () => {
     fireEvent.click(toggle);
 
     expect(onBodyTypeChangeMock).toHaveBeenCalledWith('text');
+  });
+
+  it('should switch between text/json', () => {
+    const onBodyTypeChangeMock = vi.fn();
+
+    render(
+      <MantineProvider>
+        <NextIntlClientProvider locale='en'>
+          <BodyRequest value='' onChange={() => {}} bodyType='text' onBodyTypeChange={onBodyTypeChangeMock} />
+        </NextIntlClientProvider>
+      </MantineProvider>
+    );
+
+    const toggle = screen.getByTestId('body-toggle');
+    fireEvent.click(toggle);
+
+    expect(onBodyTypeChangeMock).toHaveBeenCalledWith('json');
   });
 });

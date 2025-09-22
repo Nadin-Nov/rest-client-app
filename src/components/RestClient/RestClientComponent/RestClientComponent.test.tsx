@@ -6,7 +6,7 @@ import { describe, expect, it } from 'vitest';
 import { RestClient } from './RestClient';
 
 describe('RestClientComponent', () => {
-  it('renders ui components', () => {
+  it('should render ui components', () => {
     render(
       <MantineProvider>
         <NextIntlClientProvider locale='en'>
