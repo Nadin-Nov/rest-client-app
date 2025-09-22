@@ -129,5 +129,20 @@
     "keyPlaceholder": "Введите ключ",
     "valuePlaceholder": "Введите значение",
     "addVariable": "Добавить новую переменную"
+  },
+  "History": {
+    "historyHeader": "История запросов",
+    "method": "Метод",
+    "url": "URL",
+    "status": "Статус",
+    "timestamp": "Время",
+    "duration": "Длительность (мс)",
+    "requestSize": "Размер запроса",
+    "responseSize": "Размер ответа",
+    "error": "Ошибка",
+    "actions": "Действия",
+    "noRequests": "Вы еще не выполняли запросы",
+    "tryRestClient": "Попробуйте REST Клиент",
+    "replay": "Повторить"
   }
 }

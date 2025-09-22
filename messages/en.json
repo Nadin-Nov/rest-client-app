@@ -130,5 +130,20 @@
     "keyPlaceholder": "Enter variable key",
     "valuePlaceholder": "Enter variable value",
     "addVariable": "Add new variable"
+  },
+  "History": {
+    "historyHeader": "Request History",
+    "method": "Method",
+    "url": "URL",
+    "status": "Status",
+    "timestamp": "Timestamp",
+    "duration": "Duration (ms)",
+    "requestSize": "Req. Size",
+    "responseSize": "Resp. Size",
+    "error": "Error",
+    "actions": "Actions",
+    "noRequests": "You haven't executed any requests yet",
+    "tryRestClient": "Try REST Client",
+    "replay": "Replay"
   }
 }
