@@ -60,7 +60,9 @@
     "title": "Footer"
   },
   "NotFound": {
-    "title": "Not Found"
+    "title": "Oops! This page hid in the box 🐾",
+    "subtitle": "Meowman looked, but found nothing.",
+    "button": "Return to the cats"
   },
   "SignUp": {
     "name": "Name",
