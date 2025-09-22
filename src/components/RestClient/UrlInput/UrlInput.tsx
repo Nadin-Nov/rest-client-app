@@ -16,7 +16,6 @@ export const UrlInput: FC<UrlInputProps> = ({ value, onChange }) => {
     onChange(event.target.value);
   };
 
-  console.log(value);
   return (
     <div className={styles.urlInputWrapper}>
       <TextInput
