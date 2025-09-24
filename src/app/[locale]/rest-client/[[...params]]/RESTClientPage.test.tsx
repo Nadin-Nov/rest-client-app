@@ -10,6 +10,9 @@ vi.mock('next/navigation', () => ({
     get: () => null,
     forEach: () => {},
   }),
+  useRouter: () => ({
+    replace: vi.fn(),
+  }),
 }));
 
 interface RestClientProps {

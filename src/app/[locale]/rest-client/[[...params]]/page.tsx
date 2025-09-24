@@ -1,12 +1,13 @@
 'use client';
 
-import { useSearchParams } from 'next/navigation';
-import React from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
+import React, { useEffect } from 'react';
 
 import type { Header } from '@/components/RestClient/HeadersEditor/HeadersEditor';
 import { RestClient } from '@/components/RestClient/RestClientComponent/RestClient';
 import { PawSpinner } from '@/components/ui/PawSpinner/PawSpinner';
 import { base64Decode, base64DecodeUrl } from '@/helpers/base64';
+import { useAuthContext } from '@/hooks/useAuthContext';
 
 import styles from '../styles.module.css';
 
@@ -21,7 +22,16 @@ export default function RouteRC({ params }: PageProps) {
   const [routeParams, setRouteParams] = React.useState<{ locale: string; params?: string[] } | null>(null);
   const searchParams = useSearchParams();
 
-  React.useEffect(() => {
+  const { authUser, loading } = useAuthContext();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!loading && !authUser) {
+      router.replace('/main');
+    }
+  }, [loading, authUser, router]);
+
+  useEffect(() => {
     void params.then(setRouteParams);
   }, [params]);
 
