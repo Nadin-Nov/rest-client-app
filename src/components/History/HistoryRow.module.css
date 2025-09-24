@@ -1,0 +1,40 @@
+.row:hover {
+  background-color: #e6f7ff;
+}
+
+.link {
+  display: contents;
+}
+
+.method {
+  font-weight: bold;
+  color: #1f6feb;
+}
+
+.url {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.status {
+  text-align: center;
+}
+
+.timestamp {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.duration {
+  text-align: right;
+}
+
+.reqSize,
+.resSize {
+  text-align: right;
+}
+
+.error {
+  font-weight: 500;
+  color: #d32f2f;
+}

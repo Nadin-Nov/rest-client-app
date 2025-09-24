@@ -1,0 +1,40 @@
+.wrapper {
+  --spinner-size: 64px;
+  --paw-color: var(--color-gray);
+
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: var(--spinner-size);
+  height: var(--spinner-size);
+}
+
+.ring {
+  position: absolute;
+  inset: 0;
+
+  border: 6px solid transparent;
+  border-radius: 50%;
+
+  background: conic-gradient(#ffc107, #d74313);
+
+  mask: radial-gradient(farthest-side, transparent calc(100% - 6px), #000 0);
+
+  animation: spin 1.2s linear infinite;
+}
+
+.paw {
+  z-index: 1;
+  width: 60%;
+  height: 60%;
+  fill: var(--paw-color);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

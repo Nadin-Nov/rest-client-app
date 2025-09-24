@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.tab {
+  font-weight: bold;
+  color: #390f0b;
+}

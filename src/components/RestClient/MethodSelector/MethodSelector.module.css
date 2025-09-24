@@ -1,0 +1,18 @@
+.method {
+  width: 9rem;
+}
+
+.selectInput {
+  font-weight: bold;
+  color: var(--color-black);
+  background: #ff7f50;
+}
+
+.selectDropdown {
+  background-color: #ffd1b0;
+}
+
+.selectItem {
+  cursor: pointer;
+  padding: 8px 12px;
+}

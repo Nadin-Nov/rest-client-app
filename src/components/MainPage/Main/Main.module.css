@@ -1,0 +1,14 @@
+.mainWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  max-width: 1000px;
+  margin: 5px auto;
+  padding: 40px;
+  padding-top: 0;
+  border: 2px solid var(--secondary-color);
+  border-radius: 1rem;
+
+  background-color: #ffd1b0;
+}

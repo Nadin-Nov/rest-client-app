@@ -1,0 +1,18 @@
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 36px 36px;
+  gap: 0.5rem;
+  align-items: center;
+
+  margin-bottom: 1rem;
+}
+
+.input {
+  width: 100%;
+}
+
+.buttonWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

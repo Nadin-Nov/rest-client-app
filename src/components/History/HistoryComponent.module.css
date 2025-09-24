@@ -1,0 +1,11 @@
+.emptyRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+
+  height: 100px;
+  border: 1px dashed #ccc;
+  border-radius: 0.5rem;
+}

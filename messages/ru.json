@@ -1,0 +1,150 @@
+{
+  "MainPage": {
+    "title": "Главная",
+    "hero": {
+      "welcomeGuest": "Добро пожаловать!",
+      "welcomeUser": "С возвращением, {username}!",
+      "subtitleGuest": "Исследуй наше приложение!",
+      "subtitleUser": "Рады видеть вас снова!"
+    },
+    "projectInfo": {
+      "title": "О проекте",
+      "description1": "Лёгкое REST-клиент приложение, вдохновлённое Postman и Thunder Client. Отправляй запросы, получай и смотри ответы, управляй переменными и отслеживай историю.",
+      "description2": "Разработано с использованием React 18+, TypeScript, Next.js - передовой стек для динамичного пользовательского опыта.",
+      "description3": "Создаём современные UI-элементы /фронтенд-компоненты: адаптивные, интерактивные и удобные в использовании."
+    },
+    "team": {
+      "title": "Наша команда",
+      "memberMarta": {
+        "name": "27moon",
+        "role": "Фронтенд-кот 🐾",
+        "description": "Ловко охотится за библиотеками и мастерски приручает REST-клиенты — настоящий Postman-котик!",
+        "url": "https://github.com/27moon",
+        "avatar": "https://github.com/27moon.png"
+      },
+      "memberKate": {
+        "name": "Gnarkill",
+        "role": "Фронтенд-кот 🐾",
+        "description": "Грациозно преодолевает запутанные авторизации, словно котик, который всегда приземляется на лапки.",
+        "url": "https://github.com/Gnarkill33",
+        "avatar": "https://github.com/Gnarkill33.png"
+      },
+      "memberNadin": {
+        "name": "Nadin",
+        "role": "Фронтенд-кот 🐾",
+        "description": "Идеально балансирует переменные и состояние, будто котик-акробат на тонком канате.",
+        "url": "https://github.com/Nadin-Nov",
+        "avatar": "https://github.com/Nadin-Nov.png"
+      }
+    },
+    "callToAction": {
+      "title": "Начать",
+      "signInButton": "Войти",
+      "signUpButton": "Регистрация"
+    },
+    "thanx": {
+      "text": "Огромное спасибо нашему замурчательному ментору <link>@gentoosiast</link> за встречи, где мы всегда могли рассчитывать на твой совет и поддержку, за вдумчивые код-ревью и за терпение, достойное мудрейшего кота. Ты самый добрый и пушистый наставник!"
+    }
+  },
+  "Header": {
+    "signIn": "Войти",
+    "signUp": "Регистрация",
+    "signOut": "Выйти",
+    "language": "Язык",
+    "restClient": "REST Клиент",
+    "history": "История",
+    "variables": "Переменные"
+  },
+  "Footer": {
+    "title": "Футер"
+  },
+  "NotFound": {
+    "title": "Ой! Эта страница спряталась в коробке 🐾",
+    "subtitle": "Мяумэн искал, но ничего не нашёл.",
+    "button": "Вернуться к котикам"
+  },
+  "SignUp": {
+    "name": "Имя",
+    "password": "Пароль",
+    "enterPassword": "Введите пароль",
+    "confirmPassword": "Подтвердите пароль",
+    "signUpTitle": "Регистрация",
+    "signUpBtn": "ЗАРЕГИСТРИРОВАТЬСЯ",
+    "signInInquiry": "У вас уже есть аккаунт?",
+    "signInLink": "Войти",
+    "SuccessTitle": "Добро пожаловать!",
+    "SuccessDescription": "Вы успешно зарегистрировались!",
+    "FailTitle": "Ой!",
+    "FailDescription": "Случилась неприятность"
+  },
+  "SignIn": {
+    "password": "Пароль",
+    "signInTitle": "Вход",
+    "signInBtn": "ВОЙТИ",
+    "signUpInquiry": "Еще не зарегистрированы?",
+    "signUpLink": "Зарегистрироваться",
+    "SuccessTitle": "Рады видеть вас снова!",
+    "SuccessDescription": "Вы успешно вошли!",
+    "FailTitle": "Ой!",
+    "FailDescription": "Случилась неприятность"
+  },
+  "RestClient": {
+    "restClientHeader": "REST Клиент",
+    "sendRequestBtn": "Отправить запрос",
+    "headers": "Заголовки:",
+    "addHeader": "+ Добавить заголовок",
+    "removeHeader": "Удалить",
+    "code": "Код:",
+    "newLangMap": "Ошибка при генерации кода {lang}",
+    "loading": "...",
+    "body": "Тело:",
+    "text": "Текст",
+    "prettify": "Отформатировать",
+    "responseHeader": "Ответ",
+    "status": "Статус:",
+    "responseStatus": "Ответа пока нет",
+    "responseError": "Ошибка",
+    "methodPlaceholder": "Выберите метод",
+    "endpointUrlPlaceholder": "Эндпоинт URL",
+    "keyPlaceholder": "ключ",
+    "valuePlaceholder": "значение",
+    "generatedCodePlaceholder": "Сгенерированный код для {el}...",
+    "jsonPlaceholder": "Запрос в формате JSON...",
+    "textPlaceholder": "Запрос в текстовом формате...",
+    "placeholderForFutureResponse": "Ответ появится тут..."
+  },
+  "MakeRequestHook": {
+    "emptyURL": "URL не может быть пустым",
+    "invalidURL": "Некорректный URL"
+  },
+  "Variables": {
+    "variablesHeader": "Ваши переменные",
+    "successTitle": "Успех! 😺",
+    "addedVariable": "Переменная добавлена",
+    "updatedVariable": "Переменная обновлена",
+    "deletedVariable": "Переменная удалена",
+    "errorTitle": "Ошибка 😿",
+    "duplicateKey": "Такой ключ уже существует",
+    "saveVariable": "Сохранить переменную",
+    "editVariable": "Редактировать переменную",
+    "removeVariable": "Удалить переменную",
+    "keyPlaceholder": "Введите ключ",
+    "valuePlaceholder": "Введите значение",
+    "addVariable": "Добавить новую переменную"
+  },
+  "History": {
+    "historyHeader": "История запросов",
+    "method": "Метод",
+    "url": "URL",
+    "status": "Статус",
+    "timestamp": "Время",
+    "duration": "Длительность (мс)",
+    "requestSize": "Размер запроса",
+    "responseSize": "Размер ответа",
+    "error": "Ошибка",
+    "actions": "Действия",
+    "noRequests": "Вы еще не выполняли запросы",
+    "tryRestClient": "Попробуйте REST Клиент",
+    "replay": "Повторить"
+  }
+}
