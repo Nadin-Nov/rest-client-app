@@ -35,7 +35,7 @@ export default function RouteRC({ params }: PageProps) {
     void params.then(setRouteParams);
   }, [params]);
 
-  if (!routeParams) {
+  if (loading || !authUser || !routeParams) {
     return (
       <div className={styles.container}>
         <PawSpinner />

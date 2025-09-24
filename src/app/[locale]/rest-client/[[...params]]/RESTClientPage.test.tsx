@@ -27,6 +27,13 @@ vi.mock('@/components/RestClient/RestClientComponent/RestClient', () => ({
   RestClient: ({ initialMethod }: RestClientProps) => <div data-testid='rest-client'>{initialMethod}</div>,
 }));
 
+vi.mock('@/hooks/useAuthContext', () => ({
+  useAuthContext: () => ({
+    authUser: { id: 'id', name: 'user' },
+    loading: false,
+  }),
+}));
+
 describe('RouteRC', () => {
   it('should render RestClient when params resolve', async () => {
     const testParams = Promise.resolve({ locale: 'en', params: ['POST', 'test==', 'test='] });
