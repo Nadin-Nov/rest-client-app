@@ -62,7 +62,7 @@ describe('POST', () => {
     expect(json.snippet).toContain('fetch');
   });
 
-  it('handles invalid JSON', async () => {
+  it('should handle invalid JSON', async () => {
     const req = new Request('http://localhost/api/generate-code', {
       method: 'POST',
       body: '{ invalid json }',
